@@ -1,0 +1,200 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.history/
+.cache/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Database
+*.db
+*.rdb
+
+# Pycharm
+.idea
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Spyder
+.spyproject/
+
+# Jupyter NB Checkpoints
+.ipynb_checkpoints/
+
+# Mac OS-specific storage files
+.DS_Store
+
+# vim
+*.swp
+*.swo
+
+# Mypy cache
+.mypy_cache/
+
+# Exclude virtual environment
+.venv/
+
+# Exclude trained models
+/models/
+
+# exclude data from source control by default
+/data/
+
+# ============================================
+# SECURITY & SECRETS (Critical)
+# ============================================
+
+# Environment files (multiple variants)
+.env
+.env.*
+.env.local
+.env.*.local
+!.env.example
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.jks
+*.gpg
+
+# SSH keys
+id_rsa*
+id_ed25519*
+id_ecdsa*
+id_dsa*
+
+# Credentials and secrets
+*.secret
+*credentials*
+*secrets*
+.secrets/
+auth.json
+token.json
+.htpasswd
+
+# AWS / Cloud provider credentials
+.aws/
+.gcloud/
+.azure/
+
+# ============================================
+# MKDOCS SPECIFIC
+# ============================================
+
+# Built site (avoid exposing build artifacts)
+site/
+
+# ============================================
+# SENSITIVE DATA FILES
+# ============================================
+
+# Spreadsheets and data exports (could contain PII)
+*.csv
+*.xlsx
+*.xls
+
+# Database exports and backups
+*.sql
+*.dump
+*.bak
+*.backup
+
+# ============================================
+# ADDITIONAL SAFETY
+# ============================================
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Logs directory
+logs/
+
+# Backup files
+*.orig
+
+# Node (if using any npm packages)
+node_modules/
+.npm/
+.yarn/
+
+# Docker overrides (may contain local configs)
+docker-compose.override.yml
+docker-compose.local.yml
+
+# Cursor/AI IDE
+.cursor/
+.cursorignore
+
+# ============================================
+# DRAFT/PRIVATE CONTENT
+# ============================================
+
+# Draft and private content folders
+drafts/
+private/
+
+# Files marked as private or draft
+*-private.*
+*-draft.*
+*_private.*
+*_draft.*
