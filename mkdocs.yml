@@ -53,13 +53,13 @@ extra:
   generator: true
   social:
   - icon: fontawesome/solid/building
-    link: https://company.com
+    link: https://www.joaquinurruti.com
   - icon: fontawesome/brands/github
-    link: https://github.com/
+    link: https://github.com/Joaquin-Urruti
   - icon: fontawesome/brands/youtube
-    link: https://youtube.com/
+    link: https://youtube.com/@joaquinurruti
   - icon: fontawesome/brands/linkedin
-    link: https://www.linkedin.com
+    link: https://www.linkedin.com/in/jurruti
   analytics:
     # provider: google
     # property: G-W9Y130NXVZ

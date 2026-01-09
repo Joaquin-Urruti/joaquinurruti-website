@@ -14,11 +14,9 @@ canonical_url: https://www.joaquinurruti.com/
   "url": "https://www.joaquinurruti.com/",
   "image": "https://avatars.githubusercontent.com/u/34709402?v=4",
   "sameAs": [
-    "https://www.youtube.com/channel/UCn8ujwUInbJkBhffxqAPBVQ",
-    "https://www.youtube.com/@daveebbelaar",
+    "https://www.youtube.com/@joaquinurruti",
     "https://www.linkedin.com/in/jurruti",
     "https://github.com/Joaquin-Urruti"
-    <!-- "https://www.skool.com/@daveebbelaar" -->
   ],
   "jobTitle": "Founder & CEO",
   "worksFor": {
@@ -53,7 +51,7 @@ canonical_url: https://www.joaquinurruti.com/
 
 <div class="profile-image-grid" markdown>
 
-![Joaquín Urruti, AI Entrepreneur and Educator](assets/aapresid_rizo_ch.**jpg**){ .profile-image alt="Portrait of Joaquín Urruti, GIS and AI Specialist" }
+![Joaquín Urruti, AI Entrepreneur and Educator](assets/aapresid_rizo_ch.jpg){ .profile-image alt="Portrait of Joaquín Urruti, GIS and AI Specialist" }
 
 </div>
 
@@ -119,8 +117,22 @@ Here's what sets me apart and how I can help drive value for your business:
     ---
 
     "I am pleased to recommend Joaquín Urruti as a highly skilled professional. As an Agricultural Engineer, he consistently leads in the adoption of advanced tools, technologies, and analytical approaches to address spatial and temporal variability in agricultural systems, delivering valuable, data-driven insights for decision-makers.
+    
     Beyond his technical expertise, Joaquín is a reliable and committed professional who works exceptionally well in teams. His proactive approach, sense of responsibility, and ability to generate synergy make him a valuable contributor to any collaborative environment.
+
     I strongly recommend Joaquín to any organization or project seeking high-level expertise in geospatial analysis applied to agricultural production and land-use evaluation."
+
+
+-   :material-format-quote-open:{ .lg .middle } Felipe Harrison
+    
+    Co-Founder at AgAnalyst Ltd.
+
+    ---
+
+    "I’ve had the pleasure of working with Joaquín over the past two years, and I would especially highlight his high level of professionalism and rigorous approach to delivering technological solutions for operations. He is always attentive to new technologies and how to apply them to real-world use cases.
+
+    Joaquín stands out for his ability to design and implement robust, scalable systems aligned with business needs. He is a reliable and collaborative person, which makes working with him consistently a very positive experience. I recommend him without hesitation."
+
 
 -   :material-format-quote-open:{ .lg .middle } Galbusera Sebastian
     
@@ -129,6 +141,20 @@ Here's what sets me apart and how I can help drive value for your business:
     ---
 
     "Joaquín demonstrates excellent aptitude for developing innovative solutions, is proactive in information research and processing, designs effective technical communication tools, and works exceptionally well in collaborative environments."
+
+
+-   :material-format-quote-open:{ .lg .middle } Francisco Lomazzi
+    
+    Sustentability Manager at Espartina S.A.
+
+    ---
+
+    "Joaquín is someone who is constantly looking to improve the things he does—he doesn’t settle for them simply working. I especially want to highlight his creativity, effort, and dedication, which drive him to pursue excellence continuously. 
+    
+    We’ve worked together on several sustainability-related projects, but I’d like to single out one in particular: he created an automation to assess farms’ legal compliance regarding agrochemical application distance requirements. It was a lot of work, but he delivered it successfully. 
+    
+    A real pleasure to work with Joaquín!"
+
 
 -   :material-format-quote-open:{ .lg .middle } Javier Moreira de Souza
     
