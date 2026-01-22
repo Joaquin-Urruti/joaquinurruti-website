@@ -12,13 +12,13 @@ canonical_url: https://www.joaquinurruti.com/
   "@type": "Person",
   "name": "Joaquín Urruti",
   "url": "https://www.joaquinurruti.com/",
-  "image": "https://avatars.githubusercontent.com/u/34709402?v=4",
+  "image": "https://www.joaquinurruti.com/assets/landing_image.jpg",
   "sameAs": [
     "https://www.youtube.com/@joaquinurruti",
     "https://www.linkedin.com/in/jurruti",
     "https://github.com/Joaquin-Urruti"
   ],
-  "jobTitle": "Founder & CEO",
+  "jobTitle": "AI & GIS Engineer",
   "worksFor": {
     "@type": "Organization",
     "name": "joaquinurruti",
@@ -51,7 +51,7 @@ canonical_url: https://www.joaquinurruti.com/
 
 <div class="profile-image-grid" markdown>
 
-![Joaquín Urruti, AI Entrepreneur and Educator](assets/aapresid_rizo_ch.jpg){ .profile-image alt="Portrait of Joaquín Urruti, GIS and AI Specialist" }
+![Joaquín Urruti, AI & GIS Engineer Advisor](assets/landing_image.jpg){ .profile-image alt="Portrait of Joaquín Urruti, AI & GIS Engineer Advisor" }
 
 </div>
 
@@ -61,9 +61,9 @@ canonical_url: https://www.joaquinurruti.com/
 
 Hi! I'm Joaquín!
 
-I'm a data, GIS, and AI consultant from Argentina. I work with agricultural companies and technical organizations facing the challenge of translating data capabilities and AI innovation into operational efficiency and competitive advantage.
+I'm a [GIS](#GIS "Geospatial Information Systems") and [AI](#AI "Artificial Intelligence") consultant from Argentina. I work with agricultural companies and technical organizations facing the challenge of translating data capabilities and AI innovation into operational efficiency and competitive advantage.
 
-Most recently, I led the Innovation and Development department at Espartina S.A., an Argentinian agricultural production company, driving its transformation toward an AI First model by leveraging technology, data, and artificial intelligence to create meaningful impact on decisions, processes, and people.
+Most recently, I led the Innovation and Development department at Espartina S.A., an Argentinian agricultural production company with more than 2.000 fields and 150.000 hectares of land, driving its transformation toward an AI First model by leveraging technology, data, and artificial intelligence to create meaningful impact on decisions, processes, and people. We automated the analysis of new fields for leasing, scaled precision management zones from 50,000 to 150,000, achieved processing of 100% of yield monitor data, automated 100% of field trial processing, and implemented AI-driven automation to interpret the statistical analysis results of those trials.
 
 Before that, I led the GIS division at Espartina, developing tools and automating workflows for managing and analyzing spatial and productive data. Prior to that, I worked as a Senior Data Analyst for Major Accounts at S4 Agtech, a Buenos Aires–based company specializing in parametric drought insurance for agriculture. In that position, I combined commercial and analytical responsibilities, helping clients understand their portfolio risk through satellite data and vegetation indices, and explaining how parametric insurance coverage could minimize those risks. We worked directly with re-insurers like Munich Re across Argentina, Uruguay, and Brazil, translating complex geospatial analytics into actionable risk management strategies.
 
@@ -84,7 +84,7 @@ Here's what sets me apart and how I can help drive value for your business:
 
     ---
 
-    As the founder of Datalumina, I bring entrepreneurial insight to every project. I understand both the technical and business sides of AI implementation, ensuring solutions that deliver real ROI and align with your business goals.
+    I come from a farming family and have an agronomy background and a career built around agricultural operations, I translate business needs into clear, actionable solutions, making the bridge between “what the farm needs” and “what we build” fast, natural, and frictionless.
 
 -   :material-youtube:{ .lg .middle } Educator & Communicator
 
@@ -96,7 +96,7 @@ Here's what sets me apart and how I can help drive value for your business:
 
     ---
 
-    With over a decade in AI and data science, including work across utilities, government, and e-commerce sectors, I bring battle-tested expertise to your projects. My solutions are built on real-world experience, not just theory.
+    With 15+ years in geospatial data and remote sensing, I help teams convert complex spatial and agronomic realities into reliable, actionable systems—grounded in hands-on experience across agriculture, insurance, research NGOs, land valuation/division, and large-scale operations.
 
 -   :material-rocket:{ .lg .middle } Fast Implementation
 
@@ -176,7 +176,7 @@ Here's what sets me apart and how I can help drive value for your business:
     While I can accommodate projects of any size, I find that engagements of at least 20 hours allow for meaningful impact. This gives us enough time to understand your data, implement solutions, and deliver actionable results. We can start with a small pilot project to ensure we're a good fit.
 
 ??? note "What industries do you have experience in?"
-    I've successfully delivered projects across agriculture operations, administrations, farm valuations and parametric insurance services. While I specialize in geospatial and remote sensing, I also apply my python knowledge in projects involving all company areas.
+    I've successfully delivered projects across agriculture operations, administrations, farm valuations and parametric insurance services. While I specialize in AI, geospatial and remote sensing, I also apply my AI and python knowledge in projects involving all company areas.
 
 ??? note "How do you handle data security and confidentiality?"
     I take data security extremely seriously. I sign comprehensive NDAs before starting any project, use enterprise-grade encryption for all data transfers, and follow industry best practices for data handling. I can also work within your existing security infrastructure and policies.
