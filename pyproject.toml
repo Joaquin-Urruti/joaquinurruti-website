@@ -1,7 +1,7 @@
 [project]
-name = "mkdocs-website-template"
+name = "joaquinurruti-website"
 version = "0.1.0"
-description = "Add your description here"
+description = "Personal website of Joaquín Urruti — AI & GIS Engineer specializing in geospatial data science, precision agriculture, and process automation."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [

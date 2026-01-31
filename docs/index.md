@@ -1,7 +1,7 @@
 ---
 title: About Me
-description: Explore AI, data science, and entrepreneurship with Joaquín Urruti. Learn about Datalumina, AI tutorials, freelancing, and innovative AI solutions for businesses.
-keywords: Joaquín Urruti, AI entrepreneur, Datalumina, AI tutorials, Data Freelancer, GenAI Launchpad
+description: Joaquín Urruti — AI & GIS Engineer specializing in geospatial data science, precision agriculture, remote sensing, and AI-driven process automation for agribusiness and agricultural operations.
+keywords: Joaquín Urruti, AI & GIS Engineer, GIS consultant, geospatial data science, precision agriculture, Google Earth Engine, PostGIS, Python, remote sensing, agricultural technology, process automation, AI consulting, spatial data analysis, agribusiness, GIS automation, vegetation indices, satellite imagery, parametric insurance, logistics optimization, OSRM, regulatory compliance mapping, workflow automation, QGIS
 author: Joaquín Urruti
 canonical_url: https://www.joaquinurruti.com/
 ---

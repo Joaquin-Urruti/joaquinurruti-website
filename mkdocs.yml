@@ -1,5 +1,5 @@
 site_name: Joaquin Urruti
-site_description: Your site description
+site_description: joaquinurruti.com is a GIS, both geospatial and non-geospatial data, analytics, and artificial intelligence company founded by Joaquín Urruti to help businesses integrate AI and data into their operations and decision making workflows.
 site_url: https://joaquinurruti.com
 
 nav:
@@ -103,4 +103,4 @@ extra_files:
 - docs/robots.txt
 
 copyright: |
-  &copy; 2024 <a href="https://www.linkedin.com" target="_blank" rel="noopener">John Doe</a>. All rights reserved.
+  &copy; 2026 <a href="https://www.linkedin.com/in/jurruti/" target="_blank" rel="noopener">Joaquín Urruti</a>. All rights reserved.
