@@ -27,7 +27,7 @@ Development of an automated geospatial compliance system that calculates exclusi
 
 Agricultural operations in Argentina must comply with strict regulations regarding the application of phytosanitary products near sensitive areas such as schools, urban zones, water bodies, and tree lines. The complexity arises from three key factors:
 
-**Jurisdictional Fragmentation**: Each department (partido) in Argentina has autonomous authority to define its own restriction distances, resulting in a patchwork of regulations across the country's agricultural regions.
+**Jurisdictional Fragmentation**: Each state ('partido or departamento') in Argentina has autonomous authority to define its own restriction distances, resulting in a patchwork of regulations across the country's agricultural regions.
 
 **Multiple Restriction Types**: Regulations distinguish between two application methods (aerial and terrestrial) and two restriction levels (total exclusion zones where no application is permitted, and buffer zones where only green-band products are allowed).
 
@@ -64,8 +64,8 @@ The legislation database maintains a regulatory matrix with 15 distance paramete
 
 | Parameter Type | Objects Covered | Application Types |
 |----------------|-----------------|-------------------|
-| Exclusion distances | Urban areas, Schools, Water courses, Water bodies | Terrestrial, Aerial |
-| Buffer distances | Urban areas, Schools, Water courses, Water bodies | Terrestrial, Aerial |
+| Exclusion distances | Trees, Urban areas, Schools, Water courses, Water bodies | Terrestrial, Aerial |
+| Buffer distances | Trees, Urban areas, Schools, Water courses, Water bodies | Terrestrial, Aerial |
 
 ## Implementation Highlights
 
@@ -87,21 +87,8 @@ DISTANCE_CODES = {
 
 ### Dynamic Buffer Generation
 
-A key technical challenge was handling the cumulative nature of buffer zones. The buffer distance is measured from the sensitive object, not from the exclusion zone boundary. The solution adjusts buffer distances automatically:
+A key technical challenge was handling the cumulative nature of buffer zones. The buffer distance is measured from the sensitive object, not from the exclusion zone boundary. The solution adjusts buffer distances automatically
 
-```python
-def adjust_buffer_distances(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
-    """Adjust buffer distances to account for exclusion zone overlap."""
-    buffer_cols = [col for col in gdf.columns if col.startswith('A')]
-    
-    for buffer_col in buffer_cols:
-        exclusion_col = 'E' + buffer_col[1:]
-        if exclusion_col in gdf.columns:
-            mask = gdf[buffer_col] != 0
-            gdf.loc[mask, buffer_col] = gdf.loc[mask, buffer_col] + gdf.loc[mask, exclusion_col]
-    
-    return gdf
-```
 
 ### Spatial Processing Pipeline
 
@@ -118,45 +105,6 @@ The core processing follows a systematic approach:
 
 *Diagram of the geospatial processing workflow for exclusion and buffer zones: from regulatory and geographic data ingestion to the generation of non-overlapping buffers by restriction type, clipped to agricultural plot boundaries.*
 
-
-
-
-```python
-def generate_restriction_zones(
-    sensitive_objects: gpd.GeoDataFrame,
-    distance_column: str,
-    lots: gpd.GeoDataFrame
-) -> gpd.GeoDataFrame:
-    """Generate restriction zones intersected with agricultural lots."""
-    filtered = sensitive_objects[sensitive_objects[distance_column] > 0].copy()
-    
-    filtered['geometry'] = filtered.apply(
-        lambda row: row.geometry.buffer(row[distance_column]), 
-        axis=1
-    )
-    
-    intersected = gpd.overlay(filtered, lots, how='intersection')
-    intersected['hectares'] = intersected.geometry.area / 10000
-    
-    return intersected
-```
-
-### Non-Overlapping Zone Extraction
-
-To provide clean outputs for aerial and terrestrial applications, exclusion geometries are subtracted from buffer geometries:
-
-```python
-def separate_restriction_types(
-    combined_zones: gpd.GeoDataFrame
-) -> tuple[gpd.GeoDataFrame, gpd.GeoDataFrame]:
-    """Separate exclusion and buffer zones without geometric overlap."""
-    exclusion = combined_zones[combined_zones['restriction_type'] == 'Exclusion']
-    buffer = combined_zones[combined_zones['restriction_type'] == 'Buffer']
-    
-    buffer_clean = gpd.overlay(buffer, exclusion, how='difference')
-    
-    return exclusion, buffer_clean
-```
 
 ## Results & Impact
 
