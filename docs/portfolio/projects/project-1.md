@@ -131,9 +131,7 @@ As the sole developer of this solution, my responsibilities included:
 
 - **Requirements Analysis**: Translated complex regulatory requirements into a structured data model
 - **Architecture Design**: Designed the cloud-based workflow optimized for delegation to non-technical users
-- **Legislation Database**: Created and maintained the regulatory matrix with distance parameters for all relevant jurisdictions
 - **Geospatial Development**: Implemented all spatial processing algorithms including buffer generation, intersection, and overlap resolution
-- **User Experience**: Packaged the solution as a simple Google Colab notebook requiring only file uploads to execute
 - **Documentation**: Produced comprehensive technical documentation for maintenance and knowledge transfer
 
 ## Lessons Learned
