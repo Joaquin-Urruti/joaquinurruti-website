@@ -200,3 +200,5 @@ private/
 *_draft.*
 
 *example*
+
+*.code-workspace

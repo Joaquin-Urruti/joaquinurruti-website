@@ -1,147 +1,211 @@
 ---
-title: Computing Large-Scale Distance Matrices with a Local OSRM Server
-description: Scaling Logistics Cost Modeling with Local OSRM Distance Matrices
+title: Automatic crop protection compliance mapping across Argentina
+description: Automated GIS system for calculating phytosanitary application restriction zones across Argentine agricultural fields, processing multi-jurisdictional regulations to generate compliance maps and reports for aerial and terrestrial spraying operations.
 ---
 
-# Computing Large-Scale Distance Matrices with a Local OSRM Server
-
-!!! abstract "Project Summary"
-    **Project Type**: Open Source Tool / Internal Infrastructure  
-    **Repository**: [osrm-local-server](https://github.com/Joaquin-Urruti/osrm-local-server)  
-    **Industry**: Logistics / Supply Chain / Agricultural Distribution  
+!!! abstract "Case Study Summary"
+    **Client**: Argentine Agricultural Production Company  
+    <!-- **Website**: [Espartina]   -->
+    <!-- **Website**: [https://espartina.com.ar/]   -->
+    **Industry**: Agricultural Technology / Regulatory Compliance  
     
-    **Key Outcomes**:
+    **Impact Metrics**:
     
-    - Unlimited distance calculations without API rate limits
-    - Very fast matrix generation for large origin-destination pairs
-    - 100% cost elimination vs. commercial routing API usage
-    - Full control over data freshness and routing parameters
-    - Repeatable, auditable distance metrics for compliance
-    - Scalable to regional or country-level logistics networks
+    - 1000x reduction in manual GIS processing time per campaign
+    - +2100 agricultural lots analyzed across Argentina per processing cycle
+    - +70 departments/partidos with legislation tracked in the compliance database
+    - 100% compliance with local phytosanitary regulations across all jurisdictions
+    - +100 of analyst time saved per agricultural campaign
 
-This project addresses a common bottleneck in logistics operations: calculating road distances between many locations efficiently. When public routing APIs become too slow, expensive, or rate-limited, running OSRM locally transforms routing into a predictable, high-throughput service that scales with your business needs.
+# End-to-end automation of phytosanitary applications compliance mapping across Argentina with an automated GIS workflow
 
-## Do you need to calculate transport costs based on a very large distance matrix?
+## Overview
 
-When you’re pricing logistics, kilometers are money. If your business needs to compute road distance between **many origins** (warehouses, farms, stores, supplier locations) and **many destinations** (customers, ports, plants, distribution centers), the usual “call a routing API per pair” approach falls apart quickly: it’s slow, rate-limited, and expensive.
+Development of an automated geospatial compliance system that calculates exclusion and buffer zones for phytosanitary product applications across agricultural fields in Argentina. The system processes multiple regulatory frameworks from different jurisdictions to generate precise restriction maps and compliance reports for both aerial and terrestrial applications.
 
-This project provides a practical alternative: **run OSRM locally** and generate **large origin–destination (OD) distance matrices** quickly, using OSRM’s **Table Service** instead of individual route calls.
+## The Challenge
 
-The result is a system designed for companies that need to calculate logistics costs at scale, without depending on the public OSRM API or its usage limits.
+Agricultural operations in Argentina must comply with strict regulations regarding the application of phytosanitary products near sensitive areas such as schools, urban zones, water bodies, and tree lines. The complexity arises from three key factors:
 
-## Why this matters for cost modeling
+**Jurisdictional Fragmentation**: Each department (partido) in Argentina has autonomous authority to define its own restriction distances, resulting in a patchwork of regulations across the country's agricultural regions.
 
-In most logistics and supply-chain models, distance is a core input:
+**Multiple Restriction Types**: Regulations distinguish between two application methods (aerial and terrestrial) and two restriction levels (total exclusion zones where no application is permitted, and buffer zones where only green-band products are allowed).
 
-- Transport cost is usually proportional to kilometers traveled.
-- Choosing the optimal destination (plant, port, DC) depends on relative distances.
-- Costs must be recalculated frequently as volumes, routes, or commercial conditions change.
+**Operational Scale**: The company manages agricultural fields distributed across the entire Argentine agricultural belt, requiring compliance verification for dozens of jurisdictions with different regulatory requirements each growing season.
 
-Public routing APIs are not designed for these workloads. Rate limits, request caps, and latency make them unsuitable for building large OD matrices repeatedly.
+Previously, this analysis required manual GIS work for each department—creating individual buffers around sensitive objects using jurisdiction-specific distances, then intersecting these with field boundaries. This process was time-consuming, error-prone, and difficult to delegate to non-GIS specialists.
 
-Running OSRM locally removes these constraints and turns routing into a predictable, high-throughput internal service.
+## Technical Approach
 
-## What the project delivers
+### Technology Stack
 
-This repository implements an end-to-end workflow to compute distance matrices using a local OSRM instance:
+- **Programming Language**: Python 3.x
+- **Geospatial Processing**: GeoPandas, Shapely
+- **Development Environment**: Google Colab (Jupyter Notebook)
+- **Data Storage**: Google Drive
+- **Data Formats**: GeoPackage (.gpkg), Excel (.xlsx)
+- **Coordinate Reference System**: EPSG:32720 (UTM Zone 20S)
 
-1. Start an OSRM server locally using Docker and OpenStreetMap data.
-2. Load origin geometries (polygons) and destination points from GIS files.
-3. Generate centroids for origin polygons.
-4. Snap centroids to the nearest road segment to ensure routable points.
-5. Use OSRM’s **Table Service** to compute all origin–destination distances and durations in one request.
-6. Export the results to Excel for further analysis or cost modeling.
+### Architecture
 
-The example configuration is set up for Argentina, but the same approach works for any region with available OpenStreetMap extracts.
+!!! info "System Architecture"
+    The solution follows a batch processing architecture with cloud-based storage and execution.
+    
+    **Components**:
+    
+    - **Input Layer**: Google Drive folder containing standardized GeoPackage files
+    - **Processing Engine**: Python notebook executing spatial operations
+    - **Legislation Database**: GeoPackage with regulatory matrix by jurisdiction
+    - **Output Generator**: Automated export of processed layers and reports
 
-## Key architectural decisions
+### Data Model
 
-### OSRM running locally in Docker
+The legislation database maintains a regulatory matrix with 15 distance parameters per department:
 
-OSRM is a high-performance routing engine built on OpenStreetMap data. Running it locally gives full control over:
+| Parameter Type | Objects Covered | Application Types |
+|----------------|-----------------|-------------------|
+| Exclusion distances | Urban areas, Schools, Water courses, Water bodies | Terrestrial, Aerial |
+| Buffer distances | Urban areas, Schools, Water courses, Water bodies | Terrestrial, Aerial |
 
-- Data freshness
-- Compute resources
-- Request volume
-- Reproducibility of results
+## Implementation Highlights
 
-Docker ensures the setup is repeatable and easy to deploy across environments.
+### Regulatory Matrix Management
 
-### Using the Table Service for matrices
+The system ingests a legislation layer where each department contains codified distance values following a standardized naming convention:
 
-Instead of computing one route at a time, the project uses OSRM’s **Table Service**, which computes a full distance and duration matrix between multiple sources and destinations in a single call.
-
-This approach drastically reduces overhead and makes large matrices feasible.
-
-### Snapping origins to the road network
-
-Origin data often comes as polygons (fields, zones, service areas). Their centroids may not lie exactly on a routable road.
-
-The pipeline snaps each centroid to the nearest road node before routing, ensuring realistic and reliable distance calculations.
-
-![Architecture Diagram](../../assets/portfolio-orsm.svg)
-*Schema of the workflow*
-
-## How to run the project
-
-### Requirements
-
-- Docker
-- Python 3.11+
-- Jupyter Notebook
-- Dependencies installed via `uv` or `pip`
-
-### Start the local OSRM server
-
-```bash
-git clone https://github.com/Joaquin-Urruti/osrm-local-server
-cd osrm-local-server
-
-uv sync
-# or
-pip install -r requirements.txt
-
-./iniciar_server_osrm_docker.sh
+```python
+DISTANCE_CODES = {
+    'EPT': 'Exclusion - Urban Areas - Terrestrial',
+    'APT': 'Buffer - Urban Areas - Terrestrial',
+    'EPA': 'Exclusion - Urban Areas - Aerial',
+    'APA': 'Buffer - Urban Areas - Aerial',
+    'EET': 'Exclusion - Schools - Terrestrial',
+    'AET': 'Buffer - Schools - Terrestrial',
+    # Additional codes for water bodies and water courses
+}
 ```
 
-The first run preprocesses the OpenStreetMap extract and takes longer. Subsequent runs reuse the processed data and start quickly.
+### Dynamic Buffer Generation
 
-### Input data
+A key technical challenge was handling the cumulative nature of buffer zones. The buffer distance is measured from the sensitive object, not from the exclusion zone boundary. The solution adjusts buffer distances automatically:
 
-#### Place your GIS files under inputs:
-- "origins.gpkg" or .shp: polygon geometries with identifiers (in this project polygons were used, but they could be points). 
-- "destinations.gpkg" or .shp: point geometries for destinations.  
+```python
+def adjust_buffer_distances(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
+    """Adjust buffer distances to account for exclusion zone overlap."""
+    buffer_cols = [col for col in gdf.columns if col.startswith('A')]
+    
+    for buffer_col in buffer_cols:
+        exclusion_col = 'E' + buffer_col[1:]
+        if exclusion_col in gdf.columns:
+            mask = gdf[buffer_col] != 0
+            gdf.loc[mask, buffer_col] = gdf.loc[mask, buffer_col] + gdf.loc[mask, exclusion_col]
+    
+    return gdf
+```
 
-All data is converted internally to WGS84 (EPSG:4326) for compatibility with OSRM.
+### Spatial Processing Pipeline
 
-### Generate the distance matrix
+The core processing follows a systematic approach:
 
-#### Run the notebook distancias_table.ipynb. It will:
-- Filter origins by campaign and optional zones
-- Generate and snap centroids
-- Query the local OSRM Table Service
-- Export the OD matrix to: outputs/matrix.xlsx
+1. **Geometry Repair**: Input layers are cleaned using `buffer(0)` to fix topology errors
+2. **Reprojection**: All layers converted to UTM Zone 20S for metric calculations
+3. **Spatial Join**: Sensitive objects inherit regulatory parameters from their containing department
+4. **Buffer Generation**: 15 distinct buffer layers created based on object type and restriction category
+5. **Intersection**: Buffers clipped to agricultural lot boundaries
+6. **Overlap Resolution**: Buffer zones have exclusion zones subtracted to prevent double-counting
 
-Each row represents an origin–destination pair with distance (km) and duration (hours).
+![Processing of exclusion and buffer areas](../../assets/project-2/proceso_areas_exclusion.png)
 
-## Results and business impact
+*Diagram of the geospatial processing workflow for exclusion and buffer zones: from regulatory and geographic data ingestion to the generation of non-overlapping buffers by restriction type, clipped to agricultural plot boundaries.*
 
-The main result is the ability to compute large distance matrices quickly and reliably, without depending on the public OSRM server.
 
-### For companies, this enables:
 
-- Faster logistics cost calculations
-- Repeatable and auditable distance metrics
-- Scenario analysis across many origins and destinations
-- Full control over routing data and performance
 
-This setup is particularly valuable for agricultural logistics, retail distribution, manufacturing supply chains, and any operation where kilometers directly affect margins.
+```python
+def generate_restriction_zones(
+    sensitive_objects: gpd.GeoDataFrame,
+    distance_column: str,
+    lots: gpd.GeoDataFrame
+) -> gpd.GeoDataFrame:
+    """Generate restriction zones intersected with agricultural lots."""
+    filtered = sensitive_objects[sensitive_objects[distance_column] > 0].copy()
+    
+    filtered['geometry'] = filtered.apply(
+        lambda row: row.geometry.buffer(row[distance_column]), 
+        axis=1
+    )
+    
+    intersected = gpd.overlay(filtered, lots, how='intersection')
+    intersected['hectares'] = intersected.geometry.area / 10000
+    
+    return intersected
+```
 
-### In summary
+### Non-Overlapping Zone Extraction
 
-If your organization needs to calculate logistics costs at scale and public routing APIs are becoming a bottleneck, running OSRM locally with the Table Service is a solid, production-ready approach.
+To provide clean outputs for aerial and terrestrial applications, exclusion geometries are subtracted from buffer geometries:
 
-This project provides a concrete, reusable starting point for building those distance matrices efficiently and without external limits.
+```python
+def separate_restriction_types(
+    combined_zones: gpd.GeoDataFrame
+) -> tuple[gpd.GeoDataFrame, gpd.GeoDataFrame]:
+    """Separate exclusion and buffer zones without geometric overlap."""
+    exclusion = combined_zones[combined_zones['restriction_type'] == 'Exclusion']
+    buffer = combined_zones[combined_zones['restriction_type'] == 'Buffer']
+    
+    buffer_clean = gpd.overlay(buffer, exclusion, how='difference')
+    
+    return exclusion, buffer_clean
+```
+
+## Results & Impact
+
+The automated system delivers significant operational improvements:
+
+| Metric | Result |
+|--------|--------|
+| Processing time reduction | [COMPLETE: specify percentage] compared to manual workflow |
+| Jurisdictions covered | [COMPLETE: specify number] departments across Argentina |
+| Accuracy | 100% regulatory compliance with local ordinances |
+| Report generation | Automated Excel and GeoPackage outputs |
+| User accessibility | Non-GIS specialists can execute the workflow |
+
+**Business Benefits**:
+
+- **Pre-lease Negotiation**: Restriction data available before field rental decisions, enabling informed negotiations
+- **Regulatory Compliance**: Complete documentation of restricted areas for audit purposes
+- **Strategic Analysis**: Aggregated metrics by zone, department, or restriction type for management reporting
+- **Operational Planning**: Clear delineation of areas requiring special treatment or product restrictions
+
+## My Contributions
+
+As the sole developer of this solution, my responsibilities included:
+
+- **Requirements Analysis**: Translated complex regulatory requirements into a structured data model
+- **Architecture Design**: Designed the cloud-based workflow optimized for delegation to non-technical users
+- **Legislation Database**: Created and maintained the regulatory matrix with distance parameters for all relevant jurisdictions
+- **Geospatial Development**: Implemented all spatial processing algorithms including buffer generation, intersection, and overlap resolution
+- **User Experience**: Packaged the solution as a simple Google Colab notebook requiring only file uploads to execute
+- **Documentation**: Produced comprehensive technical documentation for maintenance and knowledge transfer
+
+## Lessons Learned
+
+**Simplicity Enables Adoption**: By designing the solution as a Colab notebook with Google Drive integration, the workflow could be delegated to team members without GIS expertise. The decision to prioritize usability over technical sophistication proved critical for operational success.
+
+**Regulatory Data Maintenance**: The most challenging aspect is keeping the legislation database current. Establishing a clear process for monitoring regulatory changes and updating the database is as important as the technical implementation.
+
+**Geometric Precision Matters**: Agricultural compliance requires precise area calculations. Investing time in geometry repair and proper coordinate system selection prevented downstream issues with area discrepancies.
+
+!!! tip "Portfolio Best Practices"
+    This case study demonstrates:
+    
+    - End-to-end automation of complex geospatial workflows
+    - Integration of regulatory compliance requirements into technical solutions
+    - Design for non-technical user adoption through simplified interfaces
+    - Multi-jurisdictional data management at national scale
+    - Python/GeoPandas expertise for agricultural technology applications
+
+
 
 
 
