@@ -142,18 +142,6 @@ As the sole developer of this solution, my responsibilities included:
 
 **Geometric Precision Matters**: Agricultural compliance requires precise area calculations. Investing time in geometry repair and proper coordinate system selection prevented downstream issues with area discrepancies.
 
-!!! tip "Portfolio Best Practices"
-    This case study demonstrates:
-    
-    - End-to-end automation of complex geospatial workflows
-    - Integration of regulatory compliance requirements into technical solutions
-    - Design for non-technical user adoption through simplified interfaces
-    - Multi-jurisdictional data management at national scale
-    - Python/GeoPandas expertise for agricultural technology applications
-
-
-
-
 
 <div class="grid cards" style="margin-top: 3rem" markdown>
 
