@@ -49,10 +49,11 @@ Previously, this analysis required **a lot of manual GIS work** for each departm
 
 ### Architecture
 
-!!! info "System Architecture" The solution follows a batch processing architecture with cloud-based storage and execution.
-
+!!! info "System Architecture"
+    The solution follows a batch processing architecture with cloud-based storage and execution.
+    
     **Components**:
-
+    
     - **Input Layer**: Google Drive folder containing standardized GeoPackage files
     - **Processing Engine**: Python notebook executing spatial operations
     - **Legislation Database**: GeoPackage with regulatory matrix by jurisdiction
@@ -105,8 +106,8 @@ The core processing follows a systematic approach:
 
 *Diagram of the geospatial processing workflow for exclusion and buffer zones: from regulatory and geographic data ingestion to the generation of non-overlapping buffers by restriction type, clipped to agricultural plot boundaries.*
 
-![Exclusion and buffer zone for terrestrial applications in a given field](../../assets/project-1/exclusion-type.png)
-*Exclusion and buffer zone for terrestrial applications in a given field.*
+![Exclusion and buffer zones for terrestrial & aerial applications across various fields](../../assets/project-1/exclusion-type.png)
+*Exclusion and buffer zones for terrestrial & aerial applications across various fields.*
 
 ## Results & Impact
 

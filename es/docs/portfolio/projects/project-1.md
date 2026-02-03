@@ -49,7 +49,8 @@ Anteriormente, este análisis requería **mucho trabajo GIS manual** para cada d
 
 ### Arquitectura
 
-!!! info "Arquitectura del Sistema" La solución sigue una arquitectura de procesamiento por lotes con almacenamiento y ejecución basados en la nube.
+!!! info "Arquitectura del Sistema"
+    La solución sigue una arquitectura de procesamiento por lotes con almacenamiento y ejecución basados en la nube.
 
     **Componentes**:
 
@@ -105,8 +106,8 @@ El procesamiento central sigue un enfoque sistemático:
 
 *Diagrama del flujo de trabajo de procesamiento geoespacial para zonas de exclusión y amortiguación: desde la ingestión de datos regulatorios y geográficos hasta la generación de buffers no superpuestos por tipo de restricción, recortados a los límites de parcelas agrícolas.*
 
-![Zona de exclusión y amortiguación para aplicaciones terrestres en un campo dado](../../assets/project-1/exclusion-type.png)
-*Zona de exclusión y amortiguación para aplicaciones terrestres en un campo dado.*
+![Distintas zonas de exclusión y amortiguación para aplicaciones terrestres y aéreas en distintos campos](../../assets/project-1/exclusion-type.png)
+*Distintas zonas de exclusión y amortiguación para aplicaciones terrestres y aéreas en distintos campos.*
 
 ## Resultados e Impacto
 
