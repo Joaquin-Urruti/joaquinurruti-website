@@ -79,6 +79,13 @@ plugins:
     - locale: es
       name: Español
       build: true
+      nav_translations:
+        Home: Inicio
+        About: Sobre mí
+        Case Studies: Casos de Estudio
+        Overview: Resumen
+        Projects: Proyectos
+        Blog: Blog
 - search
 - social:
     cards_layout_options:
