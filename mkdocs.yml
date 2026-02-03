@@ -61,13 +61,24 @@ extra:
   - icon: fontawesome/brands/linkedin
     link: https://www.linkedin.com/in/jurruti
   analytics:
-    # provider: google
-    # property: G-W9Y130NXVZ
+    provider: google
+    property: G-2HNC7Z0EDD
 
 extra_css:
 - stylesheets/extra.css
 - stylesheets/hero.css
 plugins:
+- i18n:
+    docs_structure: suffix
+    fallback_to_default: true
+    languages:
+    - locale: en
+      default: true
+      name: English
+      build: true
+    - locale: es
+      name: Español
+      build: true
 - search
 - social:
     cards_layout_options:
