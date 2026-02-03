@@ -1237,14 +1237,17 @@
 <li><strong>Coordinate Reference System</strong>: EPSG:32720 (UTM Zone 20S)</li>
 </ul>
 <h3 id="architecture">Architecture</h3>
-<p>!!! info "System Architecture" The solution follows a batch processing architecture with cloud-based storage and execution.</p>
-<div class="language-text highlight"><pre><span></span><code>**Components**:
-
-- **Input Layer**: Google Drive folder containing standardized GeoPackage files
-- **Processing Engine**: Python notebook executing spatial operations
-- **Legislation Database**: GeoPackage with regulatory matrix by jurisdiction
-- **Output Generator**: Automated export of processed layers and reports
-</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">System Architecture</p>
+<p>The solution follows a batch processing architecture with cloud-based storage and execution.</p>
+<p><strong>Components</strong>:</p>
+<ul>
+<li><strong>Input Layer</strong>: Google Drive folder containing standardized GeoPackage files</li>
+<li><strong>Processing Engine</strong>: Python notebook executing spatial operations</li>
+<li><strong>Legislation Database</strong>: GeoPackage with regulatory matrix by jurisdiction</li>
+<li><strong>Output Generator</strong>: Automated export of processed layers and reports</li>
+</ul>
+</div>
 <h3 id="data-model">Data Model</h3>
 <p>The legislation database maintains a regulatory matrix with 15 distance parameters per department:</p>
 <table>
@@ -1295,8 +1298,8 @@
 </ol>
 <p><img alt="Processing of exclusion and buffer areas" src="../../../assets/project-1/proceso_areas_exclusion.png" /></p>
 <p><em>Diagram of the geospatial processing workflow for exclusion and buffer zones: from regulatory and geographic data ingestion to the generation of non-overlapping buffers by restriction type, clipped to agricultural plot boundaries.</em></p>
-<p><img alt="Exclusion and buffer zone for terrestrial applications in a given field" src="../../../assets/project-1/exclusion-type.png" />
-<em>Exclusion and buffer zone for terrestrial applications in a given field.</em></p>
+<p><img alt="Exclusion and buffer zones for terrestrial &amp; aerial applications across various fields" src="../../../assets/project-1/exclusion-type.png" />
+<em>Exclusion and buffer zones for terrestrial &amp; aerial applications across various fields.</em></p>
 <h2 id="results-impact">Results &amp; Impact</h2>
 <p>The automated system delivers significant operational improvements:</p>
 <table>

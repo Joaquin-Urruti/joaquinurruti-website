@@ -1237,14 +1237,17 @@
 <li><strong>Sistema de Referencia de Coordenadas</strong>: EPSG:32720 (UTM Zona 20S)</li>
 </ul>
 <h3 id="arquitectura">Arquitectura</h3>
-<p>!!! info "Arquitectura del Sistema" La solución sigue una arquitectura de procesamiento por lotes con almacenamiento y ejecución basados en la nube.</p>
-<div class="language-text highlight"><pre><span></span><code>**Componentes**:
-
-- **Capa de Entrada**: Carpeta de Google Drive conteniendo archivos GeoPackage estandarizados
-- **Motor de Procesamiento**: Notebook Python ejecutando operaciones espaciales
-- **Base de Datos de Legislación**: GeoPackage con matriz regulatoria por jurisdicción
-- **Generador de Salida**: Exportación automatizada de capas procesadas e informes
-</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Arquitectura del Sistema</p>
+<p>La solución sigue una arquitectura de procesamiento por lotes con almacenamiento y ejecución basados en la nube.</p>
+<p><strong>Componentes</strong>:</p>
+<ul>
+<li><strong>Capa de Entrada</strong>: Carpeta de Google Drive conteniendo archivos GeoPackage estandarizados</li>
+<li><strong>Motor de Procesamiento</strong>: Notebook Python ejecutando operaciones espaciales</li>
+<li><strong>Base de Datos de Legislación</strong>: GeoPackage con matriz regulatoria por jurisdicción</li>
+<li><strong>Generador de Salida</strong>: Exportación automatizada de capas procesadas e informes</li>
+</ul>
+</div>
 <h3 id="modelo-de-datos">Modelo de Datos</h3>
 <p>La base de datos de legislación mantiene una matriz regulatoria con 15 parámetros de distancia por departamento:</p>
 <table>
@@ -1295,8 +1298,8 @@
 </ol>
 <p><img alt="Procesamiento de áreas de exclusión y amortiguación" src="../../../assets/project-1/proceso_areas_exclusion.png" /></p>
 <p><em>Diagrama del flujo de trabajo de procesamiento geoespacial para zonas de exclusión y amortiguación: desde la ingestión de datos regulatorios y geográficos hasta la generación de buffers no superpuestos por tipo de restricción, recortados a los límites de parcelas agrícolas.</em></p>
-<p><img alt="Zona de exclusión y amortiguación para aplicaciones terrestres en un campo dado" src="../../../assets/project-1/exclusion-type.png" />
-<em>Zona de exclusión y amortiguación para aplicaciones terrestres en un campo dado.</em></p>
+<p><img alt="Distintas zonas de exclusión y amortiguación para aplicaciones terrestres y aéreas en distintos campos" src="../../../assets/project-1/exclusion-type.png" />
+<em>Distintas zonas de exclusión y amortiguación para aplicaciones terrestres y aéreas en distintos campos.</em></p>
 <h2 id="resultados-e-impacto">Resultados e Impacto</h2>
 <p>El sistema automatizado entrega mejoras operacionales significativas:</p>
 <table>
