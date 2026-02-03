@@ -1,0 +1,1297 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Escalando el Modelado de Costos Logísticos con Matrices de Distancia OSRM Locales">
+      
+      
+      
+        <link rel="canonical" href="https://joaquinurruti.com/es/portfolio/projects/project-2/">
+      
+      
+        <link rel="prev" href="../project-1/">
+      
+      
+        <link rel="next" href="../../../blog/">
+      
+      
+        
+          <link rel="alternate" href="../../../../portfolio/projects/project-2/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="es">
+        
+      
+      
+      <link rel="icon" href="../../../../assets/favicon_ju.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Cálculo de Matrices de Distancia a Gran Escala con un Servidor OSRM Local - Joaquin Urruti</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Raleway";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/hero.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-2HNC7Z0EDD"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-2HNC7Z0EDD",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-2HNC7Z0EDD",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#calculo-de-matrices-de-distancia-a-gran-escala-con-un-servidor-osrm-local" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../../" title="Joaquin Urruti" class="md-header__button md-logo" aria-label="Joaquin Urruti" data-md-component="logo">
+      
+  <img src="../../../../assets/logo_ju.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Joaquin Urruti
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cálculo de Matrices de Distancia a Gran Escala con un Servidor OSRM Local
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../../portfolio/projects/project-2/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+  Inicio
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Casos de Estudio
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="Joaquin Urruti" class="md-nav__button md-logo" aria-label="Joaquin Urruti" data-md-component="logo">
+      
+  <img src="../../../../assets/logo_ju.svg" alt="logo">
+
+    </a>
+    Joaquin Urruti
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inicio
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sobre mí
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Casos de Estudio
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Casos de Estudio
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resumen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proyectos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Proyectos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mapeo automático de cumplimiento de aplicaciones fitosanitarias en Argentina
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cálculo de Matrices de Distancia a Gran Escala con un Servidor OSRM Local
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cálculo de Matrices de Distancia a Gran Escala con un Servidor OSRM Local
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#necesitas-calcular-costos-de-transporte-basados-en-una-matriz-de-distancia-muy-grande" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Necesitás calcular costos de transporte basados en una matriz de distancia muy grande?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#por-que-esto-importa-para-el-modelado-de-costos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por qué esto importa para el modelado de costos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lo-que-entrega-el-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lo que entrega el proyecto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decisiones-arquitectonicas-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decisiones arquitectónicas clave
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decisiones arquitectónicas clave">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#osrm-ejecutandose-localmente-en-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OSRM ejecutándose localmente en Docker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-el-table-service-para-matrices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usando el Table Service para matrices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajustando-origenes-a-la-red-vial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajustando orígenes a la red vial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-ejecutar-el-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo ejecutar el proyecto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cómo ejecutar el proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iniciar-el-servidor-osrm-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iniciar el servidor OSRM local
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datos-de-entrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datos de entrada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Datos de entrada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coloca-tus-archivos-gis-bajo-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colocá tus archivos GIS bajo inputs:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generar-la-matriz-de-distancias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generar la matriz de distancias
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generar la matriz de distancias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejecuta-el-notebook-distancias_tableipynb-este" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejecutá el notebook distancias_table.ipynb. Este:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultados-e-impacto-de-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultados e impacto de negocio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resultados e impacto de negocio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#para-empresas-esto-habilita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Para empresas, esto habilita:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#en-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        En resumen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="calculo-de-matrices-de-distancia-a-gran-escala-con-un-servidor-osrm-local">Cálculo de Matrices de Distancia a Gran Escala con un Servidor OSRM Local</h1>
+<div class="admonition abstract">
+<p class="admonition-title">Resumen del Proyecto</p>
+<p><strong>Tipo de Proyecto</strong>: Herramienta Open Source / Infraestructura Interna
+<strong>Repositorio</strong>: <a href="https://github.com/Joaquin-Urruti/osrm-local-server">osrm-local-server</a>
+<strong>Industria</strong>: Logística / Cadena de Suministro / Distribución Agrícola</p>
+<p><strong>Resultados Clave</strong>:</p>
+<ul>
+<li>Cálculos de distancia ilimitados sin límites de tasa de API</li>
+<li>Generación muy rápida de matrices para grandes pares origen-destino</li>
+<li>100% de eliminación de costos vs. uso de APIs de ruteo comerciales</li>
+<li>Control total sobre la frescura de datos y parámetros de ruteo</li>
+<li>Métricas de distancia repetibles y auditables para cumplimiento</li>
+<li>Escalable a redes logísticas regionales o a nivel país</li>
+</ul>
+</div>
+<p>Este proyecto aborda un cuello de botella común en operaciones logísticas: calcular distancias por carretera entre muchas ubicaciones eficientemente. Cuando las APIs públicas de ruteo se vuelven muy lentas, costosas o limitadas en tasa, ejecutar OSRM localmente transforma el ruteo en un servicio predecible y de alto rendimiento que escala con las necesidades de tu negocio.</p>
+<h2 id="necesitas-calcular-costos-de-transporte-basados-en-una-matriz-de-distancia-muy-grande">¿Necesitás calcular costos de transporte basados en una matriz de distancia muy grande?</h2>
+<p>Cuando estás calculando precios de logística, los kilómetros son dinero. Si tu negocio necesita computar distancias por carretera entre <strong>muchos orígenes</strong> (almacenes, campos, tiendas, ubicaciones de proveedores) y <strong>muchos destinos</strong> (clientes, puertos, plantas, centros de distribución), el enfoque usual de "llamar a una API de ruteo por par" colapsa rápidamente: es lento, tiene límites de tasa y es costoso.</p>
+<p>Este proyecto proporciona una alternativa práctica: <strong>ejecutar OSRM localmente</strong> y generar <strong>grandes matrices de distancia origen-destino (OD)</strong> rápidamente, usando el <strong>Table Service</strong> de OSRM en lugar de llamadas de ruta individuales.</p>
+<p>El resultado es un sistema diseñado para empresas que necesitan calcular costos logísticos a escala, sin depender de la API pública de OSRM o sus límites de uso.</p>
+<h2 id="por-que-esto-importa-para-el-modelado-de-costos">Por qué esto importa para el modelado de costos</h2>
+<p>En la mayoría de los modelos de logística y cadena de suministro, la distancia es un input central:</p>
+<ul>
+<li>El costo de transporte es usualmente proporcional a los kilómetros recorridos.</li>
+<li>Elegir el destino óptimo (planta, puerto, CD) depende de las distancias relativas.</li>
+<li>Los costos deben recalcularse frecuentemente a medida que cambian los volúmenes, rutas o condiciones comerciales.</li>
+</ul>
+<p>Las APIs públicas de ruteo no están diseñadas para estas cargas de trabajo. Los límites de tasa, topes de solicitudes y latencia las hacen inadecuadas para construir grandes matrices OD repetidamente.</p>
+<p>Ejecutar OSRM localmente elimina estas restricciones y convierte el ruteo en un servicio interno predecible y de alto rendimiento.</p>
+<h2 id="lo-que-entrega-el-proyecto">Lo que entrega el proyecto</h2>
+<p>Este repositorio implementa un flujo de trabajo de extremo a extremo para computar matrices de distancia usando una instancia local de OSRM:</p>
+<ol>
+<li>Iniciar un servidor OSRM localmente usando Docker y datos de OpenStreetMap.</li>
+<li>Cargar geometrías de origen (polígonos) y puntos de destino desde archivos GIS.</li>
+<li>Generar centroides para los polígonos de origen.</li>
+<li>Ajustar los centroides al segmento de carretera más cercano para asegurar puntos ruteables.</li>
+<li>Usar el <strong>Table Service</strong> de OSRM para computar todas las distancias y duraciones origen-destino en una sola solicitud.</li>
+<li>Exportar los resultados a Excel para análisis adicional o modelado de costos.</li>
+</ol>
+<p>La configuración de ejemplo está preparada para Argentina, pero el mismo enfoque funciona para cualquier región con extractos disponibles de OpenStreetMap.</p>
+<h2 id="decisiones-arquitectonicas-clave">Decisiones arquitectónicas clave</h2>
+<h3 id="osrm-ejecutandose-localmente-en-docker">OSRM ejecutándose localmente en Docker</h3>
+<p>OSRM es un motor de ruteo de alto rendimiento construido sobre datos de OpenStreetMap. Ejecutarlo localmente da control total sobre:</p>
+<ul>
+<li>Frescura de datos</li>
+<li>Recursos de cómputo</li>
+<li>Volumen de solicitudes</li>
+<li>Reproducibilidad de resultados</li>
+</ul>
+<p>Docker asegura que la configuración sea repetible y fácil de desplegar en diferentes entornos.</p>
+<h3 id="usando-el-table-service-para-matrices">Usando el Table Service para matrices</h3>
+<p>En lugar de computar una ruta a la vez, el proyecto usa el <strong>Table Service</strong> de OSRM, que computa una matriz completa de distancias y duraciones entre múltiples orígenes y destinos en una sola llamada.</p>
+<p>Este enfoque reduce drásticamente la sobrecarga y hace factibles las matrices grandes.</p>
+<h3 id="ajustando-origenes-a-la-red-vial">Ajustando orígenes a la red vial</h3>
+<p>Los datos de origen a menudo vienen como polígonos (campos, zonas, áreas de servicio). Sus centroides pueden no estar exactamente sobre una carretera ruteable.</p>
+<p>El pipeline ajusta cada centroide al nodo de carretera más cercano antes del ruteo, asegurando cálculos de distancia realistas y confiables.</p>
+<p><img alt="Diagrama de Arquitectura" src="../../../../assets/portfolio-orsm.svg" />
+<em>Esquema del flujo de trabajo</em></p>
+<h2 id="como-ejecutar-el-proyecto">Cómo ejecutar el proyecto</h2>
+<h3 id="requisitos">Requisitos</h3>
+<ul>
+<li>Docker</li>
+<li>Python 3.11+</li>
+<li>Jupyter Notebook</li>
+<li>Dependencias instaladas vía <code>uv</code> o <code>pip</code></li>
+</ul>
+<h3 id="iniciar-el-servidor-osrm-local">Iniciar el servidor OSRM local</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Joaquin-Urruti/osrm-local-server
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>osrm-local-server
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>uv<span class="w"> </span>sync
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># o</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>./iniciar_server_osrm_docker.sh
+</span></code></pre></div>
+<p>La primera ejecución preprocesa el extracto de OpenStreetMap y toma más tiempo. Las ejecuciones posteriores reutilizan los datos procesados e inician rápidamente.</p>
+<h3 id="datos-de-entrada">Datos de entrada</h3>
+<h4 id="coloca-tus-archivos-gis-bajo-inputs">Colocá tus archivos GIS bajo inputs:</h4>
+<ul>
+<li>"origins.gpkg" o .shp: geometrías de polígonos con identificadores (en este proyecto se usaron polígonos, pero podrían ser puntos).</li>
+<li>"destinations.gpkg" o .shp: geometrías de puntos para destinos.</li>
+</ul>
+<p>Todos los datos se convierten internamente a WGS84 (EPSG:4326) para compatibilidad con OSRM.</p>
+<h3 id="generar-la-matriz-de-distancias">Generar la matriz de distancias</h3>
+<h4 id="ejecuta-el-notebook-distancias_tableipynb-este">Ejecutá el notebook distancias_table.ipynb. Este:</h4>
+<ul>
+<li>Filtra orígenes por campaña y zonas opcionales</li>
+<li>Genera y ajusta centroides</li>
+<li>Consulta el Table Service de OSRM local</li>
+<li>Exporta la matriz OD a: outputs/matrix.xlsx</li>
+</ul>
+<p>Cada fila representa un par origen-destino con distancia (km) y duración (horas).</p>
+<h2 id="resultados-e-impacto-de-negocio">Resultados e impacto de negocio</h2>
+<p>El resultado principal es la capacidad de computar grandes matrices de distancia rápida y confiablemente, sin depender del servidor público de OSRM.</p>
+<h3 id="para-empresas-esto-habilita">Para empresas, esto habilita:</h3>
+<ul>
+<li>Cálculos de costos logísticos más rápidos</li>
+<li>Métricas de distancia repetibles y auditables</li>
+<li>Análisis de escenarios a través de muchos orígenes y destinos</li>
+<li>Control total sobre datos de ruteo y rendimiento</li>
+</ul>
+<p>Esta configuración es particularmente valiosa para logística agrícola, distribución retail, cadenas de suministro de manufactura, y cualquier operación donde los kilómetros afectan directamente los márgenes.</p>
+<h3 id="en-resumen">En resumen</h3>
+<p>Si tu organización necesita calcular costos logísticos a escala y las APIs públicas de ruteo se están convirtiendo en un cuello de botella, ejecutar OSRM localmente con el Table Service es un enfoque sólido y listo para producción.</p>
+<p>Este proyecto proporciona un punto de partida concreto y reutilizable para construir esas matrices de distancia eficientemente y sin límites externos.</p>
+<div class="grid cards" style="margin-top: 3rem">
+<ul>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 21h18v-2H2M20 8h-2V5h2m0-2H4v10a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4v-3h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></svg></span> ¡Tomemos un café virtual juntos!</p>
+<hr />
+<p>¿Querés ver si somos un buen match? Charlemos y descubrámoslo. Agendá una sesión de estrategia gratuita de 30 minutos para discutir tus desafíos y explorar cómo podemos trabajar juntos.</p>
+<p><a class="md-button md-button--primary" href="https://calendly.com">Agendá una llamada gratuita <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19z"/></svg></span></a></p>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
+        
+          
+          <a href="../project-1/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Mapeo automático de cumplimiento de aplicaciones fitosanitarias en Argentina">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Mapeo automático de cumplimiento de aplicaciones fitosanitarias en Argentina
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../blog/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Index">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                Index
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 <a href="https://www.linkedin.com/in/jurruti/" target="_blank" rel="noopener">Joaquín Urruti</a>. All rights reserved.
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.joaquinurruti.com" target="_blank" rel="noopener" title="www.joaquinurruti.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64zm112 352h32c17.7 0 32 14.3 32 32v80h-96v-80c0-17.7 14.3-32 32-32M96 112c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16zm144-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16M96 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16zm144-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Joaquin-Urruti" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://youtube.com/@joaquinurruti" target="_blank" rel="noopener" title="youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M549.7 124.1c-6.2-23.7-24.8-42.3-48.3-48.6C458.9 64 288.1 64 288.1 64S117.3 64 74.7 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256.4 15 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.3 448 288.1 448 288.1 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.2 337.6V175.2l142.7 81.2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/jurruti" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["search.suggest", "toc.integrate", "navigation.tabs", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.instant.prefetch", "content.tooltips", "content.tabs.link", "content.code.copy", "navigation.footer"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://joaquinurruti.com/</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://joaquinurruti.com/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://joaquinurruti.com/es/"/>
+    </url>
+    <url>
+        <loc>https://joaquinurruti.com/blog/</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://joaquinurruti.com/blog/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://joaquinurruti.com/es/blog/"/>
+    </url>
+    <url>
+        <loc>https://joaquinurruti.com/portfolio/</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://joaquinurruti.com/portfolio/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://joaquinurruti.com/es/portfolio/"/>
+    </url>
+    <url>
+        <loc>https://joaquinurruti.com/portfolio/projects/project-1/</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://joaquinurruti.com/portfolio/projects/project-1/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://joaquinurruti.com/es/portfolio/projects/project-1/"/>
+    </url>
+    <url>
+        <loc>https://joaquinurruti.com/portfolio/projects/project-2/</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://joaquinurruti.com/portfolio/projects/project-2/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://joaquinurruti.com/es/portfolio/projects/project-2/"/>
+    </url>
+    <url>
+        <loc>https://joaquinurruti.com/es/</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://joaquinurruti.com/es/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://joaquinurruti.com/"/>
+    </url>
+    <url>
+        <loc>https://joaquinurruti.com/es/blog/</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://joaquinurruti.com/es/blog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://joaquinurruti.com/blog/"/>
+    </url>
+    <url>
+        <loc>https://joaquinurruti.com/es/portfolio/</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://joaquinurruti.com/es/portfolio/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://joaquinurruti.com/portfolio/"/>
+    </url>
+    <url>
+        <loc>https://joaquinurruti.com/es/portfolio/projects/project-1/</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://joaquinurruti.com/es/portfolio/projects/project-1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://joaquinurruti.com/portfolio/projects/project-1/"/>
+    </url>
+    <url>
+        <loc>https://joaquinurruti.com/es/portfolio/projects/project-2/</loc>
+        <lastmod>2026-02-03</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://joaquinurruti.com/es/portfolio/projects/project-2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://joaquinurruti.com/portfolio/projects/project-2/"/>
+    </url>
+</urlset>
