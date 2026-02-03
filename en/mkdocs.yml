@@ -1,0 +1,109 @@
+site_name: Joaquin Urruti
+site_description: joaquinurruti.com is a GIS, both geospatial and non-geospatial data, analytics, and artificial intelligence company founded by Joaquín Urruti to help businesses integrate AI and data into their operations and decision making workflows.
+site_url: https://joaquinurruti.com/en/
+
+nav:
+- Home:
+  - About: index.md
+- Case Studies:
+  - Overview: portfolio/index.md
+  - Projects:
+    - portfolio/projects/project-1.md
+    - portfolio/projects/project-2.md
+- Blog:
+  - blog/index.md
+
+theme:
+  name: material
+  features:
+  - search.suggest
+  - toc.integrate
+  - navigation.tabs
+  - navigation.expand
+  - navigation.sections
+  - navigation.instant
+  - navigation.instant.prefetch
+  - content.tooltips
+  - content.tabs.link
+  - content.code.copy
+  - navigation.footer
+  language: en
+  palette:
+  - scheme: default
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: Switch to dark mode
+    primary: custom
+    accent: custom
+  - scheme: slate
+    toggle:
+      icon: material/toggle-switch
+      name: Switch to light mode
+    primary: custom
+    accent: custom
+  font:
+    text: Raleway
+    code: Roboto Mono
+  logo: assets/logo_ju.svg
+  favicon: assets/favicon_ju.png
+
+extra:
+  generator: true
+  alternate:
+    - name: English
+      link: /en/
+      lang: en
+    - name: Español
+      link: /es/
+      lang: es
+  social:
+  - icon: fontawesome/solid/building
+    link: https://www.joaquinurruti.com
+  - icon: fontawesome/brands/github
+    link: https://github.com/Joaquin-Urruti
+  - icon: fontawesome/brands/youtube
+    link: https://youtube.com/@joaquinurruti
+  - icon: fontawesome/brands/linkedin
+    link: https://www.linkedin.com/in/jurruti
+  analytics:
+    provider: google
+    property: G-2HNC7Z0EDD
+
+extra_css:
+- stylesheets/extra.css
+- stylesheets/hero.css
+
+plugins:
+- search
+- blog:
+    blog_dir: blog
+    authors_file: "{blog}/.authors.yml"
+    categories: true
+- social:
+    cards_layout_options:
+      background_color: "#111111"
+
+markdown_extensions:
+- attr_list
+- md_in_html
+- admonition
+- pymdownx.highlight:
+    anchor_linenums: true
+    line_spans: __span
+    pygments_lang_class: true
+- pymdownx.inlinehilite
+- pymdownx.snippets
+- pymdownx.superfences
+- pymdownx.details
+- pymdownx.critic
+- pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji ""
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg ""
+- def_list
+- pymdownx.keys
+
+extra_javascript:
+- https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js
+
+copyright: |
+  &copy; 2026 <a href="https://www.linkedin.com/in/jurruti/" target="_blank" rel="noopener">Joaquín Urruti</a>. All rights reserved.

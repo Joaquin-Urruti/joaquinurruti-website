@@ -79,25 +79,55 @@ https://docs.docker.com/get-started/get-docker/
 
 ### 1. Basic Configuration
 
-Edit `mkdocs.yml` to customize your site:
+Edit `en/mkdocs.yml` and `es/mkdocs.yml` to customize your site:
 
 - Site name and metadata
-- Navigation structure
+- Navigation structure (translate nav items in each language)
 - Color scheme and fonts
-- Custom CSS settings in `stylesheets/extra.css`
+- Custom CSS settings in `docs/stylesheets/extra.css`
 - Social links
 - Extensions and plugins
+- Language selector via `extra.alternate`
 
-### 2. Content Structure
+### 2. Content Structure (Multi-Language)
+
+This site uses **separate MkDocs projects per language** to support both English and Spanish with full blog functionality.
 
 ```bash
-docs/
-├── index.md # Your homepage
-├── about.md # About page
-├── portfolio/ # Your work
-├── blog/ # Blog posts
-└── assets/ # Images and other files
+en/                          # English project
+├── mkdocs.yml               # English configuration
+└── docs/
+    ├── index.md             # Homepage
+    ├── portfolio/           # Case studies
+    │   ├── index.md
+    │   └── projects/
+    ├── blog/                # Blog posts
+    │   ├── index.md
+    │   ├── .authors.yml
+    │   └── posts/
+    ├── stylesheets/         # Custom CSS
+    └── assets/              # Images and files
+
+es/                          # Spanish project (same structure)
+├── mkdocs.yml               # Spanish configuration
+└── docs/
 ```
+
+### 3. Building the Site
+
+```bash
+# Build both languages (outputs to site/)
+./build.sh
+
+# Or serve individually for development
+cd en && mkdocs serve   # English at localhost:8000
+cd es && mkdocs serve   # Spanish at localhost:8000
+```
+
+The `build.sh` script:
+1. Builds English to `site/en/`
+2. Builds Spanish to `site/es/`
+3. Creates a root redirect to `/en/`
 
 ## Deployment
 
@@ -110,13 +140,12 @@ I recommend publishing your site with GitHub Pages. If you want to keep your rep
 
 ### Custom Domain
 
-
-
-1. Add a `CNAME` file in your `docs` folder with your domain
+1. Add a `CNAME` file in `en/docs/` and `es/docs/` with your domain (or configure in CI workflow)
 2. Go to `repository/settings/pages` and check the domain settings
 3. Follow the [instructions here](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site) to configure your domain and DNS settings
-4. GitHub recently changed the DNS linking process: Let me know if we need to update these docs!
-5. Also enable HTTPS on this page
+4. Also enable HTTPS on this page
+
+> **Note**: The GitHub Actions workflow (`ci.yml`) is configured to set the CNAME during deployment.
 
 ## Useful Resources
 

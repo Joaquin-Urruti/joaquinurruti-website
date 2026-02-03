@@ -25,5 +25,33 @@ jobs:
         path: ~/.cache
         restore-keys: |
           mkdocs-material-
-    - run: pip install mkdocs-material mkdocs-static-i18n
-    - run: mkdocs gh-deploy --force
+    - name: Install dependencies
+      run: pip install mkdocs-material
+    - name: Build English site
+      run: cd en && mkdocs build -d ../site/en
+    - name: Build Spanish site
+      run: cd es && mkdocs build -d ../site/es
+    - name: Copy English as default
+      run: cp -r site/en/* site/
+    - name: Create root redirect
+      run: |
+        cat > site/index.html << 'EOF'
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Redirecting...</title>
+            <meta http-equiv="refresh" content="0; url=/en/">
+            <link rel="canonical" href="https://joaquinurruti.com/en/">
+        </head>
+        <body>
+            <p>Redirecting to <a href="/en/">English version</a>...</p>
+        </body>
+        </html>
+        EOF
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./site
+        cname: joaquinurruti.com
