@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to AI coding agents when working with code in this repository.
 
 ## Project Overview
 
@@ -26,7 +26,23 @@ cd es && uv run mkdocs serve   # Spanish
 
 # Test the combined site locally
 ./build.sh && cd site && python -m http.server
+
+# Docker-based development (alternative)
+./start_server.sh              # Builds image if needed, serves on :8000
+docker build -t mkdocs-site .  # Build Docker image manually
 ```
+
+## Environment Variables
+
+Google Analytics and other secrets are managed via environment variables to keep them out of version control.
+
+- **Local development**: Create a `.env` file at the project root (already in `.gitignore`):
+  ```
+  GOOGLE_ANALYTICS_KEY=<your-ga-tracking-id>
+  ```
+- **CI/CD**: Set `GOOGLE_ANALYTICS_KEY` as a GitHub repository secret.
+- **Docker**: The `start_server.sh` script passes `.env` to the container via `--env-file`.
+- **MkDocs config**: Uses `!ENV [GOOGLE_ANALYTICS_KEY, '']` in `mkdocs.yml` (built-in MkDocs YAML tag). Analytics are silently disabled if the variable is unset.
 
 ## Deployment
 
@@ -37,14 +53,22 @@ Automatic via GitHub Actions on push to `main`. The workflow:
 4. Creates redirect from root to `/en/`
 5. Deploys to GitHub Pages with CNAME
 
+**Note**: CI installs `mkdocs-material` (without `[imaging]`), so social card image generation is not available in CI. Locally, `uv sync` or `pip install "mkdocs-material[imaging]"` includes imaging support.
+
 ## Architecture
 
 ```
 joaquinurruti-website/
-├── en/                          # English project
-│   ├── mkdocs.yml               # English config (language: en)
+├── en/                              # English project
+│   ├── mkdocs.yml                   # English config (language: en)
 │   └── docs/
-│       ├── index.md             # Homepage
+│       ├── index.md                 # Homepage
+│       ├── CNAME                    # GitHub Pages custom domain
+│       ├── assets/                  # Images, logos, favicons
+│       │   ├── logo_ju.svg
+│       │   ├── favicon_ju.png
+│       │   ├── landing_image.jpg
+│       │   └── project-1/          # Project-specific images
 │       ├── portfolio/
 │       │   ├── index.md
 │       │   └── projects/
@@ -55,13 +79,18 @@ joaquinurruti-website/
 │       │   ├── .authors.yml
 │       │   └── posts/
 │       └── stylesheets/
-│           ├── extra.css
-│           └── hero.css
-├── es/                          # Spanish project (same structure)
-│   ├── mkdocs.yml               # Spanish config (language: es)
+│           ├── extra.css            # Theme colors, buttons, cards, FAQ
+│           └── hero.css             # Homepage hero section & layout
+├── es/                              # Spanish project (mirrors en/ structure)
+│   ├── mkdocs.yml                   # Spanish config (language: es)
 │   └── docs/
-├── build.sh                     # Build script for both projects
-└── .github/workflows/ci.yml     # CI/CD pipeline
+├── .env                             # Local env vars (gitignored)
+├── build.sh                         # Build script for both languages
+├── start_server.sh                  # Docker-based dev server
+├── Dockerfile                       # Container for mkdocs-material[imaging]
+├── pyproject.toml                   # Python deps (uv)
+├── requirements.txt                 # Python deps (pip)
+└── .github/workflows/ci.yml        # CI/CD pipeline
 ```
 
 ## Multi-Language Setup
@@ -72,12 +101,14 @@ The site uses **separate MkDocs projects per language** instead of the i18n plug
 - Contains `extra.alternate` for the language selector linking to `/en/` and `/es/`
 - Has independent blog functionality
 - Shares the same styling (CSS files are duplicated in each project)
+- Has its own `docs/assets/` with duplicated images
 
 ### Adding New Content
 
 1. **English content**: Add/edit files in `en/docs/`
 2. **Spanish content**: Add/edit files in `es/docs/`
 3. Update navigation in both `en/mkdocs.yml` and `es/mkdocs.yml`
+4. If adding images, place them in `docs/assets/` in **both** language projects
 
 ### Adding a New Language
 
@@ -89,11 +120,15 @@ The site uses **separate MkDocs projects per language** instead of the i18n plug
 ## Key Configuration
 
 Each `mkdocs.yml` includes:
-- Theme: Material for MkDocs with custom colors (dark navy primary, blue/lime accent)
-- Plugins: search, social (auto-generates social cards), blog
-- Extensions: syntax highlighting, admonitions, emoji, collapsible details
-- Navigation: tabs with sections for portfolio and blog
-- `extra.alternate`: Language selector links
+- **Theme**: Material for MkDocs with custom colors (dark navy `#1A1B41` primary, blue/lime accent)
+- **Fonts**: Raleway (text), Roboto Mono (code)
+- **Plugins**: search, social (auto-generates social cards), blog (with categories)
+- **Extensions**: syntax highlighting, admonitions, emoji, collapsible details, key bindings
+- **Navigation**: tabs -- "Home", "Case Studies" (en) / "Casos de Estudio" (es), "Blog"
+- **Language selector**: `extra.alternate` links between `/en/` and `/es/`
+- **Analytics**: Google Analytics via `!ENV [GOOGLE_ANALYTICS_KEY]` (see Environment Variables)
+- **Social links**: GitHub, LinkedIn, YouTube, website (in footer)
+- **Copyright**: Footer with author credit and year
 
 ## Content Workflow
 

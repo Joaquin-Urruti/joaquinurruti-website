@@ -67,7 +67,7 @@ extra:
     link: https://www.linkedin.com/in/jurruti
   analytics:
     provider: google
-    property: G-2HNC7Z0EDD
+    property: !ENV [GOOGLE_ANALYTICS_KEY, '']
 
 extra_css:
 - stylesheets/extra.css

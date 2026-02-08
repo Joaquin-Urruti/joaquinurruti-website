@@ -29,8 +29,12 @@ jobs:
       run: pip install mkdocs-material
     - name: Build English site
       run: cd en && mkdocs build -d ../site/en
+      env:
+        GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
     - name: Build Spanish site
       run: cd es && mkdocs build -d ../site/es
+      env:
+        GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
     - name: Copy English as default
       run: cp -r site/en/* site/
     - name: Create root redirect

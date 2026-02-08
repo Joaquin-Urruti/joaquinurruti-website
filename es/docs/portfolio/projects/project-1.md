@@ -18,7 +18,7 @@ description: Sistema GIS automatizado para calcular zonas de restricción de apl
     - +100 horas de analista ahorradas por campaña agrícola
 
 
-# Automatización de extremo a extremo del mapeo de cumplimiento de aplicaciones fitosanitarias en Argentina con un flujo de trabajo GIS automatizado
+# Automatización completa del mapeo de cumplimiento de aplicaciones fitosanitarias en Argentina con un flujo de trabajo GIS automatizado
 
 ## Resumen
 

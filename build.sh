@@ -4,6 +4,11 @@
 
 set -e
 
+# Load environment variables from .env if it exists
+if [ -f .env ]; then
+    export $(grep -v '^#' .env | xargs)
+fi
+
 # Set library path for macOS
 export DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib
 
