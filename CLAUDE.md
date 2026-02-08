@@ -64,11 +64,7 @@ joaquinurruti-website/
 │   └── docs/
 │       ├── index.md                 # Homepage
 │       ├── CNAME                    # GitHub Pages custom domain
-│       ├── assets/                  # Images, logos, favicons
-│       │   ├── logo_ju.svg
-│       │   ├── favicon_ju.png
-│       │   ├── landing_image.jpg
-│       │   └── project-1/          # Project-specific images
+│       ├── assets/ -> ../../shared/assets/    # Symlink to shared assets
 │       ├── portfolio/
 │       │   ├── index.md
 │       │   └── projects/
@@ -78,12 +74,19 @@ joaquinurruti-website/
 │       │   ├── index.md
 │       │   ├── .authors.yml
 │       │   └── posts/
-│       └── stylesheets/
-│           ├── extra.css            # Theme colors, buttons, cards, FAQ
-│           └── hero.css             # Homepage hero section & layout
+│       └── stylesheets/ -> ../../shared/stylesheets/  # Symlink to shared stylesheets
 ├── es/                              # Spanish project (mirrors en/ structure)
 │   ├── mkdocs.yml                   # Spanish config (language: es)
 │   └── docs/
+├── shared/                          # Shared assets and stylesheets
+│   ├── assets/                      # Images, logos, favicons
+│   │   ├── logo_ju.svg
+│   │   ├── favicon_ju.png
+│   │   ├── landing_image.jpg
+│   │   └── project-1/              # Project-specific images
+│   └── stylesheets/                 # Shared CSS files
+│       ├── extra.css                # Theme colors, buttons, cards, FAQ
+│       └── hero.css                 # Homepage hero section & layout
 ├── .env                             # Local env vars (gitignored)
 ├── build.sh                         # Build script for both languages
 ├── start_server.sh                  # Docker-based dev server
@@ -100,15 +103,15 @@ The site uses **separate MkDocs projects per language** instead of the i18n plug
 - Has its own `mkdocs.yml` with `theme.language` set appropriately
 - Contains `extra.alternate` for the language selector linking to `/en/` and `/es/`
 - Has independent blog functionality
-- Shares the same styling (CSS files are duplicated in each project)
-- Has its own `docs/assets/` with duplicated images
+- Shares assets and stylesheets via **symlinks** to `/shared/`
 
 ### Adding New Content
 
 1. **English content**: Add/edit files in `en/docs/`
 2. **Spanish content**: Add/edit files in `es/docs/`
 3. Update navigation in both `en/mkdocs.yml` and `es/mkdocs.yml`
-4. If adding images, place them in `docs/assets/` in **both** language projects
+4. **If adding images**: Place them in `shared/assets/` - they'll be available to both languages automatically
+5. **If adding CSS**: Place them in `shared/stylesheets/` - they'll be available to both languages automatically
 
 ### Adding a New Language
 
