@@ -21,6 +21,12 @@ Welcome to my portfolio of geospatial data science and AI projects. Each project
 
     Running OSRM locally enables fast, unlimited calculation of large origin–destination distance matrices using real road networks. This approach removes public API limits and helps companies model logistics costs accurately by computing kilometers between thousands of origins and destinations.
 
+-   [GeoNode Platform Deployment for Professional GIS Presentation](projects/project-3.md)
+
+    ---
+
+    Implementation of a GeoNode-based web geospatial platform to publish and share professional cartographic projects. Deploying on a dedicated server using Docker Compose resolved technical port conflicts and health check issues, enabling full control and customization of how GIS work is presented for clients and organizations, with secure access and high availability.
+
 <!-- -   [Example Erase This](projects/example.md)
 
     ---
