@@ -21,6 +21,13 @@ Bienvenido a mi portfolio de proyectos de ciencia de datos geoespaciales e IA. C
 
     Ejecutar OSRM localmente permite el cálculo rápido e ilimitado de grandes matrices de distancia origen-destino usando redes viales reales. Este enfoque elimina los límites de APIs públicas y ayuda a las empresas a modelar costos logísticos con precisión calculando kilómetros entre miles de orígenes y destinos.
 
+-   [Despliegue de Plataforma GeoNode para Presentación Profesional GIS](projects/project-3.md)
+
+    ---
+
+    Implementación de una plataforma web geoespacial basada en GeoNode para publicar y compartir proyectos cartográficos profesionales. El despliegue en un servidor dedicado usando Docker Compose resolvió conflictos técnicos de puertos y health checks, permitiendo controlar y personalizar por completo la presentación de trabajos GIS para clientes y organizaciones, con acceso seguro y alta disponibilidad.
+
+
 <!-- -   [Example Erase This](projects/example.md)
 
     ---
