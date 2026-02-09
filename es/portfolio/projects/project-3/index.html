@@ -1072,94 +1072,24 @@
 <p><em>Arquitectura de contenedores</em></p>
 <h2 id="aspectos-destacados-de-la-implementacion">Aspectos Destacados de la Implementación</h2>
 <h3 id="fases-del-proyecto">Fases del Proyecto</h3>
-<p><strong>Fase 1: Preparación (Días 1-3)</strong>
+<p><strong>Fase 1: Preparación</strong>
 - Configuración inicial del servidor
 - Instalación de Docker y Docker Compose
 - Clonación del repositorio GeoNode
 - Configuración de archivo <code>.env</code></p>
-<p><strong>Fase 2: Despliegue Inicial (Días 4-7)</strong>
+<p><strong>Fase 2: Despliegue Inicial</strong>
 - Levantamiento de contenedores base
 - Ejecución de migraciones de base de datos
 - Configuración de variables de entorno
 - Creación de superusuario administrador</p>
-<p><strong>Fase 3: Resolución de Problemas (Días 8-10)</strong>
+<p><strong>Fase 3: Resolución de Problemas</strong>
 - Identificación y resolución de conflictos de puerto
 - Ajuste de health checks
 - Verificación de conectividad entre servicios</p>
-<p><strong>Fase 4: Producción (Días 11-14)</strong>
+<p><strong>Fase 4: Producción</strong>
 - Configuración de dominios y DNS
 - Implementación de HTTPS
 - Pruebas finales y validación</p>
-<h3 id="desafios-encontrados-y-superados">Desafíos Encontrados y Superados</h3>
-<h4 id="desafio-1-conflicto-de-puerto-geoserver">Desafío 1: Conflicto de Puerto GeoServer</h4>
-<p><strong>Problema identificado:</strong>
-El puerto 8082 estaba ocupado en el servidor, impidiendo el despliegue de GeoServer.</p>
-<p><strong>Síntomas:</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Error: bind for 0.0.0.0:8082 failed: port is already allocated
-</span></code></pre></div></p>
-<p><strong>Solución implementada:</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Identificación del conflicto</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>lsof<span class="w"> </span>-i<span class="w"> </span>:8082
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Modificación del puerto en docker-compose.yml</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># De: &quot;8082:8080&quot;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># A: &quot;8083:8080&quot;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># Reinicio del servicio</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>docker<span class="w"> </span>compose<span class="w"> </span>restart<span class="w"> </span>geoserver
-</span></code></pre></div></p>
-<p><strong>Lección aprendida:</strong> Verificar disponibilidad de puertos antes del despliegue es crucial. Documentar los puertos ocupados en el servidor como parte del proceso de setup.</p>
-<h4 id="desafio-2-health-check-de-django-fallando">Desafío 2: Health Check de Django Fallando</h4>
-<p><strong>Problema identificado:</strong>
-El health check de Docker devolvía estado "unhealthy" debido a que Kong (API Gateway) requería autenticación para acceder al endpoint HTTP.</p>
-<p><strong>Síntomas:</strong>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Health check status: unhealthy
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>HTTP CODE: 401 Unauthorized
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>docker inspect: django4geonode - unhealthy
-</span></code></pre></div></p>
-<p><strong>Diagnóstico:</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Intento de health check manual</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>django4geonode<span class="w"> </span>curl<span class="w"> </span>http://django:8000/
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Resultado: 401 Unauthorized (Kong bloqueando acceso)</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># Verificación de proceso</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>django4geonode<span class="w"> </span>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>uwsgi
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Resultado: uwsgi corriendo correctamente</span>
-</span></code></pre></div></p>
-<p><strong>Solución implementada:</strong>
-Cambiar el health check de verificación HTTP a verificación de proceso:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># De:</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">healthcheck</span><span class="p">:</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;curl</span><span class="nv"> </span><span class="s">-m</span><span class="nv"> </span><span class="s">10</span><span class="nv"> </span><span class="s">--fail</span><span class="nv"> </span><span class="s">--silent</span><span class="nv"> </span><span class="s">http://django:8000/&quot;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># A:</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nt">healthcheck</span><span class="p">:</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;CMD-SHELL&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;pgrep</span><span class="nv"> </span><span class="s">-f</span><span class="nv"> </span><span class="s">uwsgi</span><span class="nv"> </span><span class="s">||</span><span class="nv"> </span><span class="s">exit</span><span class="nv"> </span><span class="s">1&quot;</span><span class="p p-Indicator">]</span>
-</span></code></pre></div>
-<p><strong>Lección aprendida:</strong> Los health checks deben ser apropiados para la arquitectura específica. En entornos con API Gateway, verificar el proceso directamente es más confiable que HTTP.</p>
-<h3 id="comandos-de-gestion-documentados">Comandos de Gestión Documentados</h3>
-<p><strong>Verificación de estado:</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Todos los contenedores</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Estado de salud específico</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>docker<span class="w"> </span>inspect<span class="w"> </span>--format<span class="o">=</span><span class="s1">&#39;{{.State.Health}}&#39;</span><span class="w"> </span>django4geonode
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Verificación de puertos</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>netstat<span class="w"> </span>-tlnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">808</span>
-</span></code></pre></div></p>
-<p><strong>Gestión de servicios:</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Reinicio completo</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>restart
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Reinicio específico</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>docker<span class="w"> </span>compose<span class="w"> </span>restart<span class="w"> </span>geoserver
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>docker<span class="w"> </span>compose<span class="w"> </span>restart<span class="w"> </span>django
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># Visualización de logs</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>docker<span class="w"> </span>logs<span class="w"> </span>django4geonode<span class="w"> </span>--tail<span class="w"> </span><span class="m">50</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>docker<span class="w"> </span>logs<span class="w"> </span>geoserver4geonode<span class="w"> </span>--tail<span class="w"> </span><span class="m">50</span>
-</span></code></pre></div></p>
 <h2 id="resultados-e-impacto">Resultados e Impacto</h2>
 <h3 id="metricas-tecnicas">Métricas Técnicas</h3>
 <table>
@@ -1265,18 +1195,10 @@ Cambiar el health check de verificación HTTP a verificación de proceso:</p>
 <p>Como único desarrollador de esta solución, mis responsabilidades incluyeron:</p>
 <ul>
 <li><strong>Análisis de Requerimientos</strong>: Evaluación de necesidades técnicas y selección de tecnología</li>
-<li><strong>Diseño de Arquitectura</strong>: Diseño de la infraestructura Docker con múltiples servicios</li>
 <li><strong>Despliegue e Implementación</strong>: Configuración y puesta en marcha de todos los componentes</li>
 <li><strong>Resolución de Problemas</strong>: Identificación y solución de conflictos de puertos y health checks</li>
 <li><strong>Documentación</strong>: Producción de guías de gestión y troubleshooting</li>
 </ul>
-<h2 id="lecciones-aprendidas">Lecciones Aprendidas</h2>
-<p><strong>Docker Compose para orquestación</strong>: Simplificó enormemente el despliegue y gestión de múltiples servicios.</p>
-<p><strong>GeoNode como base</strong>: Proporciona funcionalidad completa lista para usar para publicación geoespacial.</p>
-<p><strong>Verificación previa de puertos</strong>: En futuros despliegues, verificar todos los puertos antes de configurar docker-compose evita problemas posteriores.</p>
-<p><strong>Health checks apropiados</strong>: Definir estrategia de health check adecuada para la arquitectura específica antes del primer despliegue.</p>
-<p><strong>Kong como API Gateway</strong>: Su presencia requirió ajuste de la estrategia de health check - verificar el proceso directamente es más confiable que HTTP en estos casos.</p>
-<p><strong>Iteración controlada</strong>: Cambios pequeños y verificados individualmente permiten identificar problemas rápidamente.</p>
 <div class="grid cards" style="margin-top: 3rem">
 <ul>
 <li>
