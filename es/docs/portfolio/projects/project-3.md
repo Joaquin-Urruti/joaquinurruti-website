@@ -82,120 +82,28 @@ Como profesional independiente, decidí montar una plataforma propia para public
 
 ### Fases del Proyecto
 
-**Fase 1: Preparación (Días 1-3)**
+**Fase 1: Preparación**
 - Configuración inicial del servidor
 - Instalación de Docker y Docker Compose
 - Clonación del repositorio GeoNode
 - Configuración de archivo `.env`
 
-**Fase 2: Despliegue Inicial (Días 4-7)**
+**Fase 2: Despliegue Inicial**
 - Levantamiento de contenedores base
 - Ejecución de migraciones de base de datos
 - Configuración de variables de entorno
 - Creación de superusuario administrador
 
-**Fase 3: Resolución de Problemas (Días 8-10)**
+**Fase 3: Resolución de Problemas**
 - Identificación y resolución de conflictos de puerto
 - Ajuste de health checks
 - Verificación de conectividad entre servicios
 
-**Fase 4: Producción (Días 11-14)**
+**Fase 4: Producción**
 - Configuración de dominios y DNS
 - Implementación de HTTPS
 - Pruebas finales y validación
 
-### Desafíos Encontrados y Superados
-
-#### Desafío 1: Conflicto de Puerto GeoServer
-
-**Problema identificado:**
-El puerto 8082 estaba ocupado en el servidor, impidiendo el despliegue de GeoServer.
-
-**Síntomas:**
-```
-Error: bind for 0.0.0.0:8082 failed: port is already allocated
-```
-
-**Solución implementada:**
-```bash
-# Identificación del conflicto
-lsof -i :8082
-
-# Modificación del puerto en docker-compose.yml
-# De: "8082:8080"
-# A: "8083:8080"
-
-# Reinicio del servicio
-docker compose restart geoserver
-```
-
-**Lección aprendida:** Verificar disponibilidad de puertos antes del despliegue es crucial. Documentar los puertos ocupados en el servidor como parte del proceso de setup.
-
-#### Desafío 2: Health Check de Django Fallando
-
-**Problema identificado:**
-El health check de Docker devolvía estado "unhealthy" debido a que Kong (API Gateway) requería autenticación para acceder al endpoint HTTP.
-
-**Síntomas:**
-```
-Health check status: unhealthy
-HTTP CODE: 401 Unauthorized
-docker inspect: django4geonode - unhealthy
-```
-
-**Diagnóstico:**
-```bash
-# Intento de health check manual
-docker exec django4geonode curl http://django:8000/
-# Resultado: 401 Unauthorized (Kong bloqueando acceso)
-
-# Verificación de proceso
-docker exec django4geonode ps aux | grep uwsgi
-# Resultado: uwsgi corriendo correctamente
-```
-
-**Solución implementada:**
-Cambiar el health check de verificación HTTP a verificación de proceso:
-
-```yaml
-# De:
-healthcheck:
-  test: "curl -m 10 --fail --silent http://django:8000/"
-
-# A:
-healthcheck:
-  test: ["CMD-SHELL", "pgrep -f uwsgi || exit 1"]
-```
-
-**Lección aprendida:** Los health checks deben ser apropiados para la arquitectura específica. En entornos con API Gateway, verificar el proceso directamente es más confiable que HTTP.
-
-### Comandos de Gestión Documentados
-
-**Verificación de estado:**
-```bash
-# Todos los contenedores
-docker compose ps
-
-# Estado de salud específico
-docker inspect --format='{{.State.Health}}' django4geonode
-
-# Verificación de puertos
-netstat -tlnp | grep 808
-```
-
-**Gestión de servicios:**
-```bash
-# Reinicio completo
-docker compose restart
-
-# Reinicio específico
-docker compose restart geoserver
-docker compose restart django
-
-# Visualización de logs
-docker logs django4geonode --tail 50
-docker logs geoserver4geonode --tail 50
-```
 
 ## Resultados e Impacto
 
@@ -241,24 +149,9 @@ docker logs geoserver4geonode --tail 50
 Como único desarrollador de esta solución, mis responsabilidades incluyeron:
 
 - **Análisis de Requerimientos**: Evaluación de necesidades técnicas y selección de tecnología
-- **Diseño de Arquitectura**: Diseño de la infraestructura Docker con múltiples servicios
 - **Despliegue e Implementación**: Configuración y puesta en marcha de todos los componentes
 - **Resolución de Problemas**: Identificación y solución de conflictos de puertos y health checks
 - **Documentación**: Producción de guías de gestión y troubleshooting
-
-## Lecciones Aprendidas
-
-**Docker Compose para orquestación**: Simplificó enormemente el despliegue y gestión de múltiples servicios.
-
-**GeoNode como base**: Proporciona funcionalidad completa lista para usar para publicación geoespacial.
-
-**Verificación previa de puertos**: En futuros despliegues, verificar todos los puertos antes de configurar docker-compose evita problemas posteriores.
-
-**Health checks apropiados**: Definir estrategia de health check adecuada para la arquitectura específica antes del primer despliegue.
-
-**Kong como API Gateway**: Su presencia requirió ajuste de la estrategia de health check - verificar el proceso directamente es más confiable que HTTP en estos casos.
-
-**Iteración controlada**: Cambios pequeños y verificados individualmente permiten identificar problemas rápidamente.
 
 <div class="grid cards" style="margin-top: 3rem" markdown>
 
