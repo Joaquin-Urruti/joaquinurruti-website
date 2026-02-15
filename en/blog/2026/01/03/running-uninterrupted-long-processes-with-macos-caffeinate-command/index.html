@@ -1612,6 +1612,8 @@
 <h1 id="running-uninterrupted-long-processes-with-macos-caffeinate-command">Running Uninterrupted Long Processes with MacOS "caffeinate" command</h1>
 <h2 id="why-use-the-caffeinate-command">Why use the "caffeinate" command?</h2>
 <p>MacOS sleep mode interrupts long-running processes like GIS data analysis, satellite imagery processing, or database migrations. A 6-hour raster processing job can be killed when the system enters sleep mode, wasting hours of computation.</p>
+<!-- more -->
+
 <h2 id="solution-strategic-use-of-caffeinate">Solution: Strategic Use of Caffeinate</h2>
 <p>The built-in <code>caffeinate</code> command prevents system sleep <strong>only when necessary</strong>, maintaining power efficiency while ensuring critical processes complete without interruption.</p>
 <h2 id="how-caffeinate-works">How Caffeinate Works</h2>
