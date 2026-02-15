@@ -1472,6 +1472,7 @@
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>                                    Pydantic Schema
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                                    (schema enforcement)
 </span></code></pre></div>
+<p><img alt="Docling" src="../../../../../assets/blog/structured-outputs/docling_processing.png" width="400px" /></p>
 <h2 id="why-markdown-as-the-intermediate-format">Why Markdown as the Intermediate Format</h2>
 <p>Sending raw PDF bytes to an LLM is not a good idea in practice. PDFs are binary files — the text extraction depends heavily on how the file was generated, and the output is often polluted with layout artifacts, character encoding issues, and scrambled reading order.</p>
 <p><strong>Docling</strong> converts PDFs to clean Markdown, preserving logical structure: headers, bullet points, tables. This matters because the LLM reads the document more like a human would, rather than trying to parse a stream of coordinates and glyph codes. It also reduces token count significantly compared to naive extraction approaches.</p>
