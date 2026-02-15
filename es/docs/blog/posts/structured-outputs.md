@@ -40,6 +40,8 @@ Archivos PDF  →  Docling (Markdown)  →  OpenAI API (JSON)  →  Excel (multi
                                        (aplicación del esquema)
 ```
 
+![Docling](../../assets/blog/structured-outputs/docling_processing.png){width="400px" }
+
 ## Por Qué Markdown Como Formato Intermedio
 
 Enviar bytes crudos de PDF a un LLM no es buena idea en la práctica. Los PDFs son archivos binarios — la extracción de texto depende mucho de cómo se generó el archivo, y la salida suele estar contaminada con artefactos de layout, problemas de codificación de caracteres y orden de lectura desordenado.

@@ -40,6 +40,8 @@ PDF Files  →  Docling (Markdown)  →  OpenAI API (JSON)  →  Excel (multi-sh
                                     (schema enforcement)
 ```
 
+![Docling](../../assets/blog/structured-outputs/docling_processing.png){width="400px" }
+
 ## Why Markdown as the Intermediate Format
 
 Sending raw PDF bytes to an LLM is not a good idea in practice. PDFs are binary files — the text extraction depends heavily on how the file was generated, and the output is often polluted with layout artifacts, character encoding issues, and scrambled reading order.
