@@ -33,14 +33,7 @@ The pipeline has four stages:
 3. **Structured extraction** — send the Markdown to OpenAI with a Pydantic schema enforced via Structured Outputs
 4. **Persistence** — append the extracted data to a multi-sheet Excel workbook
 
-```
-PDF Files  →  Docling (Markdown)  →  OpenAI API (JSON)  →  Excel (multi-sheet)
-                                           ↑
-                                    Pydantic Schema
-                                    (schema enforcement)
-```
-
-![Docling](../../assets/blog/structured-outputs/docling_processing.png){width="400px" }
+![workflow-schema](../../assets/blog/structured-outputs/workflow_schema.png)
 
 ## Why Markdown as the Intermediate Format
 

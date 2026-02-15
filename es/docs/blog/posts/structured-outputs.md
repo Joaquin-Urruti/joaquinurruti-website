@@ -33,14 +33,7 @@ El pipeline tiene cuatro etapas:
 3. **Extracción estructurada** — enviar el Markdown a OpenAI con un esquema Pydantic aplicado via Structured Outputs
 4. **Persistencia** — agregar los datos extraídos a un libro Excel multi-hoja
 
-```
-Archivos PDF  →  Docling (Markdown)  →  OpenAI API (JSON)  →  Excel (multi-hoja)
-                                              ↑
-                                       Esquema Pydantic
-                                       (aplicación del esquema)
-```
-
-![Docling](../../assets/blog/structured-outputs/docling_processing.png){width="400px" }
+![workflow-schema](../../assets/blog/structured-outputs/workflow_schema.png)
 
 ## Por Qué Markdown Como Formato Intermedio
 
