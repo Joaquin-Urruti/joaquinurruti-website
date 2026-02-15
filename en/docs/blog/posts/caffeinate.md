@@ -16,6 +16,7 @@ description: A MacOS terminal command that will prevent your computer
 
 MacOS sleep mode interrupts long-running processes like GIS data analysis, satellite imagery processing, or database migrations. A 6-hour raster processing job can be killed when the system enters sleep mode, wasting hours of computation.
 
+<!-- more -->
 
 ## Solution: Strategic Use of Caffeinate
 

@@ -16,6 +16,8 @@ description: Un comando de terminal de MacOS que evitará que tu computadora ent
 
 El modo de suspensión de MacOS interrumpe procesos de larga duración como análisis de datos GIS, procesamiento de imágenes satelitales o migraciones de bases de datos. Un trabajo de procesamiento raster de 6 horas puede ser terminado cuando el sistema entra en modo de suspensión, desperdiciando horas de computación.
 
+<!-- more -->
+
 
 ## Solución: Uso Estratégico de Caffeinate
 
