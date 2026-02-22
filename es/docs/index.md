@@ -66,6 +66,12 @@ Soy consultor de [GIS](#GIS "Sistemas de Información Geográfica") e [IA](#AI "
 
 Más recientemente, lideré el departamento de Innovación y Desarrollo en Espartina S.A., una empresa argentina de producción agrícola con más de 2.000 campos y 150.000 hectáreas de tierra, impulsando su transformación hacia un modelo AI First aprovechando tecnología, datos e inteligencia artificial para crear un impacto significativo en decisiones, procesos y personas. Automatizamos el análisis de nuevos campos para arrendamiento, escalamos las zonas de manejo de precisión de 50.000 a 150.000 hectáreas, logramos procesar el 100% de los datos de monitores de rendimiento, automatizamos el 100% del procesamiento de ensayos de campo e implementamos automatización impulsada por IA para interpretar los resultados del análisis estadístico de esos ensayos.
 
+<div class="about-image-float" markdown>
+
+![Joaquín Urruti](assets/ajedrez-frente-color.jpg){ .about-profile alt="Portrait of Joaquín Urruti, AI & GIS Engineer Advisor" }
+
+</div>
+
 Antes de eso, lideré la división GIS en Espartina, desarrollando herramientas y automatizando flujos de trabajo para gestionar y analizar datos espaciales y productivos. Previamente, trabajé como Analista de Datos Senior para Cuentas Principales en S4 Agtech, una empresa con sede en Buenos Aires especializada en seguros paramétricos de sequía para agricultura. En esa posición, combiné responsabilidades comerciales y analíticas, ayudando a los clientes a entender el riesgo de su cartera a través de datos satelitales e índices de vegetación, y explicando cómo la cobertura de seguros paramétricos podía minimizar esos riesgos. Trabajamos directamente con reaseguradoras como Munich Re en Argentina, Uruguay y Brasil, traduciendo análisis geoespaciales complejos en estrategias de gestión de riesgo accionables.
 
 Con una sólida formación en GIS, programación Python, Google Earth Engine y desarrollo de bases de datos respaldadas por PostGIS, diseño e implemento estrategias de innovación que integran ciencia de datos geoespaciales, teledetección, automatización de procesos y optimización impulsada por IA. Mi enfoque siempre está en la eficiencia, escalabilidad y asegurar que las soluciones sean verdaderamente adoptadas por los equipos que las utilizan.
