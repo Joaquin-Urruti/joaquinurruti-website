@@ -225,4 +225,4 @@ I'm always interested in discussing how spatial data analysis can improve agricu
 
 [Book Free Intro Call :material-arrow-top-right:](https://calendly.com/joaquin-urruti/consultation-30min){ .md-button .md-button--primary }
 
-You can also find me on [LinkedIn](https://linkedin.com/in/joaquin-urruti) where I share more about GIS, Python, and agricultural innovation.
+You can also find me on [LinkedIn](https://www.linkedin.com/in/jurruti/) where I share more about GIS, Python, and agricultural innovation.

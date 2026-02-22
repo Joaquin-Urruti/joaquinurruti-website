@@ -228,4 +228,4 @@ Siempre me interesa discutir cómo el análisis de datos espaciales puede mejora
 
 [Agendar Llamada Introductoria Gratuita :material-arrow-top-right:](https://calendly.com/joaquin-urruti/consultation-30min){ .md-button .md-button--primary }
 
-También podés encontrarme en [LinkedIn](https://linkedin.com/in/joaquin-urruti) donde comparto más sobre GIS, Python e innovación agrícola.
+También podés encontrarme en [LinkedIn](https://www.linkedin.com/in/jurruti/) donde comparto más sobre GIS, Python e innovación agrícola.
