@@ -30,16 +30,16 @@ theme:
   - navigation.footer
   language: es
   palette:
-  - scheme: default
-    toggle:
-      icon: material/toggle-switch-off-outline
-      name: Cambiar a modo oscuro
-    primary: custom
-    accent: custom
   - scheme: slate
     toggle:
       icon: material/toggle-switch
       name: Cambiar a modo claro
+    primary: custom
+    accent: custom
+  - scheme: default
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: Cambiar a modo oscuro
     primary: custom
     accent: custom
   font:

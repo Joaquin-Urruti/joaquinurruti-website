@@ -30,16 +30,16 @@ theme:
   - navigation.footer
   language: en
   palette:
-  - scheme: default
-    toggle:
-      icon: material/toggle-switch-off-outline
-      name: Switch to dark mode
-    primary: custom
-    accent: custom
   - scheme: slate
     toggle:
       icon: material/toggle-switch
       name: Switch to light mode
+    primary: custom
+    accent: custom
+  - scheme: default
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: Switch to dark mode
     primary: custom
     accent: custom
   font:
