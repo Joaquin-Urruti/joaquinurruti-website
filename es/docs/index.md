@@ -33,7 +33,8 @@ canonical_url: https://www.joaquinurruti.com/es/
 
 # Transformá tus datos e IA en tu ventaja competitiva
 
-### Tengo más de 5 años de experiencia haciendo exactamente eso
+<span style="display:block; line-height:1.1; margin-bottom:0.1em; font-size:1.3em;">Tengo más de 5 años implementando soluciones de IA y datos</span>
+<span style="display:block; line-height:1.1; font-size:1.3em;">Y más de 15 años trabajando con sistemas GIS</span>
 
 - ¿Te cuesta mantenerte al día con el ritmo acelerado de la innovación en IA?
 

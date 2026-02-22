@@ -33,7 +33,8 @@ canonical_url: https://www.joaquinurruti.com/
 
 # Turn your data and AI into your competitive advantage
 
-### I have 5+ years experience doing just that
+<span style="display:block; line-height:1.1; margin-bottom:0.1em; font-size:1.3em;">I have 5+ years implementing AI & data solutions</span>
+<span style="display:block; line-height:1.1; font-size:1.3em;">And 15+ years working with GIS systems</span>
 
 - Are you struggling to keep up with the rapid pace of AI innovation?
 
@@ -64,6 +65,12 @@ Hi! I'm Joaquín!
 I'm a [GIS](#GIS "Geospatial Information Systems") and [AI](#AI "Artificial Intelligence") consultant from Argentina. I work with agricultural companies and technical organizations facing the challenge of translating data capabilities and AI innovation into operational efficiency and competitive advantage.
 
 Most recently, I led the Innovation and Development department at Espartina S.A., an Argentinian agricultural production company with more than 2.000 fields and 150.000 hectares of land, driving its transformation toward an AI First model by leveraging technology, data, and artificial intelligence to create meaningful impact on decisions, processes, and people. We automated the analysis of new fields for leasing, scaled precision management zones from 50,000 to 150,000, achieved processing of 100% of yield monitor data, automated 100% of field trial processing, and implemented AI-driven automation to interpret the statistical analysis results of those trials.
+
+<div class="about-image-float" markdown>
+
+![Joaquín Urruti](assets/ajedrez-frente-color.jpg){ .about-profile alt="Portrait of Joaquín Urruti, AI & GIS Engineer Advisor" }
+
+</div>
 
 Before that, I led the GIS division at Espartina, developing tools and automating workflows for managing and analyzing spatial and productive data. Prior to that, I worked as a Senior Data Analyst for Major Accounts at S4 Agtech, a Buenos Aires–based company specializing in parametric drought insurance for agriculture. In that position, I combined commercial and analytical responsibilities, helping clients understand their portfolio risk through satellite data and vegetation indices, and explaining how parametric insurance coverage could minimize those risks. We worked directly with re-insurers like Munich Re across Argentina, Uruguay, and Brazil, translating complex geospatial analytics into actionable risk management strategies.
 
