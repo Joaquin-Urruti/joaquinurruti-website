@@ -58,7 +58,48 @@
   .profile-image-grid {
     grid-row: 1;
     grid-column: 1;
-    justify-content: center; /* Center image on mobile */
+    justify-content: center;
+    /* Center image on mobile */
+  }
+}
+
+/* About section — floated side image */
+.about-image-float {
+  float: right;
+  width: 280px;
+  margin: 0.2rem 0 1rem 1.5rem;
+}
+
+.about-image-float p {
+  margin: 0;
+}
+
+.md-typeset .about-profile {
+  width: 280px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.md-typeset .about-profile:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 768px) {
+  .about-image-float {
+    float: none;
+    width: auto;
+    text-align: center;
+    margin: 0 auto 1rem;
+  }
+
+  .md-typeset .about-profile {
+    width: 100%;
+    max-width: 280px;
+    height: 350px;
   }
 }
 
@@ -68,7 +109,7 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-  
+
   .profile-image {
     width: 400px;
     height: 500px;
