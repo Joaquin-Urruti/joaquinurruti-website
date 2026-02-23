@@ -65,11 +65,11 @@ I'm a geospatial data, [GIS](#GIS "Geospatial Information Systems") and [AI](#AI
 
 I recently led the Innovation and Development department at Espartina S.A., an Argentinian agricultural production company with more than 2,000 lots and 150,000 hectares of land, driving its transformation toward a maximum efficiency model, leveraging technology, data, and artificial intelligence to create meaningful impact on decisions, processes, and people. We automated the analysis of new fields for leasing, scaled precision management zones from 50,000 to 150,000 hectares, achieved processing of 100% of yield monitor data, automated 100% of field trial processing, and implemented AI-driven automation to interpret the statistical analysis results of those trials.
 
-**<div class="about-image-float" markdown>
+<div class="about-image-float" markdown>
 
 ![Joaquín Urruti](assets/ajedrez-frente-color.jpg){ .about-profile alt="Portrait of Joaquín Urruti, AI & GIS Engineer Advisor" }
 
-</di**v>
+</div>
 
 Before that, I led the GIS division at Espartina, developing tools and automating workflows for managing and analyzing spatial and productive data. Prior to that, I worked as a commercial analyst for major accounts at S4 Agtech, a Buenos Aires–based company specializing in parametric drought insurance for agriculture. In that position, I combined commercial and analytical responsibilities, helping clients understand their portfolio risk through satellite data and vegetation indices, and explaining how parametric insurance coverage could minimize those risks. We worked directly with re-insurers like Munich Re across Argentina, Uruguay, and Brazil, translating complex geospatial analytics into actionable risk management strategies.
 
