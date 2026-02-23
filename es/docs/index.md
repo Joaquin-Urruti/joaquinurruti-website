@@ -33,16 +33,15 @@ canonical_url: https://www.joaquinurruti.com/es/
 
 # Transformá tus datos e IA en tu ventaja competitiva
 
-<span style="display:block; line-height:1.1; margin-bottom:0.1em; font-size:1.3em;">Tengo más de 5 años implementando soluciones de IA y datos</span>
-<span style="display:block; line-height:1.1; font-size:1.3em;">Y más de 15 años trabajando con sistemas GIS</span>
+<span style="display:block; line-height:1.1; margin-bottom:0.1em; font-size:1.3em;">Tengo más de 15 años trabajando con sistemas GIS y Teledetección, y más de 5 años implementando soluciones de IA y datos</span>
 
 - ¿Te cuesta mantenerte al día con el ritmo acelerado de la innovación en IA?
 
 - ¿Necesitás ayuda para traducir el hype de la IA en resultados de negocio reales?
 
-- ¿Necesitás alguien que entienda tanto la perspectiva técnica como la de negocios?
+- ¿Necesitás alguien que entienda tanto la perspectiva técnica como la del negocio?
 
-- ¿Tenés muchos datos pero ningún insight?
+- ¿Tenés muchos datos pero no les estás sacando provecho?
 
 
 
@@ -62,9 +61,9 @@ canonical_url: https://www.joaquinurruti.com/es/
 
 ¡Hola! ¡Soy Joaquín!
 
-Soy consultor de [GIS](#GIS "Sistemas de Información Geográfica") e [IA](#AI "Inteligencia Artificial") de Argentina. Trabajo con empresas agrícolas y organizaciones técnicas que enfrentan el desafío de traducir capacidades de datos e innovación en IA en eficiencia operativa y ventaja competitiva.
+Soy consultor de datos geoespaciales, [GIS](#GIS "Sistemas de Información Geográfica") e [IA](#AI "Inteligencia Artificial") de Argentina. Trabajo con empresas agrícolas, start-ups y organizaciones técnicas que enfrentan el desafío de traducir capacidades de datos e innovación en IA en eficiencia operativa y ventaja competitiva.
 
-Más recientemente, lideré el departamento de Innovación y Desarrollo en Espartina S.A., una empresa argentina de producción agrícola con más de 2.000 campos y 150.000 hectáreas de tierra, impulsando su transformación hacia un modelo AI First aprovechando tecnología, datos e inteligencia artificial para crear un impacto significativo en decisiones, procesos y personas. Automatizamos el análisis de nuevos campos para arrendamiento, escalamos las zonas de manejo de precisión de 50.000 a 150.000 hectáreas, logramos procesar el 100% de los datos de monitores de rendimiento, automatizamos el 100% del procesamiento de ensayos de campo e implementamos automatización impulsada por IA para interpretar los resultados del análisis estadístico de esos ensayos.
+Recientemente lideré el departamento de Innovación y Desarrollo en Espartina S.A., una empresa argentina de producción agrícola con más de 2.000 lotes y 150.000 hectáreas de tierra, impulsando su transformación hacia un modelo de máxima eficiencia, apalancado en la tecnología, los datos y la inteligencia artificial, para crear un impacto significativo en las decisiones, los procesos y las personas. Automatizamos el análisis de nuevos campos para arrendamiento, escalamos las zonas de manejo de precisión de 50.000 a 150.000 hectáreas, logramos procesar el 100% de los datos de monitores de rendimiento, automatizamos el 100% del procesamiento de ensayos de campo e implementamos automatización impulsada por IA para interpretar los resultados del análisis estadístico de esos ensayos.
 
 <div class="about-image-float" markdown>
 
@@ -72,9 +71,9 @@ Más recientemente, lideré el departamento de Innovación y Desarrollo en Espar
 
 </div>
 
-Antes de eso, lideré la división GIS en Espartina, desarrollando herramientas y automatizando flujos de trabajo para gestionar y analizar datos espaciales y productivos. Previamente, trabajé como Analista de Datos Senior para Cuentas Principales en S4 Agtech, una empresa con sede en Buenos Aires especializada en seguros paramétricos de sequía para agricultura. En esa posición, combiné responsabilidades comerciales y analíticas, ayudando a los clientes a entender el riesgo de su cartera a través de datos satelitales e índices de vegetación, y explicando cómo la cobertura de seguros paramétricos podía minimizar esos riesgos. Trabajamos directamente con reaseguradoras como Munich Re en Argentina, Uruguay y Brasil, traduciendo análisis geoespaciales complejos en estrategias de gestión de riesgo accionables.
+Antes de eso, lideré la división GIS en Espartina, desarrollando herramientas y automatizando flujos de trabajo para gestionar y analizar datos espaciales y productivos. Previamente, trabajé como analista comercial de grandes cuentas en S4 Agtech, una empresa con sede en Buenos Aires especializada en seguros paramétricos de sequía para agricultura. En esa posición, combiné responsabilidades comerciales y analíticas, ayudando a los clientes a entender el riesgo de su cartera a través de datos satelitales e índices de vegetación, y explicando cómo la cobertura de seguros paramétricos podía minimizar esos riesgos. Trabajamos directamente con reaseguradoras como Munich Re en Argentina, Uruguay y Brasil, traduciendo análisis geoespaciales complejos en estrategias de gestión de riesgo accionables.
 
-Con una sólida formación en GIS, programación Python, Google Earth Engine y desarrollo de bases de datos respaldadas por PostGIS, diseño e implemento estrategias de innovación que integran ciencia de datos geoespaciales, teledetección, automatización de procesos y optimización impulsada por IA. Mi enfoque siempre está en la eficiencia, escalabilidad y asegurar que las soluciones sean verdaderamente adoptadas por los equipos que las utilizan.
+Con una sólida formación en GIS, programación en Python, Google Earth Engine y desarrollo de bases de datos Postgres/PostGIS, diseño e implemento estrategias de innovación que integran ciencia de datos geoespaciales, teledetección, automatización de procesos y optimización impulsada por IA. Mi enfoque siempre está en la eficiencia, escalabilidad y asegurar que las soluciones sean verdaderamente adoptadas por los equipos que las utilizan.
 
 Soy Ingeniero Agrónomo de la Universidad de Buenos Aires con una Maestría en GIS Open Source y estudios de posgrado en Agronegocios, Ciencia de Datos y Blockchain.
 

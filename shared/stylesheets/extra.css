@@ -3,7 +3,7 @@
   --color-salmon: #E88070;
   --color-lime-cream: #d8ff85ff;
   --color-icy-blue: #A8D0F8;
-  --color-iron-grey: #4C5454;
+  --color-gunmetal: #3A4040;
   --color-majorelle-blue: #6E44FF;
   --color-black: #000000;
   --color-white: #FFFFFF;
@@ -19,18 +19,18 @@
 
 /* Dark theme custom colors */
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color: var(--color-iron-grey);
+  --md-primary-fg-color: var(--color-gunmetal);
   --md-default-bg-color: #090d1d;
   --md-accent-fg-color: var(--color-lime-cream);
   --md-typeset-a-color: var(--md-accent-fg-color);
-  --md-footer-bg-color: var(--color-iron-grey);
+  --md-footer-bg-color: var(--color-gunmetal);
 }
 
 /* Dark Theme Custom Button */
 [data-md-color-scheme="slate"] .md-button {
   background-color: var(--md-accent-fg-color);
   border-color: var(--md-accent-fg-color);
-  color: var(--color-iron-grey);
+  color: var(--color-gunmetal);
 }
 
 [data-md-color-scheme="slate"] .md-button:hover {
