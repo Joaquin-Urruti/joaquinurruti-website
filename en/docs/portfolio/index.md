@@ -15,6 +15,12 @@ Welcome to my portfolio of geospatial data science and AI projects. Each project
 
     Automated GIS system for calculating phytosanitary application restriction zones across Argentine agricultural fields, processing multi-jurisdictional regulations to generate compliance maps and reports for aerial and terrestrial spraying operations.
 
+-   [Semi-Automatic Land Cover Classification with Sentinel-2](projects/project-4.md)
+
+    ---
+
+    Semi-automatic land cover classification of a 12,756-hectare cattle ranch in San Luis, Argentina, using Sentinel-2 imagery and unsupervised machine learning. Ten distinct land-cover classes were discriminated in under one week — a 75% time reduction compared to manual mapping — delivering actionable maps and area statistics for agricultural conversion planning.
+
 -   [Large-Scale Distance Matrices with Local OSRM Server](projects/project-2.md)
 
     ---

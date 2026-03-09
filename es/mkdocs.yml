@@ -9,6 +9,7 @@ nav:
   - Resumen: portfolio/index.md
   - Proyectos:
     - portfolio/projects/project-1.md
+    - portfolio/projects/project-4.md
     - portfolio/projects/project-2.md
     - portfolio/projects/project-3.md
 - Blog:
@@ -51,12 +52,12 @@ theme:
 extra:
   generator: true
   alternate:
-    - name: English
-      link: /en/
-      lang: en
-    - name: Español
-      link: /es/
-      lang: es
+  - name: English
+    link: /en/
+    lang: en
+  - name: Español
+    link: /es/
+    lang: es
   social:
   - icon: fontawesome/solid/building
     link: https://www.joaquinurruti.com
@@ -68,7 +69,7 @@ extra:
     link: https://www.linkedin.com/in/jurruti
   analytics:
     provider: google
-    property: !ENV [GOOGLE_ANALYTICS_KEY, '']
+    property: !ENV [ GOOGLE_ANALYTICS_KEY, '' ]
 
 extra_css:
 - stylesheets/extra.css
@@ -94,7 +95,11 @@ markdown_extensions:
     pygments_lang_class: true
 - pymdownx.inlinehilite
 - pymdownx.snippets
-- pymdownx.superfences
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid-custom
+      format: !!python/name:pymdownx.superfences.fence_code_format ""
 - pymdownx.details
 - pymdownx.critic
 - pymdownx.emoji:
@@ -105,6 +110,7 @@ markdown_extensions:
 
 extra_javascript:
 - https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js
+- javascripts/mermaid-init.js
 
 copyright: |
   &copy; 2026 <a href="https://www.linkedin.com/in/jurruti/" target="_blank" rel="noopener">Joaquín Urruti</a>. Todos los derechos reservados.

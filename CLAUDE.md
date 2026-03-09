@@ -32,6 +32,45 @@ cd es && uv run mkdocs serve   # Spanish
 docker build -t mkdocs-site .  # Build Docker image manually
 ```
 
+## Brand Guidelines
+
+### Color Palette
+
+| Token              | Hex       | Usage                                       |
+|--------------------|-----------|---------------------------------------------|
+| **Salmon**         | `#E88070` | Primary accent, CTAs, highlights            |
+| **Lime Cream**     | `#D8FF85` | Secondary accent, tags, success states      |
+| **Icy Blue**       | `#A8D0F8` | Tertiary accent, backgrounds, info elements |
+| **Gunmetal**       | `#3A4040` | Body text, dark UI elements                 |
+| **Majorelle Blue** | `#6E44FF` | Links, interactive elements, emphasis       |
+| **Black**          | `#000000` | Headlines, high-contrast text               |
+| **White**          | `#FFFFFF` | Backgrounds, light surfaces                 |
+
+### Color Application Rules
+
+- **Primary background**: White (`#FFFFFF`) or very light tints of Icy Blue for sections.
+- **Body text**: Gunmetal (`#3A4040`) — never pure black for body copy in web/presentations.
+- **Headlines**: Black (`#000000`) or Gunmetal depending on contrast needs.
+- **Primary accent / CTAs**: Salmon (`#E88070`).
+- **Secondary highlights**: Lime Cream (`#D8FF85`) — use sparingly, works well on dark backgrounds.
+- **Links and interactive elements**: Majorelle Blue (`#6E44FF`).
+- **Info panels, subtle backgrounds**: Icy Blue (`#A8D0F8`) at reduced opacity when needed.
+- Avoid using more than 3 palette colors in a single section to keep the design clean.
+
+### CSS Custom Properties
+
+```css
+:root {
+  --color-salmon: #E88070;
+  --color-lime-cream: #D8FF85;
+  --color-icy-blue: #A8D0F8;
+  --color-gunmetal: #3A4040;
+  --color-majorelle-blue: #6E44FF;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+}
+```
+
 ## Environment Variables
 
 Google Analytics and other secrets are managed via environment variables to keep them out of version control.
@@ -112,6 +151,7 @@ The site uses **separate MkDocs projects per language** instead of the i18n plug
 3. Update navigation in both `en/mkdocs.yml` and `es/mkdocs.yml`
 4. **If adding images**: Place them in `shared/assets/` - they'll be available to both languages automatically
 5. **If adding CSS**: Place them in `shared/stylesheets/` - they'll be available to both languages automatically
+6. Always my brand guideline colors when creating mermaid diagrams
 
 ### Adding a New Language
 

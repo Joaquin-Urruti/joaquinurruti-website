@@ -15,6 +15,12 @@ Bienvenido a mi portfolio de proyectos de ciencia de datos geoespaciales e IA. C
 
     Sistema GIS automatizado para calcular zonas de restricción de aplicaciones fitosanitarias en campos agrícolas argentinos, procesando regulaciones multi-jurisdiccionales para generar mapas de cumplimiento e informes para operaciones de pulverización aérea y terrestre.
 
+-   [Clasificación Semi-Automática de Cobertura del Suelo con Sentinel-2](projects/project-4.md)
+
+    ---
+
+    Clasificación semi-automática de cobertura del suelo de un campo ganadero de 12.756 hectáreas en San Luis, Argentina, utilizando imágenes Sentinel-2 y aprendizaje automático no supervisado. Se discriminaron 10 clases distintas de cobertura en menos de una semana — una reducción del 75% del tiempo respecto al mapeo manual — entregando mapas y estadísticas de superficie para la planificación de reconversión agrícola.
+
 -   [Matrices de Distancia a Gran Escala con Servidor OSRM Local](projects/project-2.md)
 
     ---
@@ -26,7 +32,6 @@ Bienvenido a mi portfolio de proyectos de ciencia de datos geoespaciales e IA. C
     ---
 
     Implementación de una plataforma web geoespacial basada en GeoNode para publicar y compartir proyectos cartográficos profesionales. El despliegue en un servidor dedicado usando Docker Compose resolvió conflictos técnicos de puertos y health checks, permitiendo controlar y personalizar por completo la presentación de trabajos GIS para clientes y organizaciones, con acceso seguro y alta disponibilidad.
-
 
 <!-- -   [Example Erase This](projects/example.md)
 
