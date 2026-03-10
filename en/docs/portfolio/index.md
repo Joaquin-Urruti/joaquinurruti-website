@@ -9,6 +9,12 @@ Welcome to my portfolio of geospatial data science and AI projects. Each project
 
 <div class="grid cards" markdown>
 
+-   [Water Risk Assessment for Agricultural Land Acquisition](projects/project-5.md)
+
+    ---
+
+    Satellite-based historical water risk analysis using Google Earth Engine and Dynamic World to characterize flood probability across agricultural fields. The workflow processes 6+ years of Sentinel-2 imagery, producing monthly risk profiles and per-parcel comparisons that directly support farmland purchase and leasing decisions.
+
 -   [Automatic phytosanitary application compliance mapping](projects/project-1.md)
 
     ---

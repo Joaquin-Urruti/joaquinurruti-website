@@ -9,6 +9,12 @@ Bienvenido a mi portfolio de proyectos de ciencia de datos geoespaciales e IA. C
 
 <div class="grid cards" markdown>
 
+-   [Evaluación de Riesgo Hídrico para Adquisición de Tierras Agrícolas](projects/project-5.md)
+
+    ---
+
+    Análisis histórico de riesgo hídrico basado en imágenes satelitales usando Google Earth Engine y Dynamic World para caracterizar la probabilidad de inundación en campos agrícolas. El flujo de trabajo procesa 6+ años de imágenes Sentinel-2, produciendo perfiles de riesgo mensuales y comparaciones por lote que respaldan directamente las decisiones de compra y arrendamiento de tierras.
+
 -   [Mapeo automático de cumplimiento de aplicaciones fitosanitarias](projects/project-1.md)
 
     ---
