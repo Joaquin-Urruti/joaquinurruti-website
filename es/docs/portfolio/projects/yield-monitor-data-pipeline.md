@@ -94,7 +94,7 @@ flowchart TD
 
 Los puntos crudos de rendimiento se filtran usando una combinación de umbrales estadísticos y verificaciones de consistencia espacial. Este paso elimina los artefactos más comunes: valores atípicos extremos, lecturas de rendimiento cero, puntos registrados durante cambios de velocidad y distorsiones por retardo temporal al inicio de cada pasada.
 
-![Datos crudos vs limpios de monitor de rendimiento](clean_monitors.png)
+![Datos crudos vs limpios de monitor de rendimiento](../../assets/yield-monitor-data-pipeline/clean_monitors.png)
 
 *Izquierda: Datos crudos del monitor de rendimiento mostrando ruido significativo e inconsistencia espacial. Derecha: Dataset limpio y suavizado con artefactos eliminados, revelando el patrón espacial real de rendimiento.*
 
@@ -104,7 +104,7 @@ Cuando un lote ha sido cosechado por más de una cosechadora o cabezal, cada má
 
 Un componente clave de esta corrección es el **índice de rendimiento** (`rinde_ind`): para cada lote, el rendimiento del monitor se expresa como una relación respecto a la media del lote, produciendo un índice adimensional que captura el patrón de variabilidad espacial independientemente de los valores absolutos. Este índice se multiplica luego por el **rendimiento ERP** (`Rinde_Albalanza`) — el rendimiento real calculado a partir de los pesos de balanza de camión en la entrega — que es la medición de verdad terrestre más confiable disponible. El resultado es el **rendimiento corregido** (`rinde_corregido`): un mapa espacialmente variable que preserva el patrón relativo del monitor pero está anclado a la producción real, verificada por balanza, de cada lote.
 
-![Tabla de datos de corrección de rendimiento](Imagen_1.png)
+![Tabla de datos de corrección de rendimiento](../../assets/yield-monitor-data-pipeline/Imagen%201.png)
 
 *Tabla de corrección por lote, cultivo, genotipo, tratamiento y zona de manejo. El índice de rendimiento (`rinde_ind`) expresa cada valor del monitor relativo a la media del lote. El rendimiento corregido (`rinde_corregido`) se obtiene multiplicando este índice por el rendimiento de balanza ERP (`Rinde_Albalanza`), anclando la variabilidad espacial a la medición de producción más confiable.*
 
@@ -112,7 +112,7 @@ Un componente clave de esta corrección es el **índice de rendimiento** (`rinde
 
 Los puntos ubicados cerca de los límites del lote están frecuentemente distorsionados debido al ancho parcial del cabezal durante la cosecha. El flujo de trabajo identifica estos puntos de borde usando análisis de proximidad espacial contra las geometrías de límite del lote y los elimina o marca para prevenir su influencia en los análisis posteriores.
 
-![Detección de puntos de borde](remove-edge-points.png)
+![Detección de puntos de borde](../../assets/yield-monitor-data-pipeline/remove-edge-points.png)
 
 *Clasificación de puntos de borde: los puntos verdes se retienen como datos interiores válidos; los puntos rojos se identifican como afectados por el borde y se excluyen del análisis.*
 
@@ -133,37 +133,10 @@ Este enriquecimiento transforma los datos de rendimiento de una capa espacial ai
 
 Cuando el almacenamiento a largo plazo y la comparación entre campañas son prioridades, el dataset final se convierte de geometrías de puntos crudas a una grilla hexagonal indexada con H3. Esto proporciona varias ventajas sobre las operaciones tradicionales basadas en geometrías:
 
-![Grilla H3 con zonas de manejo](h3_grid.png)
+![Grilla H3 con zonas de manejo](../../assets/yield-monitor-data-pipeline/h3_grid.png)
 
 *Izquierda: Límites de zonas de manejo derivados de análisis de suelo y topografía. Derecha: Datos de rendimiento limpios agregados en celdas hexagonales H3, superpuestos con las delineaciones de zonas de manejo para comparación espacial.*
 
-```python
-import h3
-import geopandas as gpd
-import pandas as pd
-from shapely.geometry import Polygon
-
-
-def points_to_h3_grid(gdf: gpd.GeoDataFrame, resolution: int = 10) -> gpd.GeoDataFrame:
-    """Aggregate yield point data into H3 hexagonal cells."""
-    gdf["h3_index"] = gdf.apply(
-        lambda row: h3.latlng_to_cell(row.geometry.y, row.geometry.x, resolution),
-        axis=1
-    )
-
-    aggregated = gdf.groupby("h3_index").agg(
-        yield_mean=("yield_cleaned", "mean"),
-        yield_std=("yield_cleaned", "std"),
-        point_count=("yield_cleaned", "count"),
-        management_zone=("zone_id", "first"),
-    ).reset_index()
-
-    aggregated["geometry"] = aggregated["h3_index"].apply(
-        lambda idx: Polygon(h3.cell_to_boundary(idx))
-    )
-
-    return gpd.GeoDataFrame(aggregated, geometry="geometry", crs="EPSG:4326")
-```
 
 !!! note "¿Por qué H3?"
     Las grillas hexagonales H3 proporcionan resolución espacial uniforme, indexación eficiente y agregación fluida entre campañas. A diferencia de las nubes de puntos irregulares, las celdas H3 permiten la comparación directa entre temporadas sin operaciones complejas de vinculación espacial, haciendo que el análisis histórico a gran escala sea significativamente más rápido y consistente.
