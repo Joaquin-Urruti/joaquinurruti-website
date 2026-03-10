@@ -108,6 +108,7 @@ The final deliverable integrates all outputs into a single risk assessment dashb
 
 ### Analytical Workflow
 
+<div align="center" style="margin: 0 auto; display: block; max-width: 1400px;">
 ```mermaid
 flowchart LR
     A["🛰️ Ingest Dynamic World<br/>Collection"] --> B["🔍 Spatial & Temporal<br/>Filtering"]
@@ -116,10 +117,15 @@ flowchart LR
     D --> E["📊 Probability<br/>Computation"]
     E --> F["🗺️ Risk Maps<br/>& Reports"]
 
-    classDef step fill:#90EE90,stroke:#333,stroke-width:2px,color:darkgreen
+    classDef proxy fill:#EED5CF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef core fill:#DDEAF6,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef data fill:#D6CCFF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
 
-    class A,B,C,D,E,F step
+    class A proxy
+    class B,C,D,E core
+    class F data
 ```
+</div>
 
 ## Results & Impact
 

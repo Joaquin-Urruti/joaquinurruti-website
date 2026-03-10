@@ -108,6 +108,7 @@ El entregable final integra todos los productos en un único panel de evaluació
 
 ### Flujo de Trabajo Analítico
 
+<div align="center" style="margin: 0 auto; display: block; max-width: 1400px;">
 ```mermaid
 flowchart LR
     A["🛰️ Ingestar Colección<br/>Dynamic World"] --> B["🔍 Filtrado Espacial<br/>y Temporal"]
@@ -116,10 +117,15 @@ flowchart LR
     D --> E["📊 Cómputo de<br/>Probabilidad"]
     E --> F["🗺️ Mapas de Riesgo<br/>e Informes"]
 
-    classDef step fill:#90EE90,stroke:#333,stroke-width:2px,color:darkgreen
+    classDef proxy fill:#EED5CF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef core fill:#DDEAF6,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef data fill:#D6CCFF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
 
-    class A,B,C,D,E,F step
+    class A proxy
+    class B,C,D,E core
+    class F data
 ```
+</div>
 
 ## Resultados e Impacto
 

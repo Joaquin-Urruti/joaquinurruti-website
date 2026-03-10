@@ -52,6 +52,8 @@ The operation faced several specific constraints:
 
 ### Architecture
 
+<div align="center" style="margin: 0 auto; display: block; max-width: 1400px;">
+  
 ```mermaid
 flowchart TD
     A([📥 Raw Yield Monitor Data]) --> B[🔍 Noise Filtering and Smoothing]
@@ -66,16 +68,18 @@ flowchart TD
     H --> I
     I --> J([📊 Analysis-Ready Dataset])
 
-    classDef startEnd fill:#E6E6FA,stroke:#333,stroke-width:2px,color:darkblue
-    classDef process fill:#90EE90,stroke:#333,stroke-width:2px,color:darkgreen
-    classDef decision fill:#FFD700,stroke:#333,stroke-width:2px,color:black
-    classDef data fill:#87CEEB,stroke:#333,stroke-width:2px,color:darkblue
+    classDef startEnd fill:#E7F5C5,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef process fill:#DDEAF6,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef decision fill:#EED5CF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef data fill:#D6CCFF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
 
     class A,J startEnd
     class B,D,E,F,H process
     class C,G decision
     class I data
 ```
+
+</div>
 
 !!! info "System Architecture"
     The pipeline is fully modular: each processing step can be configured, skipped, or parameterized independently depending on the characteristics of the field and the harvesting operation. This design allows the same workflow to handle single-machine fields and complex multi-combine scenarios without code changes.

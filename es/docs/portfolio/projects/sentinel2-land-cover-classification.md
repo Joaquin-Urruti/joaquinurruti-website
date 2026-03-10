@@ -60,6 +60,7 @@ Cada índice fue seleccionado para maximizar la discriminación entre las 10 cla
 
 La decisión metodológica clave fue utilizar un **enfoque semi-supervisado** — clustering no supervisado seguido de fusión de clases guiada por expertos — en lugar de una clasificación completamente supervisada. Esto estuvo motivado por dos factores: la ausencia de imágenes de referencia de alta resolución, y la gran cantidad de clases espectralmente similares que habrían requerido un volumen impracticable de muestras de verdad de campo.
 
+<div align="center" style="margin: 0 auto; display: block; max-width: 1400px;">
 ```mermaid
 flowchart TD
     Start([🛰️ Inicio]) --> FieldVisit[🗺️ Visita de Campo e Identificación de Clases]
@@ -74,16 +75,17 @@ flowchart TD
     Export --> PostProc[🗺️ Post-procesamiento en QGIS]
     PostProc --> Deliver([📤 Entregables Finales])
 
-    classDef startEnd fill:#D8FF85,stroke:#3A4040,stroke-width:2px,color:#000
-    classDef process fill:#D8FF85,stroke:#3A4040,stroke-width:2px,color:#000
-    classDef decision fill:#D8FF85,stroke:#3A4040,stroke-width:2px,color:#000
-    classDef adjust fill:#D8FF85,stroke:#3A4040,stroke-width:2px,color:#000
+    classDef startEnd fill:#E7F5C5,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef process fill:#DDEAF6,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef decision fill:#EED5CF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef adjust fill:#EED5CF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
 
     class Start,Deliver startEnd
     class FieldVisit,ImageSelect,Indices,Cluster,Merge,Export,PostProc process
     class Evaluate decision
     class Adjust adjust
 ```
+</div>
 
 El proceso iterativo comenzó con aproximadamente **25 clusters** y fue refinado progresivamente — reduciendo y fusionando clases — hasta que la salida mostró una fuerte concordancia visual tanto con las imágenes satelitales como con las observaciones de campo recolectadas durante la visita al sitio.
 
