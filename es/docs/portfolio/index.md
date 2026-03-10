@@ -9,6 +9,12 @@ Bienvenido a mi portfolio de proyectos de ciencia de datos geoespaciales e IA. C
 
 <div class="grid cards" markdown>
 
+-   [Pipeline de Procesamiento de Datos de Monitores de Rendimiento](projects/project-6.md)
+
+    ---
+
+    Flujo de trabajo automatizado que transforma exportaciones ruidosas y poco confiables de monitores de rendimiento en capas analíticas limpias, enriquecidas y espacialmente consistentes. El pipeline procesa más de 130.000 hectáreas por temporada, aplicando corrección de calibración multi-cabezal, eliminación de puntos de borde, enriquecimiento espacial e indexación hexagonal H3 para comparación entre campañas en operaciones agrícolas de gran escala.
+
 -   [Evaluación de Riesgo Hídrico para Adquisición de Tierras Agrícolas](projects/project-5.md)
 
     ---

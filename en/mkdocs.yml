@@ -8,6 +8,7 @@ nav:
 - Case Studies:
   - Overview: portfolio/index.md
   - Projects:
+    - portfolio/projects/project-6.md
     - portfolio/projects/project-5.md
     - portfolio/projects/project-1.md
     - portfolio/projects/project-4.md

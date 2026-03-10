@@ -9,6 +9,12 @@ Welcome to my portfolio of geospatial data science and AI projects. Each project
 
 <div class="grid cards" markdown>
 
+-   [End-to-End Yield Monitor Data Processing Pipeline](projects/project-6.md)
+
+    ---
+
+    Automated workflow that transforms noisy, unreliable yield monitor exports into clean, enriched, and spatially consistent analytics layers. The pipeline processes 130,000+ hectares per season, applying multi-header calibration correction, edge point removal, spatial enrichment, and H3 hexagonal indexing for cross-campaign comparison in large-scale farming operations.
+
 -   [Water Risk Assessment for Agricultural Land Acquisition](projects/project-5.md)
 
     ---
