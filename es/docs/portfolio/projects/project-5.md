@@ -64,7 +64,7 @@ Esta distinción de doble clase es esencial para la evaluación de riesgo agríc
 
 ### Extensibilidad a Otros Sensores
 
-Si bien esta implementación utilizó Sentinel-2 a través de Dynamic World, la metodología está diseñada para soportar fuentes de datos alternativas o combinadas. La imagen a continuación ilustra cómo diferentes sensores satelitales y métodos de clasificación detectan agua en un mismo campo:
+Si bien esta implementación utilizó el Dataset Dynamic World generado a partir de imágenes Sentinel-2, la metodología está diseñada para soportar fuentes de datos alternativas o combinadas. La imagen a continuación ilustra cómo diferentes sensores satelitales y métodos de clasificación detectan agua en un mismo campo:
 
 ![Comparación de clasificación de agua entre tres fuentes satelitales](../../assets/project-5/different_water_classifications.jpg)
 *Comparación de enfoques de detección de agua: banda SCL de Sentinel-2 (izquierda), MNDWI de Landsat 8 (centro) y MNDWI de Landsat 7 (derecha). Los contornos amarillos indican cuerpos de agua y áreas anegadas detectadas. Cada método ofrece diferentes compromisos en resolución espacial, profundidad temporal y precisión de clasificación — el flujo de trabajo puede incorporar cualquiera de ellos según los requerimientos del proyecto.*

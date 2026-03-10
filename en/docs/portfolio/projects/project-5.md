@@ -50,7 +50,7 @@ Without this information, buyers and tenants were exposed to hidden hydrological
 - **Geospatial Data Formats**: GeoJSON for field boundaries, raster composites for water probability maps
 
 !!! info "Methodology Note"
-    While this case study was implemented using **Sentinel-2** imagery through Dynamic World, the methodology is designed to be sensor-agnostic. It can be extended to **Landsat 7/8** (using MNDWI thresholding) or to a **hybrid Sentinel + Landsat collection** to increase temporal depth and observation density when longer historical records are required.
+    While this case study was implemented using Dynamic World dataset, built from the processing of  **Sentinel-2** imagery, the methodology is designed to be sensor-agnostic. It can be extended to **Landsat 7/8** (using MNDWI thresholding) or to a **hybrid Sentinel + Landsat collection** to increase temporal depth and observation density when longer historical records are required.
 
 
 ### Dynamic World: Dual-Class Flood Detection
