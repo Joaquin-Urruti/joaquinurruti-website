@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon_ju.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -1631,6 +1631,7 @@
 </table>
 <h3 id="metodologia-de-clasificacion">Metodología de Clasificación</h3>
 <p>La decisión metodológica clave fue utilizar un <strong>enfoque semi-supervisado</strong> — clustering no supervisado seguido de fusión de clases guiada por expertos — en lugar de una clasificación completamente supervisada. Esto estuvo motivado por dos factores: la ausencia de imágenes de referencia de alta resolución, y la gran cantidad de clases espectralmente similares que habrían requerido un volumen impracticable de muestras de verdad de campo.</p>
+<div align="center" style="margin: 0 auto; display: block; max-width: 1400px;">
 <pre class="mermaid-custom"><code>flowchart TD
     Start([🛰️ Inicio]) --&gt; FieldVisit[🗺️ Visita de Campo e Identificación de Clases]
     FieldVisit --&gt; ImageSelect[📥 Selección de Imagen Sentinel-2]
@@ -1644,15 +1645,17 @@
     Export --&gt; PostProc[🗺️ Post-procesamiento en QGIS]
     PostProc --&gt; Deliver([📤 Entregables Finales])
 
-    classDef startEnd fill:#D8FF85,stroke:#3A4040,stroke-width:2px,color:#000
-    classDef process fill:#D8FF85,stroke:#3A4040,stroke-width:2px,color:#000
-    classDef decision fill:#D8FF85,stroke:#3A4040,stroke-width:2px,color:#000
-    classDef adjust fill:#D8FF85,stroke:#3A4040,stroke-width:2px,color:#000
+    classDef startEnd fill:#E7F5C5,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef process fill:#DDEAF6,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef decision fill:#EED5CF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef adjust fill:#EED5CF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
 
     class Start,Deliver startEnd
     class FieldVisit,ImageSelect,Indices,Cluster,Merge,Export,PostProc process
     class Evaluate decision
     class Adjust adjust</code></pre>
+</div>
+
 <p>El proceso iterativo comenzó con aproximadamente <strong>25 clusters</strong> y fue refinado progresivamente — reduciendo y fusionando clases — hasta que la salida mostró una fuerte concordancia visual tanto con las imágenes satelitales como con las observaciones de campo recolectadas durante la visita al sitio.</p>
 <hr />
 <h2 id="aspectos-destacados-de-la-implementacion">Aspectos Destacados de la Implementación</h2>

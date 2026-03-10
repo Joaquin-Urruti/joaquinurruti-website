@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon_ju.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -1601,6 +1601,7 @@
 <p><img alt="Complete water risk assessment dashboard" src="../../../assets/water-risk-assessment/riesgo_hidrico.jpg" /></p>
 <p><em>Complete water risk assessment: (left) monthly spatial distribution of flood risk, (top-right) stacked area chart of surface area by flood probability level per month, (bottom-right) detailed table showing hectares within each risk category (0-10%, 10-20%, 20-30%, 30-40%, &gt;40%) for every month of the year.</em></p>
 <h3 id="analytical-workflow">Analytical Workflow</h3>
+<div align="center" style="margin: 0 auto; display: block; max-width: 1400px;">
 <pre class="mermaid-custom"><code>flowchart LR
     A["🛰️ Ingest Dynamic World&lt;br/&gt;Collection"] --&gt; B["🔍 Spatial &amp; Temporal&lt;br/&gt;Filtering"]
     B --&gt; C["💧 Extract water &amp;&lt;br/&gt;flooded_vegetation"]
@@ -1608,9 +1609,15 @@
     D --&gt; E["📊 Probability&lt;br/&gt;Computation"]
     E --&gt; F["🗺️ Risk Maps&lt;br/&gt;&amp; Reports"]
 
-    classDef step fill:#90EE90,stroke:#333,stroke-width:2px,color:darkgreen
+    classDef proxy fill:#EED5CF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef core fill:#DDEAF6,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef data fill:#D6CCFF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
 
-    class A,B,C,D,E,F step</code></pre>
+    class A proxy
+    class B,C,D,E core
+    class F data</code></pre>
+</div>
+
 <h2 id="results-impact">Results &amp; Impact</h2>
 <ul>
 <li><strong>6+ years of Sentinel-2 data</strong> processed per field evaluation via Dynamic World, providing a statistically meaningful characterization of water behavior</li>

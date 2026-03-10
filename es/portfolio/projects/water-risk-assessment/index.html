@@ -27,7 +27,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon_ju.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -1601,6 +1601,7 @@
 <p><img alt="Panel completo de evaluación de riesgo hídrico" src="../../../assets/water-risk-assessment/riesgo_hidrico.jpg" /></p>
 <p><em>Evaluación completa de riesgo hídrico: (izquierda) distribución espacial mensual del riesgo de inundación, (arriba-derecha) gráfico de áreas apiladas de superficie por nivel de probabilidad de inundación por mes, (abajo-derecha) tabla detallada mostrando hectáreas dentro de cada categoría de riesgo (0-10%, 10-20%, 20-30%, 30-40%, &gt;40%) para cada mes del año.</em></p>
 <h3 id="flujo-de-trabajo-analitico">Flujo de Trabajo Analítico</h3>
+<div align="center" style="margin: 0 auto; display: block; max-width: 1400px;">
 <pre class="mermaid-custom"><code>flowchart LR
     A["🛰️ Ingestar Colección&lt;br/&gt;Dynamic World"] --&gt; B["🔍 Filtrado Espacial&lt;br/&gt;y Temporal"]
     B --&gt; C["💧 Extraer water y&lt;br/&gt;flooded_vegetation"]
@@ -1608,9 +1609,15 @@
     D --&gt; E["📊 Cómputo de&lt;br/&gt;Probabilidad"]
     E --&gt; F["🗺️ Mapas de Riesgo&lt;br/&gt;e Informes"]
 
-    classDef step fill:#90EE90,stroke:#333,stroke-width:2px,color:darkgreen
+    classDef proxy fill:#EED5CF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef core fill:#DDEAF6,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
+    classDef data fill:#D6CCFF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
 
-    class A,B,C,D,E,F step</code></pre>
+    class A proxy
+    class B,C,D,E core
+    class F data</code></pre>
+</div>
+
 <h2 id="resultados-e-impacto">Resultados e Impacto</h2>
 <ul>
 <li><strong>6+ años de datos Sentinel-2</strong> procesados por cada evaluación de campo vía Dynamic World, proporcionando una caracterización estadísticamente significativa del comportamiento hídrico</li>
