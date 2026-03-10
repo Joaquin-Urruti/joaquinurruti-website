@@ -74,7 +74,7 @@ As an independent professional, I decided to set up my own platform to publish a
 
     **Data flow**: nginx/Kong → Django → GeoServer/PostgreSQL
 
-![Architecture Diagram](../../assets/project-3/geonode_architecture.png)
+![Architecture Diagram](../../assets/geonode-platform-deployment/geonode_architecture.png)
 
 *Container architecture*
 

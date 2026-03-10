@@ -123,7 +123,7 @@ Rather than classifying on raw spectral bands alone, the classification input wa
 !!! info "Classification Map"
     The final classification map and the Sentinel-2 composite used as reference are included as figures in this case study. The color-coded map shows the spatial distribution of all 10 classes across the entire field, with area statistics per class.
 
-![Final results of the unsupervised classification — land-cover class encoding.](../../assets/project-4/results.png)
+![Final results of the unsupervised classification — land-cover class encoding.](../../assets/sentinel2-land-cover-classification/results.png)
 
 ---
 

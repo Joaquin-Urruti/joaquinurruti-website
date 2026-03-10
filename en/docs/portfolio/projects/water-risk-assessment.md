@@ -66,7 +66,7 @@ This dual-class distinction is essential for agricultural risk assessment. A fie
 
 While this implementation used Sentinel-2 through Dynamic World, the methodology is designed to support alternative or combined data sources. The image below illustrates how different satellite sensors and classification methods detect water across the same field:
 
-![Water classification comparison across three satellite sources](../../assets/project-5/different_water_classifications.jpg)
+![Water classification comparison across three satellite sources](../../assets/water-risk-assessment/different_water_classifications.jpg)
 *Comparison of water detection approaches: Sentinel-2 SCL band (left), Landsat 8 MNDWI (center), and Landsat 7 MNDWI (right). Yellow outlines indicate detected water bodies and waterlogged areas. Each method offers different tradeoffs in spatial resolution, temporal depth, and classification accuracy — the workflow can incorporate any of them depending on project requirements.*
 
 ## Implementation Highlights
@@ -75,7 +75,7 @@ While this implementation used Sentinel-2 through Dynamic World, the methodology
 
 The core algorithm processes every available Dynamic World image in the time series, extracts the `water` and `flooded_vegetation` probability bands for each pixel, and computes the historical average probability of each class at every location. The result is a pair of continuous probability surfaces that reveal which areas within a field are chronically affected by open water, flooded vegetation, or both.
 
-![Water probability map overlaid on satellite imagery](../../assets/project-5/water_probability.png)
+![Water probability map overlaid on satellite imagery](../../assets/water-risk-assessment/water_probability.png)
 
 *Historical water probability map for a property along the Uruguay River. Green areas indicate zones dominated by flooded vegetation; purple areas indicate persistent open water. The overlay reveals the spatial distribution of hydrological risk across seven parcels (Lote 1–7).*
 
@@ -83,11 +83,11 @@ The core algorithm processes every available Dynamic World image in the time ser
 
 Beyond the historical average, the workflow generates a month-by-month breakdown of water and flooded vegetation probability. This seasonal profile is critical for agricultural planning, as it reveals whether flood risk peaks coincide with planting or harvest windows.
 
-![Monthly probability time series — historical](../../assets/project-5/historic_dynamic.png)
+![Monthly probability time series — historical](../../assets/water-risk-assessment/historic_dynamic.png)
 
 *Historical monthly probability of water (red) and flooded vegetation (blue) across the full satellite archive. Peaks correspond to major flood events, with recurring seasonal patterns visible year over year.*
 
-![Monthly probability profile — averaged](../../assets/project-5/monthly_dynamic.png)
+![Monthly probability profile — averaged](../../assets/water-risk-assessment/monthly_dynamic.png)
 
 *Averaged monthly probability profile showing the seasonal behavior of water and flooded vegetation. This view enables quick identification of high-risk months for agricultural operations.*
 
@@ -95,14 +95,14 @@ Beyond the historical average, the workflow generates a month-by-month breakdown
 
 The system computes water probability curves for each individual parcel within a property, allowing comparative analysis. This is particularly valuable when negotiating leasing terms for specific lots or prioritizing which parcels to acquire.
 
-![Per-parcel water probability curves](../../assets/project-5/field_dynamic.png)
+![Per-parcel water probability curves](../../assets/water-risk-assessment/field_dynamic.png)
 *Water probability by parcel (Lote) for a property along the Uruguay River. Each curve represents a different parcel, showing its unique seasonal water behavior. Larger parcels near the river (e.g., "Costa Río Uruguay 4 — 102 ha") exhibit distinct risk profiles compared to smaller or more elevated lots.*
 
 ### Comprehensive Risk Classification
 
 The final deliverable integrates all outputs into a single risk assessment dashboard: monthly spatial maps, a stacked area chart showing surface area by risk level per month, and a detailed table quantifying hectares within each risk category.
 
-![Complete water risk assessment dashboard](../../assets/project-5/riesgo_hidrico.jpg)
+![Complete water risk assessment dashboard](../../assets/water-risk-assessment/riesgo_hidrico.jpg)
 
 *Complete water risk assessment: (left) monthly spatial distribution of flood risk, (top-right) stacked area chart of surface area by flood probability level per month, (bottom-right) detailed table showing hectares within each risk category (0-10%, 10-20%, 20-30%, 30-40%, >40%) for every month of the year.*
 

@@ -74,7 +74,7 @@ Como profesional independiente, decidí montar una plataforma propia para public
 
     **Flujo de datos**: nginx/Kong → Django → GeoServer/PostgreSQL
 
-![Diagrama de Arquitectura](../../assets/project-3/geonode_architecture.png)
+![Diagrama de Arquitectura](../../assets/geonode-platform-deployment/geonode_architecture.png)
 
 *Arquitectura de contenedores*
 

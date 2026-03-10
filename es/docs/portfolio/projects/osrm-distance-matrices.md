@@ -79,7 +79,7 @@ Los datos de origen a menudo vienen como polígonos (campos, zonas, áreas de se
 
 El pipeline ajusta cada centroide al nodo de carretera más cercano antes del ruteo, asegurando cálculos de distancia realistas y confiables.
 
-![Diagrama de Arquitectura](../../assets/portfolio-orsm.svg)
+![Diagrama de Arquitectura](../../assets/osrm-distance-matrices.svg)
 *Esquema del flujo de trabajo*
 
 ## Cómo ejecutar el proyecto

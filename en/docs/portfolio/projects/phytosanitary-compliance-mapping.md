@@ -102,11 +102,11 @@ The core processing follows a systematic approach:
 5.  **Intersection**: Buffers clipped to agricultural lot boundaries
 6.  **Overlap Resolution**: Buffer zones have exclusion zones subtracted to prevent double-counting
 
-![Processing of exclusion and buffer areas](../../assets/project-1/proceso_areas_exclusion.png)
+![Processing of exclusion and buffer areas](../../assets/phytosanitary-compliance-mapping/proceso_areas_exclusion.png)
 
 *Diagram of the geospatial processing workflow for exclusion and buffer zones: from regulatory and geographic data ingestion to the generation of non-overlapping buffers by restriction type, clipped to agricultural plot boundaries.*
 
-![Exclusion and buffer zones for terrestrial & aerial applications across various fields](../../assets/project-1/exclusion-type.png)
+![Exclusion and buffer zones for terrestrial & aerial applications across various fields](../../assets/phytosanitary-compliance-mapping/exclusion-type.png)
 *Exclusion and buffer zones for terrestrial & aerial applications across various fields.*
 
 ## Results & Impact

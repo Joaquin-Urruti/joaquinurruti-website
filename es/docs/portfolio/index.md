@@ -9,37 +9,37 @@ Bienvenido a mi portfolio de proyectos de ciencia de datos geoespaciales e IA. C
 
 <div class="grid cards" markdown>
 
--   [Pipeline de Procesamiento de Datos de Monitores de Rendimiento](projects/project-6.md)
+-   [Pipeline de Procesamiento de Datos de Monitores de Rendimiento](projects/yield-monitor-data-pipeline.md)
 
     ---
 
     Flujo de trabajo automatizado que transforma exportaciones ruidosas y poco confiables de monitores de rendimiento en capas analíticas limpias, enriquecidas y espacialmente consistentes. El pipeline procesa más de 130.000 hectáreas por temporada, aplicando corrección de calibración multi-cabezal, eliminación de puntos de borde, enriquecimiento espacial e indexación hexagonal H3 para comparación entre campañas en operaciones agrícolas de gran escala.
 
--   [Evaluación de Riesgo Hídrico para Adquisición de Tierras Agrícolas](projects/project-5.md)
+-   [Evaluación de Riesgo Hídrico para Adquisición de Tierras Agrícolas](projects/water-risk-assessment.md)
 
     ---
 
     Análisis histórico de riesgo hídrico basado en imágenes satelitales usando Google Earth Engine y Dynamic World para caracterizar la probabilidad de inundación en campos agrícolas. El flujo de trabajo procesa 6+ años de imágenes Sentinel-2, produciendo perfiles de riesgo mensuales y comparaciones por lote que respaldan directamente las decisiones de compra y arrendamiento de tierras.
 
--   [Mapeo automático de cumplimiento de aplicaciones fitosanitarias](projects/project-1.md)
+-   [Mapeo automático de cumplimiento de aplicaciones fitosanitarias](projects/phytosanitary-compliance-mapping.md)
 
     ---
 
     Sistema GIS automatizado para calcular zonas de restricción de aplicaciones fitosanitarias en campos agrícolas argentinos, procesando regulaciones multi-jurisdiccionales para generar mapas de cumplimiento e informes para operaciones de pulverización aérea y terrestre.
 
--   [Clasificación Semi-Automática de Cobertura del Suelo con Sentinel-2](projects/project-4.md)
+-   [Clasificación Semi-Automática de Cobertura del Suelo con Sentinel-2](projects/sentinel2-land-cover-classification.md)
 
     ---
 
     Clasificación semi-automática de cobertura del suelo de un campo ganadero de 12.756 hectáreas en San Luis, Argentina, utilizando imágenes Sentinel-2 y aprendizaje automático no supervisado. Se discriminaron 10 clases distintas de cobertura en menos de una semana — una reducción del 75% del tiempo respecto al mapeo manual — entregando mapas y estadísticas de superficie para la planificación de reconversión agrícola.
 
--   [Matrices de Distancia a Gran Escala con Servidor OSRM Local](projects/project-2.md)
+-   [Matrices de Distancia a Gran Escala con Servidor OSRM Local](projects/osrm-distance-matrices.md)
 
     ---
 
     Ejecutar OSRM localmente permite el cálculo rápido e ilimitado de grandes matrices de distancia origen-destino usando redes viales reales. Este enfoque elimina los límites de APIs públicas y ayuda a las empresas a modelar costos logísticos con precisión calculando kilómetros entre miles de orígenes y destinos.
 
--   [Despliegue de Plataforma GeoNode para Presentación Profesional GIS](projects/project-3.md)
+-   [Despliegue de Plataforma GeoNode para Presentación Profesional GIS](projects/geonode-platform-deployment.md)
 
     ---
 

@@ -8,12 +8,12 @@ nav:
 - Casos de Estudio:
   - Resumen: portfolio/index.md
   - Proyectos:
-    - portfolio/projects/project-6.md
-    - portfolio/projects/project-5.md
-    - portfolio/projects/project-1.md
-    - portfolio/projects/project-4.md
-    - portfolio/projects/project-2.md
-    - portfolio/projects/project-3.md
+    - portfolio/projects/yield-monitor-data-pipeline.md
+    - portfolio/projects/water-risk-assessment.md
+    - portfolio/projects/phytosanitary-compliance-mapping.md
+    - portfolio/projects/sentinel2-land-cover-classification.md
+    - portfolio/projects/osrm-distance-matrices.md
+    - portfolio/projects/geonode-platform-deployment.md
 - Blog:
   - blog/index.md
 
@@ -79,6 +79,14 @@ extra_css:
 
 plugins:
 - search
+- redirects:
+    redirect_maps:
+      'portfolio/projects/project-1.md': 'portfolio/projects/phytosanitary-compliance-mapping.md'
+      'portfolio/projects/project-2.md': 'portfolio/projects/osrm-distance-matrices.md'
+      'portfolio/projects/project-3.md': 'portfolio/projects/geonode-platform-deployment.md'
+      'portfolio/projects/project-4.md': 'portfolio/projects/sentinel2-land-cover-classification.md'
+      'portfolio/projects/project-5.md': 'portfolio/projects/water-risk-assessment.md'
+      'portfolio/projects/project-6.md': 'portfolio/projects/yield-monitor-data-pipeline.md'
 - blog:
     blog_dir: blog
     authors_file: "{blog}/.authors.yml"

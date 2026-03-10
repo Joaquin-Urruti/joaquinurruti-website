@@ -94,7 +94,7 @@ flowchart TD
 
 Raw yield points are filtered using a combination of statistical thresholds and spatial consistency checks. This step removes the most common artifacts: extreme outlier values, zero-yield readings, points recorded during speed changes, and time-lag distortions at the start of each pass.
 
-![Raw vs Clean yield monitor data](../../assets/project-6/clean_monitors.png)
+![Raw vs Clean yield monitor data](../../assets/yield-monitor-data-pipeline/clean_monitors.png)
 
 *Left: Raw yield monitor data showing significant noise and spatial inconsistency. Right: Cleaned and smoothed dataset with artifacts removed, revealing the true spatial yield pattern.*
 
@@ -104,7 +104,7 @@ When a field has been harvested by more than one combine or header, each machine
 
 A key component of this correction is the **yield index** (`rinde_ind`): for each lot, the monitor yield is expressed as a ratio relative to the lot mean, producing a dimensionless index that captures the spatial variability pattern independently of absolute values. This index is then multiplied by the **ERP yield** (`Rinde_Albalanza`) — the actual yield calculated from truck scale weights at delivery — which is the most reliable ground-truth measurement available. The result is the **corrected yield** (`rinde_corregido`): a spatially variable map that preserves the relative pattern from the monitor but is anchored to the real, scale-verified production of each lot.
 
-![Yield correction data table](../../assets/project-6/Imagen%201.png)
+![Yield correction data table](../../assets/yield-monitor-data-pipeline/Imagen%201.png)
 
 *Correction table by lot, crop, genotype, treatment, and management zone. The yield index (`rinde_ind`) expresses each monitor value relative to the lot mean. The corrected yield (`rinde_corregido`) is obtained by multiplying this index by the ERP scale-based yield (`Rinde_Albalanza`), anchoring spatial variability to the most reliable production measurement.*
 
@@ -112,7 +112,7 @@ A key component of this correction is the **yield index** (`rinde_ind`): for eac
 
 Points located near field boundaries are frequently distorted due to partial header width during harvesting. The workflow identifies these edge points using spatial proximity analysis against field boundary geometries and either removes or flags them to prevent their influence on downstream analytics.
 
-![Edge point detection](../../assets/project-6/remove-edge-points.png)
+![Edge point detection](../../assets/yield-monitor-data-pipeline/remove-edge-points.png)
 
 *Edge point classification: green points are retained as valid interior data; red points are identified as boundary-affected and excluded from analysis.*
 
@@ -133,7 +133,7 @@ This enrichment transforms the yield data from a standalone spatial layer into a
 
 When long-term storage and cross-campaign comparison are priorities, the final dataset is converted from raw point geometries into an H3-indexed hexagonal grid. This provides several advantages over traditional geometry-based operations:
 
-![H3 grid with management zones](../../assets/project-6/h3_grid.png)
+![H3 grid with management zones](../../assets/yield-monitor-data-pipeline/h3_grid.png)
 
 *Left: Management zone boundaries derived from soil and topographic analysis. Right: Cleaned yield data aggregated into H3 hexagonal cells, overlaid with management zone delineations for spatial comparison.*
 

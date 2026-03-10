@@ -123,7 +123,7 @@ En lugar de clasificar solo con bandas espectrales crudas, la entrada de clasifi
 !!! info "Mapa de Clasificación"
     El mapa de clasificación final y el compuesto Sentinel-2 utilizado como referencia se incluyen como figuras en este caso de estudio. El mapa codificado por colores muestra la distribución espacial de las 10 clases en todo el campo, con estadísticas de superficie por clase.
 
-![Resultados finales de la clasificación no supervisada — codificación de clases de cobertura.](../../assets/project-4/results.png)
+![Resultados finales de la clasificación no supervisada — codificación de clases de cobertura.](../../assets/sentinel2-land-cover-classification/results.png)
 
 
 ---

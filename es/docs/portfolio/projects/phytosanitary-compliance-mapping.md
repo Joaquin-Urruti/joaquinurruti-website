@@ -102,11 +102,11 @@ El procesamiento central sigue un enfoque sistemático:
 5.  **Intersección**: Buffers recortados a los límites del lote agrícola
 6.  **Resolución de Superposición**: A las zonas de amortiguación se les resta las zonas de exclusión para prevenir doble conteo
 
-![Procesamiento de áreas de exclusión y amortiguación](../../assets/project-1/proceso_areas_exclusion.png)
+![Procesamiento de áreas de exclusión y amortiguación](../../assets/phytosanitary-compliance-mapping/proceso_areas_exclusion.png)
 
 *Diagrama del flujo de trabajo de procesamiento geoespacial para zonas de exclusión y amortiguación: desde la ingestión de datos regulatorios y geográficos hasta la generación de buffers no superpuestos por tipo de restricción, recortados a los límites de parcelas agrícolas.*
 
-![Distintas zonas de exclusión y amortiguación para aplicaciones terrestres y aéreas en distintos campos](../../assets/project-1/exclusion-type.png)
+![Distintas zonas de exclusión y amortiguación para aplicaciones terrestres y aéreas en distintos campos](../../assets/phytosanitary-compliance-mapping/exclusion-type.png)
 *Distintas zonas de exclusión y amortiguación para aplicaciones terrestres y aéreas en distintos campos.*
 
 ## Resultados e Impacto

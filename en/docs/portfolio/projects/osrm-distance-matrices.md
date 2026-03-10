@@ -79,7 +79,7 @@ Origin data often comes as polygons (fields, zones, service areas). Their centro
 
 The pipeline snaps each centroid to the nearest road node before routing, ensuring realistic and reliable distance calculations.
 
-![Architecture Diagram](../../assets/portfolio-orsm.svg)
+![Architecture Diagram](../../assets/osrm-distance-matrices.svg)
 *Schema of the workflow*
 
 ## How to run the project

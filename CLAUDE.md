@@ -107,8 +107,8 @@ joaquinurruti-website/
 │       ├── portfolio/
 │       │   ├── index.md
 │       │   └── projects/
-│       │       ├── project-1.md
-│       │       └── project-2.md
+│       │       ├── phytosanitary-compliance-mapping.md
+│       │       └── osrm-distance-matrices.md
 │       ├── blog/
 │       │   ├── index.md
 │       │   ├── .authors.yml
@@ -122,7 +122,7 @@ joaquinurruti-website/
 │   │   ├── logo_ju.svg
 │   │   ├── favicon_ju.png
 │   │   ├── landing_image.jpg
-│   │   └── project-1/              # Project-specific images
+│   │   └── water-risk-assessment/   # Project-specific images
 │   └── stylesheets/                 # Shared CSS files
 │       ├── extra.css                # Theme colors, buttons, cards, FAQ
 │       └── hero.css                 # Homepage hero section & layout

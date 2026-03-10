@@ -66,7 +66,7 @@ Esta distinción de doble clase es esencial para la evaluación de riesgo agríc
 
 Si bien esta implementación utilizó el Dataset Dynamic World generado a partir de imágenes Sentinel-2, la metodología está diseñada para soportar fuentes de datos alternativas o combinadas. La imagen a continuación ilustra cómo diferentes sensores satelitales y métodos de clasificación detectan agua en un mismo campo:
 
-![Comparación de clasificación de agua entre tres fuentes satelitales](../../assets/project-5/different_water_classifications.jpg)
+![Comparación de clasificación de agua entre tres fuentes satelitales](../../assets/water-risk-assessment/different_water_classifications.jpg)
 *Comparación de enfoques de detección de agua: banda SCL de Sentinel-2 (izquierda), MNDWI de Landsat 8 (centro) y MNDWI de Landsat 7 (derecha). Los contornos amarillos indican cuerpos de agua y áreas anegadas detectadas. Cada método ofrece diferentes compromisos en resolución espacial, profundidad temporal y precisión de clasificación — el flujo de trabajo puede incorporar cualquiera de ellos según los requerimientos del proyecto.*
 
 ## Aspectos Destacados de la Implementación
@@ -75,7 +75,7 @@ Si bien esta implementación utilizó el Dataset Dynamic World generado a partir
 
 El algoritmo central procesa cada imagen disponible de Dynamic World en la serie temporal, extrae las bandas de probabilidad de `water` y `flooded_vegetation` para cada píxel, y calcula la probabilidad histórica promedio de cada clase en cada ubicación. El resultado es un par de superficies de probabilidad continuas que revelan qué áreas dentro de un campo están crónicamente afectadas por agua abierta, vegetación inundada, o ambas.
 
-![Mapa de probabilidad hídrica superpuesto sobre imagen satelital](../../assets/project-5/water_probability.png)
+![Mapa de probabilidad hídrica superpuesto sobre imagen satelital](../../assets/water-risk-assessment/water_probability.png)
 
 *Mapa de probabilidad hídrica histórica para un establecimiento sobre el Río Uruguay. Las áreas verdes indican zonas dominadas por vegetación inundada; las áreas violetas indican agua abierta persistente. La superposición revela la distribución espacial del riesgo hidrológico en siete lotes (Lote 1–7).*
 
@@ -83,11 +83,11 @@ El algoritmo central procesa cada imagen disponible de Dynamic World en la serie
 
 Más allá del promedio histórico, el flujo de trabajo genera un desglose mes a mes de la probabilidad de agua y vegetación inundada. Este perfil estacional es crítico para la planificación agrícola, ya que revela si los picos de riesgo de inundación coinciden con las ventanas de siembra o cosecha.
 
-![Serie temporal de probabilidad mensual — histórica](../../assets/project-5/historic_dynamic.png)
+![Serie temporal de probabilidad mensual — histórica](../../assets/water-risk-assessment/historic_dynamic.png)
 
 *Probabilidad mensual histórica de agua (rojo) y vegetación inundada (azul) a lo largo de todo el archivo satelital. Los picos corresponden a eventos de inundación mayores, con patrones estacionales recurrentes visibles año tras año.*
 
-![Perfil de probabilidad mensual — promediado](../../assets/project-5/monthly_dynamic.png)
+![Perfil de probabilidad mensual — promediado](../../assets/water-risk-assessment/monthly_dynamic.png)
 
 *Perfil de probabilidad mensual promediado que muestra el comportamiento estacional de agua y vegetación inundada. Esta vista permite la identificación rápida de meses de alto riesgo para las operaciones agrícolas.*
 
@@ -95,14 +95,14 @@ Más allá del promedio histórico, el flujo de trabajo genera un desglose mes a
 
 El sistema calcula curvas de probabilidad hídrica para cada lote individual dentro de un establecimiento, permitiendo un análisis comparativo. Esto es particularmente valioso al negociar términos de arrendamiento para lotes específicos o priorizar qué lotes adquirir.
 
-![Curvas de probabilidad hídrica por lote](../../assets/project-5/field_dynamic.png)
+![Curvas de probabilidad hídrica por lote](../../assets/water-risk-assessment/field_dynamic.png)
 *Probabilidad hídrica por lote para un establecimiento sobre el Río Uruguay. Cada curva representa un lote diferente, mostrando su comportamiento hídrico estacional particular. Los lotes más grandes cerca del río (ej., "Costa Río Uruguay 4 — 102 ha") exhiben perfiles de riesgo distintos en comparación con lotes más pequeños o más elevados.*
 
 ### Clasificación Integral de Riesgo
 
 El entregable final integra todos los productos en un único panel de evaluación de riesgo: mapas espaciales mensuales, un gráfico de áreas apiladas mostrando la superficie por nivel de riesgo por mes, y una tabla detallada cuantificando hectáreas dentro de cada categoría de riesgo.
 
-![Panel completo de evaluación de riesgo hídrico](../../assets/project-5/riesgo_hidrico.jpg)
+![Panel completo de evaluación de riesgo hídrico](../../assets/water-risk-assessment/riesgo_hidrico.jpg)
 
 *Evaluación completa de riesgo hídrico: (izquierda) distribución espacial mensual del riesgo de inundación, (arriba-derecha) gráfico de áreas apiladas de superficie por nivel de probabilidad de inundación por mes, (abajo-derecha) tabla detallada mostrando hectáreas dentro de cada categoría de riesgo (0-10%, 10-20%, 20-30%, 30-40%, >40%) para cada mes del año.*
 
