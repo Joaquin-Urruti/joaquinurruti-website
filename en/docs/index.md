@@ -51,7 +51,7 @@ canonical_url: https://www.joaquinurruti.com/
 
 <div class="profile-image-grid" markdown>
 
-![Joaquín Urruti, AI & GIS Engineer Advisor](assets/landing_image.jpg){ .profile-image alt="Portrait of Joaquín Urruti, AI & GIS Engineer Advisor" }
+![Joaquín Urruti, AI & GIS Engineer Advisor](./assets/landing_image.jpeg){ .profile-image alt="Portrait of Joaquín Urruti, AI & GIS Engineer Advisor" }
 
 </div>
 

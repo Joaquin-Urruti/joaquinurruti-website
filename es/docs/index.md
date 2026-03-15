@@ -51,7 +51,7 @@ canonical_url: https://www.joaquinurruti.com/es/
 
 <div class="profile-image-grid" markdown>
 
-![Joaquín Urruti, Ingeniero y Consultor en IA & GIS](assets/landing_image.jpg){ .profile-image alt="Retrato de Joaquín Urruti, Ingeniero y Consultor en IA & GIS" }
+![Joaquín Urruti, Ingeniero y Consultor en IA & GIS](./assets/landing_image.jpeg){ .profile-image alt="Retrato de Joaquín Urruti, Ingeniero y Consultor en IA & GIS" }
 
 </div>
 
