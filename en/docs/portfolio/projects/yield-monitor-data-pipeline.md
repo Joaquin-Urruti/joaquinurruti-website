@@ -150,7 +150,7 @@ The implementation of this workflow delivered measurable improvements across the
 
 - **+85% reduction in processing time**: What previously required days of manual work per farm is now completed in hours through the automated pipeline.
 - **40–60% noise reduction**: Statistical and spatial filtering consistently removes a significant portion of raw data artifacts, depending on harvest conditions and equipment.
-- **30,000+ hectares processed per season**: The workflow scales across the company's full operational footprint without degradation in processing quality.
+- **130,000+ hectares processed per season**: The workflow scales across the company's full operational footprint without degradation in processing quality.
 - **First-ever cross-campaign comparison capability**: With H3-indexed historical data, agronomists can now compare yield performance across multiple seasons at consistent spatial resolution.
 - **Unified data standard**: All farms, lots, and campaigns produce datasets in the same format, enabling company-wide analytics and benchmarking.
 - **Seamless integration**: Enriched datasets connect directly to management zone analysis, trial interpretation, variable rate prescriptions, and business intelligence dashboards.

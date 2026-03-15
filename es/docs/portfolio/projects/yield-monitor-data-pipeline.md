@@ -151,7 +151,7 @@ La implementación de este flujo de trabajo entregó mejoras medibles a lo largo
 
 - **85% de reducción en el tiempo de procesamiento**: Lo que antes requería días de trabajo manual por establecimiento ahora se completa en horas a través del pipeline automatizado.
 - **40–60% de reducción de ruido**: El filtrado estadístico y espacial elimina consistentemente una porción significativa de los artefactos de datos crudos, dependiendo de las condiciones de cosecha y el equipamiento.
-- **30.000+ hectáreas procesadas por temporada**: El flujo de trabajo escala a toda la superficie operativa de la empresa sin degradación en la calidad del procesamiento.
+- **130.000+ hectáreas procesadas por temporada**: El flujo de trabajo escala a toda la superficie operativa de la empresa sin degradación en la calidad del procesamiento.
 - **Primera capacidad de comparación entre campañas**: Con datos históricos indexados con H3, los agrónomos pueden ahora comparar el rendimiento entre múltiples temporadas a resolución espacial consistente.
 - **Estándar de datos unificado**: Todos los establecimientos, lotes y campañas producen datasets en el mismo formato, habilitando analítica y benchmarking a nivel de toda la empresa.
 - **Integración fluida**: Los datasets enriquecidos se conectan directamente con análisis de zonas de manejo, interpretación de ensayos, prescripciones de dosis variable y dashboards de inteligencia de negocio.
