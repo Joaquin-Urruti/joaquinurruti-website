@@ -54,7 +54,7 @@ La mayoría de los profesionales GIS están familiarizados con trabajar con rast
 
 Este enfoque se rompe cuando necesitás analizar patrones temporales. **XArray trata tus 288 rasters como un único dataset multidimensional** organizado por tiempo, latitud y longitud.
 
-![Estructura de Datos de XArray](/es/docs/assets/blog/PMRA/xarray-datastructure.png)
+![Estructura de Datos de XArray](../../assets/blog/PMRA/xarray-datastructure.png)
 
 
 En lugar de gestionar 288 archivos, trabajás con una sola estructura de datos unificada. Esto hace que las consultas temporales sean instantáneas: "¿Cuál fue la precipitación promedio en esta ubicación en todos los eneros?" se convierte en una sola línea de código.
