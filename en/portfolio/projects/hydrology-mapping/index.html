@@ -1362,6 +1362,7 @@
 </ul>
 </div>
 <h3 id="processing-diagram">Processing Diagram</h3>
+<div align="center" style="margin: 0 auto; display: block; max-width: 1400px;">
 <pre class="mermaid-custom"><code>flowchart TD
     A["Google Earth Engine&lt;br/&gt;FABDEM Extraction"] --&gt; B["GeoTIFF Export&lt;br/&gt;Clipped to AOI"]
     B --&gt; C["DEM Conditioning&lt;br/&gt;Breaching &amp; Filling"]
@@ -1382,6 +1383,8 @@
     class C,D1,D2 core
     class E1,E2,F cache
     class G data</code></pre>
+</div>
+
 <hr />
 <h2 id="implementation-highlights">Implementation Highlights</h2>
 <h3 id="1-fabdem-extraction-via-gee-python-api">1. FABDEM Extraction via GEE Python API</h3>
