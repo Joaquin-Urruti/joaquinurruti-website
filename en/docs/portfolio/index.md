@@ -21,6 +21,12 @@ Welcome to my portfolio of geospatial data science and AI projects. Each project
 
     Satellite-based historical water risk analysis using Google Earth Engine and Dynamic World to characterize flood probability across agricultural fields. The workflow processes 6+ years of Sentinel-2 imagery, producing monthly risk profiles and per-parcel comparisons that directly support farmland purchase and leasing decisions.
 
+-   [Hydrological Mapping: Automated Waterlogging Detection at Field Scale](projects/hydrology-mapping.md)
+
+    ---
+
+    Automated geospatial pipeline using FABDEM, Google Earth Engine, and WhiteboxTools to identify topographic depressions and drainage pathways across agricultural fields. Delivers 50 m buffer restriction zones for silo bag placement and frost-risk assessment — processing 130,000+ hectares per run with zero manual digitizing.
+
 -   [Automatic phytosanitary application compliance mapping](projects/phytosanitary-compliance-mapping.md)
 
     ---

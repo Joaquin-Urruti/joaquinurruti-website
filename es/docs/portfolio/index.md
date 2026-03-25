@@ -21,6 +21,12 @@ Bienvenido a mi portfolio de proyectos de ciencia de datos geoespaciales e IA. C
 
     Análisis histórico de riesgo hídrico basado en imágenes satelitales usando Google Earth Engine y Dynamic World para caracterizar la probabilidad de inundación en campos agrícolas. El flujo de trabajo procesa 6+ años de imágenes Sentinel-2, produciendo perfiles de riesgo mensuales y comparaciones por lote que respaldan directamente las decisiones de compra y arrendamiento de tierras.
 
+-   [Mapeo Hidrológico: Detección Automatizada de Áreas de Anegamiento a Escala Regional](projects/hydrology-mapping.md)
+
+    ---
+
+    Pipeline geoespacial automatizado con FABDEM, Google Earth Engine y WhiteboxTools para identificar depresiones topográficas y vías de drenaje en campos agrícolas. Genera zonas de restricción con buffer de 50 m para colocación de silobolsas y evaluación de riesgo de heladas — más de 130.000 hectáreas por ejecución sin digitalización manual.
+
 -   [Mapeo automático de cumplimiento de aplicaciones fitosanitarias](projects/phytosanitary-compliance-mapping.md)
 
     ---
