@@ -71,6 +71,7 @@ Most freely available DEMs (SRTM, Copernicus DEM) retain surface elevation artif
 
 ### Processing Diagram
 
+<div align="center" style="margin: 0 auto; display: block; max-width: 1400px;">
 ```mermaid
 flowchart TD
     A["Google Earth Engine<br/>FABDEM Extraction"] --> B["GeoTIFF Export<br/>Clipped to AOI"]
@@ -93,6 +94,7 @@ flowchart TD
     class E1,E2,F cache
     class G data
 ```
+</div>
 
 ---
 

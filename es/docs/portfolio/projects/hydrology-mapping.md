@@ -71,6 +71,7 @@ La mayoría de los DEMs gratuitos (SRTM, Copernicus DEM) conservan artefactos de
 
 ### Diagrama de Procesamiento
 
+<div align="center" style="margin: 0 auto; display: block; max-width: 1400px;">
 ```mermaid
 flowchart TD
     A["Google Earth Engine<br/>Extracción FABDEM"] --> B["Exportación GeoTIFF<br/>Recortada al AOI"]
@@ -93,6 +94,7 @@ flowchart TD
     class E1,E2,F cache
     class G data
 ```
+</div>
 
 ---
 
