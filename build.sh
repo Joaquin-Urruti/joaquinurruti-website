@@ -20,21 +20,21 @@ echo "Building Spanish site..."
 cd es && uv run mkdocs build -d ../site/es
 cd ..
 
-echo "Setting English as default (copying to root)..."
-cp -r site/en/* site/
+echo "Setting Spanish as default (copying to root)..."
+cp -r site/es/* site/
 
-# Create a redirect index.html at root that goes to /en/
+# Create a redirect index.html at root that goes to /es/
 cat > site/index.html << 'EOF'
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=/en/">
-    <link rel="canonical" href="https://joaquinurruti.com/en/">
+    <meta http-equiv="refresh" content="0; url=/es/">
+    <link rel="canonical" href="https://joaquinurruti.com/es/">
 </head>
 <body>
-    <p>Redirecting to <a href="/en/">English version</a>...</p>
+    <p>Redirecting to <a href="/es/">Versión en español</a>...</p>
 </body>
 </html>
 EOF

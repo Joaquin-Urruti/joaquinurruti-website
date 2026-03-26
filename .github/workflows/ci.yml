@@ -35,8 +35,8 @@ jobs:
       run: cd es && mkdocs build -d ../site/es
       env:
         GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
-    - name: Copy English as default
-      run: cp -r site/en/* site/
+    - name: Copy Spanish as default
+      run: cp -r site/es/* site/
     - name: Create root redirect
       run: |
         cat > site/index.html << 'EOF'
@@ -45,11 +45,11 @@ jobs:
         <head>
             <meta charset="utf-8">
             <title>Redirecting...</title>
-            <meta http-equiv="refresh" content="0; url=/en/">
-            <link rel="canonical" href="https://joaquinurruti.com/en/">
+            <meta http-equiv="refresh" content="0; url=/es/">
+            <link rel="canonical" href="https://joaquinurruti.com/es/">
         </head>
         <body>
-            <p>Redirecting to <a href="/en/">English version</a>...</p>
+            <p>Redirecting to <a href="/es/">Versión en español</a>...</p>
         </body>
         </html>
         EOF
