@@ -1,16 +1,16 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Automated pipeline using FABDEM, Google Earth Engine, and WhiteboxTools to map topographic depressions, drainage pathways, and buffer-based restriction zones for silo bags and frost risk.">
+        <meta name="description" content="Pipeline automatizado con FABDEM, Google Earth Engine y WhiteboxTools para mapear depresiones topográficas, vías de drenaje y zonas de restricción con buffer para silobolsas y riesgo de heladas.">
       
       
       
-        <link rel="canonical" href="https://joaquinurruti.com/en/portfolio/projects/hydrology-mapping/">
+        <link rel="canonical" href="https://joaquinurruti.com/es/portfolio/projects/hydrology-mapping/">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Hydrological Mapping: Automated Waterlogging Detection at Field Scale - Joaquin Urruti</title>
+        <title>Mapeo Hidrológico: Detección Automatizada de Áreas de Anegamiento a Escala Regional - Joaquin Urruti</title>
       
     
     
@@ -92,8 +92,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
-          Skip to content
+        <a href="#descripcion-general" class="md-skip">
+          Saltar a contenido
         </a>
       
     </div>
@@ -105,7 +105,7 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
     <a href="../../.." title="Joaquin Urruti" class="md-header__button md-logo" aria-label="Joaquin Urruti" data-md-component="logo">
       
   <img src="../../../assets/logo_ju.svg" alt="logo">
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hydrological Mapping: Automated Waterlogging Detection at Field Scale
+              Mapeo Hidrológico: Detección Automatizada de Áreas de Anegamiento a Escala Regional
             
           </span>
         </div>
@@ -138,9 +138,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
       </label>
     
@@ -148,9 +148,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
       </label>
     
@@ -165,7 +165,7 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
@@ -199,16 +199,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Buscar">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -221,7 +221,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicializando búsqueda
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -242,7 +242,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -258,7 +258,7 @@
           
   
   
-  Home
+  Inicio
 
         </a>
       </li>
@@ -278,7 +278,7 @@
           
   
   
-  Case Studies
+  Casos de Estudio
 
         </a>
       </li>
@@ -328,7 +328,7 @@
 
   
 
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Joaquin Urruti" class="md-nav__button md-logo" aria-label="Joaquin Urruti" data-md-component="logo">
       
@@ -372,7 +372,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Inicio
   
 
     
@@ -388,7 +388,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Home
+    Inicio
   
 
           </label>
@@ -408,7 +408,7 @@
   <span class="md-ellipsis">
     
   
-    About
+    Sobre mí
   
 
     
@@ -461,7 +461,7 @@
   <span class="md-ellipsis">
     
   
-    Case Studies
+    Casos de Estudio
   
 
     
@@ -477,7 +477,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Case Studies
+    Casos de Estudio
   
 
           </label>
@@ -497,7 +497,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Resumen
   
 
     
@@ -543,7 +543,7 @@
   <span class="md-ellipsis">
     
   
-    Projects
+    Proyectos
   
 
     
@@ -559,7 +559,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Projects
+    Proyectos
   
 
           </label>
@@ -579,7 +579,7 @@
   <span class="md-ellipsis">
     
   
-    End-to-End Yield Monitor Processing Pipeline
+    Flujo de Procesamiento de Monitores de Rendimiento de Punta a Punta
   
 
     
@@ -607,7 +607,7 @@
   <span class="md-ellipsis">
     
   
-    Water Risk Assessment for Agricultural Land Acquisition
+    Evaluación de Riesgo Hídrico para Adquisición de Tierras Agrícolas
   
 
     
@@ -635,7 +635,7 @@
   <span class="md-ellipsis">
     
   
-    Automatic crop protection compliance mapping across Argentina
+    Mapeo automático de cumplimiento de aplicaciones fitosanitarias en Argentina
   
 
     
@@ -663,7 +663,7 @@
   <span class="md-ellipsis">
     
   
-    Semi-Automatic Land Cover Classification with Sentinel-2
+    Clasificación Semi-Automática de Cobertura del Suelo con Sentinel-2
   
 
     
@@ -691,7 +691,7 @@
   <span class="md-ellipsis">
     
   
-    Computing Large-Scale Distance Matrices with a Local OSRM Server
+    Cálculo de Matrices de Distancia a Gran Escala con un Servidor OSRM Local
   
 
     
@@ -719,7 +719,7 @@
   <span class="md-ellipsis">
     
   
-    GeoNode Deployment - Open Source Geospatial Platform
+    Despliegue de GeoNode - Plataforma Geoespacial Open Source
   
 
     
@@ -864,7 +864,7 @@
   <span class="md-ellipsis">
     
   
-    Archive
+    Archivo
   
 
     
@@ -880,7 +880,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Archive
+    Archivo
   
 
           </label>
@@ -956,7 +956,7 @@
   <span class="md-ellipsis">
     
   
-    Categories
+    Categorías
   
 
     
@@ -972,7 +972,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Categories
+    Categorías
   
 
           </label>
@@ -987,44 +987,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/ai-engineering/" class="md-nav__link">
+      <a href="../../../blog/category/comandos/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    AI Engineering
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../blog/category/commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Commands
+    Comandos
   
 
     
@@ -1077,44 +1047,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/data-extraction/" class="md-nav__link">
+      <a href="../../../blog/category/extracci%C3%B3n-de-datos/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data Extraction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../blog/category/document-processing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Document Processing
+    Extracción de Datos
   
 
     
@@ -1167,6 +1107,96 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../blog/category/herramientas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Herramientas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/ingenier%C3%ADa-de-ia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ingeniería de IA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/procesamiento-de-documentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesamiento de Documentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="../../../blog/category/python/" class="md-nav__link">
         
   
@@ -1197,44 +1227,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/quick-tips/" class="md-nav__link">
+      <a href="../../../blog/category/tips-r%C3%A1pidos/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Quick Tips
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../blog/category/tools/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tools
+    Tips Rápidos
   
 
     
@@ -1310,68 +1310,68 @@
 
 
 
-  <h1>Hydrological Mapping: Automated Waterlogging Detection at Field Scale</h1>
+  <h1>Mapeo Hidrológico: Detección Automatizada de Áreas de Anegamiento a Escala Regional</h1>
 
 <div class="admonition abstract">
-<p class="admonition-title">Case Study Summary</p>
-<p><strong>Industry</strong>: Agricultural Technology / Precision Agriculture</p>
-<p><strong>Impact Metrics</strong>:</p>
+<p class="admonition-title">Resumen del Caso de Estudio</p>
+<p><strong>Industria</strong>: Tecnología Agropecuaria / Agricultura de Precisión</p>
+<p><strong>Métricas de Impacto</strong>:</p>
 <ul>
-<li>130,000+ hectares analyzed across multiple producers in a single processing run</li>
-<li>100% automated identification of concave drainage areas — zero manual digitizing required</li>
-<li>50-meter buffer zones automatically generated around every identified restriction zone</li>
-<li>Reusable pipeline applicable to frost-risk and silo-bag placement assessments simultaneously</li>
+<li>Más de 130.000 hectáreas analizadas en múltiples establecimientos en una sola ejecución</li>
+<li>100% de identificación automatizada de áreas cóncavas sin drenaje — sin digitalización manual</li>
+<li>Zonas de restricción con buffer de 50 m generadas automáticamente alrededor de cada área identificada</li>
+<li>Pipeline reutilizable para evaluación de riesgo de heladas y ubicación de silobolsas de forma simultánea</li>
 </ul>
 </div>
 <hr />
-<h2 id="overview">Overview</h2>
-<p>This project delivers an automated geospatial pipeline to identify topographic depressions — areas where water accumulates under continuous precipitation — and map the drainage pathways connecting them across agricultural fields. The outputs directly support precision farm management decisions, specifically determining safe placement zones for silo bags and flagging areas with elevated frost risk.</p>
+<h2 id="descripcion-general">Descripción General</h2>
+<p>Este proyecto entrega un pipeline geoespacial automatizado para identificar depresiones topográficas —áreas donde el agua se acumularía bajo precipitaciones continuas— y mapear las vías de drenaje que las conectan a lo largo de campos agrícolas. Los resultados apoyan directamente decisiones de manejo agropecuario de precisión: determinar zonas seguras para la colocación de silobolsas e identificar áreas con mayor riesgo de heladas.</p>
 <hr />
-<h2 id="the-challenge">The Challenge</h2>
-<p>Improper silo bag placement in Argentinian agricultural fields is a persistent operational risk. Concave areas that lack natural drainage can accumulate water after heavy rainfall events, leading to grain moisture damage and significant economic losses. Identifying these zones traditionally required either agronomist field surveys — costly and time-consuming at scale — or manual interpretation of elevation data with no standardized methodology.</p>
-<p>Beyond silo bag placement, the same topographic patterns that create waterlogging risk are also correlated with cold air pooling and elevated frost risk, a secondary use case that existing farm management tools rarely address in an automated, field-scale workflow.</p>
-<p>Key constraints the solution had to address:</p>
+<h2 id="el-problema">El Problema</h2>
+<p>La ubicación inadecuada de silobolsas en campos agrícolas de Argentina representa un riesgo operativo persistente. Las áreas cóncavas sin drenaje natural pueden acumular agua tras lluvias intensas, provocando daños por humedad en el grano y pérdidas económicas significativas. Identificar estas zonas de forma tradicional requería relevamientos en campo por parte de agrónomos —costosos y lentos a escala— o interpretación manual de datos de elevación sin una metodología estandarizada.</p>
+<p>Más allá de la ubicación de silobolsas, los mismos patrones topográficos que generan riesgo de anegamiento están correlacionados con la acumulación de aire frío y mayor riesgo de heladas, un caso de uso secundario que las herramientas de gestión agrícola existentes raramente abordan de forma automatizada a escala de lote.</p>
+<p>Restricciones clave que la solución debía resolver:</p>
 <ul>
-<li><strong>Scale</strong>: The analysis needed to be reproducible across multiple fields without manual rework per parcel.</li>
-<li><strong>Data quality</strong>: Standard elevation models (SRTM, ASTER) contain significant vegetation and building noise in agricultural landscapes; a bare-earth model was required.</li>
-<li><strong>Practicality of output</strong>: Results needed to include a conservative buffer zone to translate raw topographic analysis into actionable restriction polygons.</li>
+<li><strong>Escala</strong>: El análisis debía ser reproducible en múltiples campos sin retrabajo manual por parcela.</li>
+<li><strong>Calidad del dato</strong>: Los modelos de elevación estándar (SRTM, ASTER) contienen ruido significativo por vegetación y construcciones en paisajes agrícolas; se requería un modelo de tierra desnuda.</li>
+<li><strong>Practicidad del output</strong>: Los resultados debían incluir una zona de buffer conservadora para traducir el análisis topográfico en polígonos de restricción accionables.</li>
 </ul>
 <hr />
-<h2 id="technical-approach">Technical Approach</h2>
-<h3 id="technology-stack">Technology Stack</h3>
+<h2 id="enfoque-tecnico">Enfoque Técnico</h2>
+<h3 id="stack-tecnologico">Stack Tecnológico</h3>
 <ul>
-<li><strong>Elevation Data</strong>: <a href="https://gee-community-catalog.org/projects/fabdem/">FABDEM</a> (Forest And Buildings removed Copernicus DEM) — a bare-earth global DEM at ~30m resolution, free of vegetation and building artifacts</li>
-<li><strong>Data Extraction</strong>: Google Earth Engine Python API (<code>earthengine-api</code>)</li>
-<li><strong>Hydrological Processing</strong>: WhiteboxTools Python frontend (<code>whitebox</code>)</li>
-<li><strong>Geospatial I/O &amp; Manipulation</strong>: GeoPandas, Fiona, Rasterio, Shapely</li>
-<li><strong>Buffer &amp; Vector Operations</strong>: GeoPandas with projected CRS</li>
-<li><strong>Environment</strong>: Python 3.11+, reproducible via <code>requirements.txt</code></li>
+<li><strong>Datos de Elevación</strong>: <a href="https://gee-community-catalog.org/projects/fabdem/">FABDEM</a> (Forest And Buildings removed Copernicus DEM) — DEM global de tierra desnuda a ~30 m de resolución, libre de artefactos por vegetación y edificaciones</li>
+<li><strong>Extracción de Datos</strong>: API Python de Google Earth Engine (<code>earthengine-api</code>)</li>
+<li><strong>Procesamiento Hidrológico</strong>: WhiteboxTools Python frontend (<code>whitebox</code>)</li>
+<li><strong>I/O y Manipulación Geoespacial</strong>: GeoPandas, Fiona, Rasterio, Shapely</li>
+<li><strong>Operaciones de Buffer y Vectores</strong>: GeoPandas con CRS proyectado</li>
+<li><strong>Entorno</strong>: Python 3.11+, reproducible vía <code>requirements.txt</code></li>
 </ul>
-<h3 id="why-fabdem">Why FABDEM?</h3>
-<p>Most freely available DEMs (SRTM, Copernicus DEM) retain surface elevation artifacts from tree canopy and rooftops. In agricultural areas, this introduces false depressions and distorts flow accumulation models. FABDEM applies machine-learning-based canopy and building removal on top of Copernicus DEM GLO-30, producing a significantly cleaner bare-earth surface — critical for accurate hydrological analysis at field scale.</p>
+<h3 id="por-que-fabdem">¿Por qué FABDEM?</h3>
+<p>La mayoría de los DEMs gratuitos (SRTM, Copernicus DEM) conservan artefactos de elevación por copa de árboles y techos de edificaciones. En zonas agrícolas, esto genera depresiones falsas y distorsiona los modelos de acumulación de flujo. FABDEM aplica remoción de canopeo y construcciones basada en machine learning sobre el Copernicus DEM GLO-30, produciendo una superficie de tierra desnuda significativamente más limpia —crítica para un análisis hidrológico preciso a escala de lote.</p>
 <div class="admonition info">
-<p class="admonition-title">System Architecture</p>
-<p>The pipeline follows a linear ETL structure: cloud extraction → local hydrological processing → vector output with buffer zones.</p>
-<p><strong>Components</strong>:</p>
+<p class="admonition-title">Arquitectura del Sistema</p>
+<p>El pipeline sigue una estructura ETL lineal: extracción en la nube → procesamiento hidrológico local → output vectorial con zonas de buffer.</p>
+<p><strong>Componentes</strong>:</p>
 <ul>
-<li><strong>GEE Extraction Module</strong>: Fetches and clips FABDEM tiles for the area of interest, exports as GeoTIFF to Google Drive</li>
-<li><strong>WhiteboxTools Processing Module</strong>: Performs DEM conditioning, depression filling/breach analysis, flow direction, flow accumulation, and stream network extraction</li>
-<li><strong>Depression Mapping Module</strong>: Derives filled-DEM difference raster to isolate concave areas; vectorizes and filters by minimum area threshold</li>
-<li><strong>Drainage Path Module</strong>: Extracts flow accumulation network above a configurable threshold; converts to polyline vector</li>
-<li><strong>Buffer &amp; Restriction Zone Module</strong>: Applies 50 m planar buffer to depression polygons; merges overlapping zones; outputs final restriction layer</li>
+<li><strong>Módulo de Extracción GEE</strong>: Obtiene y recorta tiles de FABDEM para el área de interés; exporta como GeoTIFF a Google Drive</li>
+<li><strong>Módulo de Procesamiento WhiteboxTools</strong>: Ejecuta acondicionamiento del DEM, análisis de relleno/breach de depresiones, dirección de flujo, acumulación de flujo y extracción de red de drenaje</li>
+<li><strong>Módulo de Mapeo de Depresiones</strong>: Calcula el raster diferencia DEM rellenado − DEM original para aislar áreas cóncavas; vectoriza y filtra por umbral de área mínima</li>
+<li><strong>Módulo de Vías de Drenaje</strong>: Extrae la red de acumulación de flujo sobre un umbral configurable; convierte a vector de polilíneas</li>
+<li><strong>Módulo de Buffer y Zonas de Restricción</strong>: Aplica buffer planimétrico de 50 m a los polígonos de depresión; disuelve zonas superpuestas; genera la capa de restricción final</li>
 </ul>
 </div>
-<h3 id="processing-diagram">Processing Diagram</h3>
+<h3 id="diagrama-de-procesamiento">Diagrama de Procesamiento</h3>
 <div align="center" style="margin: 0 auto; display: block; max-width: 1400px;">
 <pre class="mermaid-custom"><code>flowchart TD
-    A["Google Earth Engine&lt;br/&gt;FABDEM Extraction"] --&gt; B["GeoTIFF Export&lt;br/&gt;Clipped to AOI"]
-    B --&gt; C["DEM Conditioning&lt;br/&gt;Breaching &amp; Filling"]
-    C --&gt; D1["Depression Raster&lt;br/&gt;Filled DEM − Original DEM"]
-    C --&gt; D2["Flow Direction&lt;br/&gt;&amp; Accumulation"]
-    D1 --&gt; E1["Depression Polygons&lt;br/&gt;Vectorization + Area Filter"]
-    D2 --&gt; E2["Drainage Network&lt;br/&gt;Stream Threshold Extraction"]
-    E1 --&gt; F["50 m Buffer Zones&lt;br/&gt;Restriction Polygons"]
-    E2 --&gt; G["Final Output&lt;br/&gt;GeoPackage / Shapefile"]
+    A["Google Earth Engine&lt;br/&gt;Extracción FABDEM"] --&gt; B["Exportación GeoTIFF&lt;br/&gt;Recortada al AOI"]
+    B --&gt; C["Acondicionamiento DEM&lt;br/&gt;Breaching y relleno"]
+    C --&gt; D1["Raster de depresiones&lt;br/&gt;DEM rellenado − DEM original"]
+    C --&gt; D2["Dirección de flujo&lt;br/&gt;y acumulación"]
+    D1 --&gt; E1["Polígonos de depresiones&lt;br/&gt;Vectorización + filtro por área"]
+    D2 --&gt; E2["Red de drenaje&lt;br/&gt;Extracción por umbral de cursos"]
+    E1 --&gt; F["Zonas de buffer 50 m&lt;br/&gt;Polígonos de restricción"]
+    E2 --&gt; G["Entrega final&lt;br/&gt;GeoPackage / Shapefile"]
     F --&gt; G
 
     classDef proxy fill:#EED5CF,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
@@ -1386,67 +1386,67 @@
 </div>
 
 <hr />
-<h2 id="implementation-highlights">Implementation Highlights</h2>
-<h3 id="1-fabdem-extraction-via-gee-python-api">1. FABDEM Extraction via GEE Python API</h3>
-<p>The area of interest is passed as a GeoJSON geometry. The script clips the FABDEM image collection, reprojects to a metric CRS, and exports the result as a Cloud Optimized GeoTIFF.</p>
-<p><img alt="Hydrological digital elevation model (DEM)" src="../../../assets/hidrology/hidrology-dem.png" /></p>
-<p><em>Hydrological digital elevation model (DEM) for the study area.</em></p>
-<h3 id="2-depression-identification-with-whiteboxtools">2. Depression Identification with WhiteboxTools</h3>
-<p>Depressions are extracted by computing the difference between the hydrologically filled DEM and the original. Cells with a positive difference indicate topographic sinks — areas where water would accumulate.</p>
-<h3 id="3-drainage-network-extraction">3. Drainage Network Extraction</h3>
-<p>Flow direction and accumulation are computed using the D8 algorithm. A configurable upstream-area threshold determines the minimum catchment size required for a cell to be classified as a stream channel.</p>
-<p><img alt="Corresponding satellite imagery" src="../../../assets/hidrology/hidrology-satellite.png" /></p>
-<p><em>Corresponding satellite imagery for visual reference alongside the terrain model.</em></p>
-<h3 id="4-buffer-zone-generation">4. Buffer Zone Generation</h3>
-<p>A 50 m planar buffer is applied to each depression polygon to define the practical exclusion zone for silo bag placement. Overlapping buffers are dissolved to avoid redundant polygons.</p>
+<h2 id="detalles-de-implementacion">Detalles de Implementación</h2>
+<h3 id="1-extraccion-de-fabdem-mediante-la-api-python-de-gee">1. Extracción de FABDEM mediante la API Python de GEE</h3>
+<p>El área de interés se pasa como geometría GeoJSON. El script recorta la colección de imágenes FABDEM, reproyecta a un CRS métrico y exporta el resultado como GeoTIFF optimizado para la nube.</p>
+<p><img alt="Modelo digital de elevación hidrológico (DEM)" src="../../../assets/hidrology/hidrology-dem.png" /></p>
+<p><em>Modelo digital de elevación hidrológico (DEM) para el área de estudio.</em></p>
+<h3 id="2-identificacion-de-depresiones-con-whiteboxtools">2. Identificación de Depresiones con WhiteboxTools</h3>
+<p>Las depresiones se extraen calculando la diferencia entre el DEM hidrológicamente rellenado y el original. Las celdas con diferencia positiva indican sumideros topográficos —áreas donde el agua se acumularía.</p>
+<h3 id="3-extraccion-de-la-red-de-drenaje">3. Extracción de la Red de Drenaje</h3>
+<p>La dirección y acumulación de flujo se calculan con el algoritmo D8. Un umbral de área de captación configurable determina el tamaño mínimo de cuenca necesario para que una celda sea clasificada como canal de drenaje.</p>
+<p><img alt="Imagen satelital correspondiente" src="../../../assets/hidrology/hidrology-satellite.png" /></p>
+<p><em>Imagen satelital correspondiente como referencia visual junto al modelo de terreno.</em></p>
+<h3 id="4-generacion-de-zonas-de-restriccion">4. Generación de Zonas de Restricción</h3>
+<p>Se aplica un buffer planimétrico de 50 m a cada polígono de depresión para definir la zona de exclusión operativa para la colocación de silobolsas. Los buffers superpuestos se disuelven para evitar polígonos redundantes.</p>
 <hr />
-<h2 id="results-impact">Results &amp; Impact</h2>
+<h2 id="resultados-e-impacto">Resultados e Impacto</h2>
 <table>
 <thead>
 <tr>
-<th>Metric</th>
-<th>Value</th>
+<th>Métrica</th>
+<th>Valor</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Hectares analyzed</td>
-<td>130,000+ ha across multiple producers</td>
+<td>Hectáreas analizadas</td>
+<td>más de 130.000 ha en múltiples establecimientos</td>
 </tr>
 <tr>
-<td>DEM resolution used</td>
-<td>30 m (FABDEM bare-earth)</td>
+<td>Resolución del DEM utilizado</td>
+<td>30 m (FABDEM tierra desnuda)</td>
 </tr>
 <tr>
-<td>Prior automated equivalent</td>
-<td>None — analysis was not performed at this scale before</td>
+<td>Equivalente automatizado previo</td>
+<td>Ninguno — este análisis no se realizaba a esta escala</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li><strong>Elimination of manual error</strong>: The hydrological approach is fully deterministic — every depression above the minimum area threshold is captured, with no analyst subjectivity.</li>
-<li><strong>Reusability</strong>: The same pipeline can be re-run for any new field geometry without code changes — only the AOI input changes.</li>
-<li><strong>Dual-use output</strong>: The depression layer is directly reusable for frost-risk assessment, providing additional agronomic value beyond the original silo bag placement use case.</li>
-<li><strong>Conservative risk management</strong>: The 50 m buffer adds a safety margin beyond the depression edge, accounting for DEM resolution limitations and equipment maneuvering space.</li>
+<li><strong>Eliminación del error manual</strong>: El enfoque hidrológico es completamente determinístico — toda depresión por encima del umbral mínimo de área es capturada, sin subjetividad del analista.</li>
+<li><strong>Reutilización</strong>: El mismo pipeline puede re-ejecutarse para cualquier nueva geometría de campo sin modificar el código — solo cambia el input del área de interés.</li>
+<li><strong>Output de doble uso</strong>: La capa de depresiones es directamente reutilizable para evaluación de riesgo de heladas, aportando valor agronómico adicional más allá del caso de uso original de silobolsas.</li>
+<li><strong>Gestión de riesgo conservadora</strong>: El buffer de 50 m agrega un margen de seguridad más allá del borde de la depresión, contemplando las limitaciones de resolución del DEM y el espacio de maniobra de la maquinaria.</li>
 </ul>
 <hr />
-<h2 id="my-contributions">My Contributions</h2>
+<h2 id="mis-contribuciones">Mis Contribuciones</h2>
 <ul>
-<li><strong>End-to-end pipeline design and implementation</strong> in Python, from GEE data extraction to final vector outputs</li>
-<li><strong>Elevation data selection</strong>: Evaluated multiple global DEM products and selected FABDEM specifically for its bare-earth correction, which is critical for agricultural hydrological analysis</li>
-<li><strong>WhiteboxTools integration</strong>: Configured and chained the full hydrological workflow — breach analysis, flow direction, flow accumulation, stream extraction, and depression vectorization</li>
-<li><strong>Buffer parameterization</strong>: Defined the 50 m exclusion buffer as a conservative operational threshold, with the parameter exposed for client customization</li>
-<li><strong>Secondary use-case identification</strong>: Recognized and documented the frost-risk application of the depression layer as an added deliverable at no additional processing cost</li>
-<li><strong>Output format decisions</strong>: Delivered results in GeoPackage for compatibility with QGIS, ArcGIS, and common farm management platforms</li>
+<li><strong>Diseño e implementación end-to-end del pipeline</strong> en Python, desde la extracción de datos en GEE hasta los outputs vectoriales finales</li>
+<li><strong>Selección del dato de elevación</strong>: Evalué múltiples productos DEM globales y seleccioné FABDEM específicamente por su corrección de tierra desnuda, crítica para el análisis hidrológico en contextos agrícolas</li>
+<li><strong>Integración de WhiteboxTools</strong>: Configuré y encadené el flujo hidrológico completo — análisis de breaching y relleno, dirección de flujo, acumulación de flujo, extracción de la red de drenaje y vectorización de depresiones</li>
+<li><strong>Parametrización del buffer</strong>: Definí el buffer de exclusión de 50 m como umbral operativo conservador, con el parámetro expuesto para personalización por cliente</li>
+<li><strong>Identificación del caso de uso secundario</strong>: Reconocí y documenté la aplicación de la capa de depresiones para riesgo de heladas como entregable adicional sin costo de procesamiento extra</li>
+<li><strong>Decisiones de formato de output</strong>: Entregué los resultados en GeoPackage para compatibilidad con QGIS, ArcGIS y plataformas comunes de gestión agrícola</li>
 </ul>
 <hr />
 <div class="grid cards" style="margin-top: 3rem">
 <ul>
 <li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 22v-2s5-2 10-2 10 2 10 2v2zm9.3-12.9c-1.2-3.9-7.3-3-7.3-3s.2 7.8 5.9 6.6C9.5 9.8 8 9 8 9c2.8 0 3 3.4 3 3.4V17h2v-4.2s0-3.9 3-4.9c0 0-2 3-2 5 7 .7 7-8.9 7-8.9s-8.9-1-9.7 5.1"/></svg></span> Need to map drainage risk on your fields?</p>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 22v-2s5-2 10-2 10 2 10 2v2zm9.3-12.9c-1.2-3.9-7.3-3-7.3-3s.2 7.8 5.9 6.6C9.5 9.8 8 9 8 9c2.8 0 3 3.4 3 3.4V17h2v-4.2s0-3.9 3-4.9c0 0-2 3-2 5 7 .7 7-8.9 7-8.9s-8.9-1-9.7 5.1"/></svg></span> ¿Necesitás mapear el riesgo hídrico en tus campos?</p>
 <hr />
-<p>Do you need to identify waterlogging or frost-risk zones at field scale before the next planting season? Book a free 30-minute session to discuss your specific terrain and data constraints.</p>
-<p><a class="md-button md-button--primary" href="https://calendly.com">Book a free call <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19z"/></svg></span></a></p>
+<p>¿Querés identificar zonas de anegamiento o riesgo de heladas a escala de lote antes de la próxima campaña? Reservá una sesión gratuita de 30 minutos para analizar tus datos y explorar cómo podemos trabajar juntos.</p>
+<p><a class="md-button md-button--primary" href="https://calendly.com">Reservar una llamada gratuita <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19z"/></svg></span></a></p>
 </li>
 </ul>
 </div>
@@ -1488,7 +1488,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      &copy; 2026 <a href="https://www.linkedin.com/in/jurruti/" target="_blank" rel="noopener">Joaquín Urruti</a>. All rights reserved.
+      &copy; 2026 <a href="https://www.linkedin.com/in/jurruti/" target="_blank" rel="noopener">Joaquín Urruti</a>. Todos los derechos reservados.
 
     </div>
   
@@ -1562,7 +1562,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["search.suggest", "toc.integrate", "navigation.tabs", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.instant.prefetch", "content.tooltips", "content.tabs.link", "content.code.copy", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["search.suggest", "toc.integrate", "navigation.tabs", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.instant.prefetch", "content.tooltips", "content.tabs.link", "content.code.copy", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>

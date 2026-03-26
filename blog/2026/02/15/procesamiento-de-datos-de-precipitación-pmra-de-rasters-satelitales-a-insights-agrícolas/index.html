@@ -1,19 +1,19 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How to convert 288 precipitation rasters from CONICET's PMRA dataset into analyzable dataframes for agricultural land evaluation across Argentina using xarray.">
+        <meta name="description" content="Cómo convertir 288 rasters de precipitación del dataset PMRA de CONICET en dataframes analizables para la evaluación de tierras agrícolas en Argentina usando xarray.">
       
       
       
-        <link rel="canonical" href="https://joaquinurruti.com/en/blog/2026/02/15/processing-pmra-precipitation-data-from-satellite-rasters-to-agricultural-insights/">
+        <link rel="canonical" href="https://joaquinurruti.com/es/blog/2026/02/15/procesamiento-de-datos-de-precipitaci%C3%B3n-pmra-de-rasters-satelitales-a-insights-agr%C3%ADcolas/">
       
       
-        <link rel="prev" href="../../11/eliminating-manual-data-entry-from-pdfs-with-ai-a-production-pipeline/">
+        <link rel="prev" href="../../11/eliminando-la-carga-manual-de-datos-desde-pdfs-con-ia-un-pipeline-productivo/">
       
       
       
@@ -29,7 +29,7 @@
     
     
       
-        <title>Processing PMRA Precipitation Data: From Satellite Rasters to Agricultural Insights - Joaquin Urruti</title>
+        <title>Procesamiento de Datos de Precipitación PMRA: De Rasters Satelitales a Insights Agrícolas - Joaquin Urruti</title>
       
     
     
@@ -94,8 +94,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#processing-pmra-precipitation-data-from-satellite-rasters-to-agricultural-insights" class="md-skip">
-          Skip to content
+        <a href="#procesamiento-de-datos-de-precipitacion-pmra-de-rasters-satelitales-a-insights-agricolas" class="md-skip">
+          Saltar a contenido
         </a>
       
     </div>
@@ -107,7 +107,7 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
     <a href="../../../../.." title="Joaquin Urruti" class="md-header__button md-logo" aria-label="Joaquin Urruti" data-md-component="logo">
       
   <img src="../../../../../assets/logo_ju.svg" alt="logo">
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Processing PMRA Precipitation Data: From Satellite Rasters to Agricultural Insights
+              Procesamiento de Datos de Precipitación PMRA: De Rasters Satelitales a Insights Agrícolas
             
           </span>
         </div>
@@ -140,9 +140,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
       </label>
     
@@ -150,9 +150,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
       </label>
     
@@ -167,7 +167,7 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
@@ -201,16 +201,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Buscar">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -223,7 +223,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicializando búsqueda
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -244,7 +244,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -260,7 +260,7 @@
           
   
   
-  Home
+  Inicio
 
         </a>
       </li>
@@ -280,7 +280,7 @@
           
   
   
-  Case Studies
+  Casos de Estudio
 
         </a>
       </li>
@@ -334,7 +334,7 @@
 
   
 
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../../../.." title="Joaquin Urruti" class="md-nav__button md-logo" aria-label="Joaquin Urruti" data-md-component="logo">
       
@@ -378,7 +378,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Inicio
   
 
     
@@ -394,7 +394,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Home
+    Inicio
   
 
           </label>
@@ -414,7 +414,7 @@
   <span class="md-ellipsis">
     
   
-    About
+    Sobre mí
   
 
     
@@ -467,7 +467,7 @@
   <span class="md-ellipsis">
     
   
-    Case Studies
+    Casos de Estudio
   
 
     
@@ -483,7 +483,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Case Studies
+    Casos de Estudio
   
 
           </label>
@@ -503,7 +503,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Resumen
   
 
     
@@ -549,7 +549,7 @@
   <span class="md-ellipsis">
     
   
-    Projects
+    Proyectos
   
 
     
@@ -565,7 +565,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Projects
+    Proyectos
   
 
           </label>
@@ -585,7 +585,7 @@
   <span class="md-ellipsis">
     
   
-    End-to-End Yield Monitor Processing Pipeline
+    Flujo de Procesamiento de Monitores de Rendimiento de Punta a Punta
   
 
     
@@ -613,7 +613,7 @@
   <span class="md-ellipsis">
     
   
-    Water Risk Assessment for Agricultural Land Acquisition
+    Evaluación de Riesgo Hídrico para Adquisición de Tierras Agrícolas
   
 
     
@@ -641,7 +641,7 @@
   <span class="md-ellipsis">
     
   
-    Automatic crop protection compliance mapping across Argentina
+    Mapeo automático de cumplimiento de aplicaciones fitosanitarias en Argentina
   
 
     
@@ -669,7 +669,7 @@
   <span class="md-ellipsis">
     
   
-    Semi-Automatic Land Cover Classification with Sentinel-2
+    Clasificación Semi-Automática de Cobertura del Suelo con Sentinel-2
   
 
     
@@ -697,7 +697,7 @@
   <span class="md-ellipsis">
     
   
-    Computing Large-Scale Distance Matrices with a Local OSRM Server
+    Cálculo de Matrices de Distancia a Gran Escala con un Servidor OSRM Local
   
 
     
@@ -725,7 +725,7 @@
   <span class="md-ellipsis">
     
   
-    GeoNode Deployment - Open Source Geospatial Platform
+    Despliegue de GeoNode - Plataforma Geoespacial Open Source
   
 
     
@@ -878,7 +878,7 @@
   <span class="md-ellipsis">
     
   
-    Archive
+    Archivo
   
 
     
@@ -894,7 +894,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Archive
+    Archivo
   
 
           </label>
@@ -973,7 +973,7 @@
   <span class="md-ellipsis">
     
   
-    Categories
+    Categorías
   
 
     
@@ -989,7 +989,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Categories
+    Categorías
   
 
           </label>
@@ -1004,44 +1004,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/ai-engineering/" class="md-nav__link">
+      <a href="../../../../category/comandos/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    AI Engineering
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../category/commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Commands
+    Comandos
   
 
     
@@ -1094,44 +1064,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/data-extraction/" class="md-nav__link">
+      <a href="../../../../category/extracci%C3%B3n-de-datos/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data Extraction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../category/document-processing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Document Processing
+    Extracción de Datos
   
 
     
@@ -1184,6 +1124,96 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../category/herramientas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Herramientas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ingenier%C3%ADa-de-ia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ingeniería de IA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/procesamiento-de-documentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesamiento de Documentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../category/python/" class="md-nav__link">
         
   
@@ -1214,44 +1244,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/quick-tips/" class="md-nav__link">
+      <a href="../../../../category/tips-r%C3%A1pidos/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Quick Tips
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../category/tools/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tools
+    Tips Rápidos
   
 
     
@@ -1329,7 +1329,7 @@
                 <a href="../../../../" class="md-nav__link">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
                   <span class="md-ellipsis">
-                    Back to index
+                    Regresar al índice
                   </span>
                 </a>
               </div>
@@ -1366,7 +1366,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2026-02-15 00:00:00+00:00" class="md-ellipsis">February 15, 2026</time>
+                        <time datetime="2026-02-15 00:00:00+00:00" class="md-ellipsis">15 de febrero de 2026</time>
                       </div>
                     </li>
                     
@@ -1375,7 +1375,7 @@
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
                           <span class="md-ellipsis">
-                            in
+                            en
                             
                               <a href="../../../../category/gis/">GIS</a>, 
                               <a href="../../../../category/data-engineering/">Data Engineering</a>, 
@@ -1391,7 +1391,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              6 min read
+                              7 minutos de lectura
                             
                           </span>
                         </div>
@@ -1406,7 +1406,7 @@
           
             
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
   
   
   
@@ -1415,15 +1415,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Tabla de contenidos
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-this-matters-for-agricultural-operations" class="md-nav__link">
+  <a href="#por-que-esto-importa-para-las-operaciones-agricolas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why This Matters for Agricultural Operations
+        Por Qué Esto Importa para las Operaciones Agrícolas
       
     </span>
   </a>
@@ -1431,10 +1431,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-pmra-dataset-what-youre-working-with" class="md-nav__link">
+  <a href="#el-dataset-pmra-con-que-estas-trabajando" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The PMRA Dataset: What You're Working With
+        El Dataset PMRA: Con Qué Estás Trabajando
       
     </span>
   </a>
@@ -1442,10 +1442,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-xarray-changes-everything" class="md-nav__link">
+  <a href="#por-que-xarray-cambia-todo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why XArray Changes Everything
+        Por Qué XArray Cambia Todo
       
     </span>
   </a>
@@ -1453,10 +1453,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setting-up-the-environment" class="md-nav__link">
+  <a href="#configuracion-del-entorno" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setting Up the Environment
+        Configuración del Entorno
       
     </span>
   </a>
@@ -1464,10 +1464,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#loading-and-organizing-288-rasters" class="md-nav__link">
+  <a href="#cargando-y-organizando-288-rasters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Loading and Organizing 288 Rasters
+        Cargando y Organizando 288 Rasters
       
     </span>
   </a>
@@ -1475,10 +1475,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#building-the-xarray-dataset" class="md-nav__link">
+  <a href="#construyendo-el-dataset-xarray" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Building the XArray Dataset
+        Construyendo el Dataset XArray
       
     </span>
   </a>
@@ -1486,10 +1486,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exporting-to-netcdf-for-reusability" class="md-nav__link">
+  <a href="#exportando-a-netcdf-para-reutilizacion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Exporting to NetCDF for Reusability
+        Exportando a NetCDF para Reutilización
       
     </span>
   </a>
@@ -1497,10 +1497,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#converting-to-dataframe-for-analysis" class="md-nav__link">
+  <a href="#convirtiendo-a-dataframe-para-analisis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Converting to DataFrame for Analysis
+        Convirtiendo a DataFrame para Análisis
       
     </span>
   </a>
@@ -1508,10 +1508,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-a-geodataframe-for-spatial-analysis" class="md-nav__link">
+  <a href="#creando-un-geodataframe-para-analisis-espacial" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Creating a GeoDataFrame for Spatial Analysis
+        Creando un GeoDataFrame para Análisis Espacial
       
     </span>
   </a>
@@ -1519,10 +1519,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#real-world-application-field-evaluation" class="md-nav__link">
+  <a href="#aplicacion-real-evaluacion-de-campos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Real-World Application: Field Evaluation
+        Aplicación Real: Evaluación de Campos
       
     </span>
   </a>
@@ -1530,10 +1530,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-takeaways" class="md-nav__link">
+  <a href="#conclusiones-clave" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Takeaways
+        Conclusiones Clave
       
     </span>
   </a>
@@ -1541,10 +1541,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#proximos-pasos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next Steps
+        Próximos Pasos
       
     </span>
   </a>
@@ -1566,43 +1566,43 @@
 
 
 
-<h1 id="processing-pmra-precipitation-data-from-satellite-rasters-to-agricultural-insights">Processing PMRA Precipitation Data: From Satellite Rasters to Agricultural Insights</h1>
-<p>When evaluating fields for lease in Argentina, one question always comes up: <strong>how much rain does this area really get?</strong> The problem is that ground-based weather stations are sparse and don't cover most rural areas. Satellite data like ERA5 has low spatial resolution and questionable accuracy for local decisions.</p>
+<h1 id="procesamiento-de-datos-de-precipitacion-pmra-de-rasters-satelitales-a-insights-agricolas">Procesamiento de Datos de Precipitación PMRA: De Rasters Satelitales a Insights Agrícolas</h1>
+<p>Al evaluar campos para arrendamiento en Argentina, siempre surge una pregunta: <strong>¿cuánta lluvia recibe realmente esta zona?</strong> El problema es que las estaciones meteorológicas terrestres son escasas y no cubren la mayoría de las áreas rurales. Los datos satelitales como ERA5 tienen baja resolución espacial y precisión cuestionable para decisiones locales.</p>
 <!-- more -->
 
-<p>The good news is that CONICET's PMRA (Precipitaciones Mensuales de la República Argentina) dataset solves this. It combines ground measurements with four global precipitation products using random forest regression. This gives us 5km resolution precipitation data for every corner of Argentina from 2000 to 2023.</p>
-<p>But there's a challenge: <strong>the data comes as 288 individual raster files</strong>. One file per month for 24 years. Working with them one by one is impractical when you need to analyze trends, calculate statistics, or compare regions.</p>
-<h2 id="why-this-matters-for-agricultural-operations">Why This Matters for Agricultural Operations</h2>
-<p>In my role leading innovation at an agricultural company, we constantly evaluate new land for lease. Understanding precipitation patterns is critical for:</p>
+<p>La buena noticia es que el dataset PMRA (Precipitaciones Mensuales de la República Argentina) de CONICET resuelve esto. Combina mediciones terrestres con cuatro productos globales de precipitación mediante regresión de random forest. Esto nos da datos de precipitación con resolución de 5km para cada rincón de Argentina desde 2000 hasta 2023.</p>
+<p>Pero hay un desafío: <strong>los datos vienen como 288 archivos raster individuales</strong>. Un archivo por mes durante 24 años. Trabajar con ellos uno por uno es impracticable cuando necesitás analizar tendencias, calcular estadísticas o comparar regiones.</p>
+<h2 id="por-que-esto-importa-para-las-operaciones-agricolas">Por Qué Esto Importa para las Operaciones Agrícolas</h2>
+<p>En mi rol liderando innovación en una empresa agrícola, evaluamos constantemente nuevas tierras para arrendamiento. Entender los patrones de precipitación es crítico para:</p>
 <ul>
-<li>Estimating crop yield potential in unfamiliar regions</li>
-<li>Assessing drought risk for insurance decisions  </li>
-<li>Planning rotation strategies based on historical rainfall distribution</li>
+<li>Estimar el potencial de rendimiento de cultivos en regiones desconocidas</li>
+<li>Evaluar el riesgo de sequía para decisiones de seguros</li>
+<li>Planificar estrategias de rotación basadas en la distribución histórica de lluvias</li>
 </ul>
-<p>Without complete precipitation data, we're making expensive decisions with incomplete information. PMRA fills that gap, but only if we can process it efficiently.</p>
-<h2 id="the-pmra-dataset-what-youre-working-with">The PMRA Dataset: What You're Working With</h2>
-<p>The PMRA dataset provides monthly precipitation data at 5km resolution across Argentina. Each GeoTIFF file covers the entire country for one month. The naming convention follows this pattern: <code>PMRA_[month]_[year].tif</code>. </p>
-<p>Download the complete dataset from <a href="https://drive.google.com/drive/folders/1c4OUapwH5QwLwZ-oxQV1-Q6wrQkhV7Gy">CONICET's Drive folder</a>. You'll get 288 files totaling several gigabytes of precipitation data.</p>
-<p>They also developed a Google Earth Engine app that lets you visualize the 23 annual precipitation maps, define an area of interest, and generate a chart of the monthly precipitation time series.</p>
-<p><img alt="PMRA Precipitation Rasters" src="../../../../../assets/blog/PMRA/gee_app.jpeg" /></p>
-<p>The key advantage over ERA5 or other satellite products is the combination of ground truth with satellite data. This hybrid approach delivers better local accuracy without requiring a weather station in your specific area.</p>
-<h2 id="why-xarray-changes-everything">Why XArray Changes Everything</h2>
-<p>Most GIS professionals are familiar with working with individual rasters using tools like <code>rasterio</code> or GDAL. The standard workflow looks like this:</p>
+<p>Sin datos completos de precipitación, estamos tomando decisiones costosas con información incompleta. PMRA llena ese vacío, pero solo si podemos procesarlo eficientemente.</p>
+<h2 id="el-dataset-pmra-con-que-estas-trabajando">El Dataset PMRA: Con Qué Estás Trabajando</h2>
+<p>El dataset PMRA proporciona datos mensuales de precipitación con resolución de 5km en toda Argentina. Cada archivo GeoTIFF cubre el país entero para un mes. La convención de nombres sigue este patrón: <code>PMRA_[mes]_[año].tif</code>.</p>
+<p>Descargá el dataset completo desde la <a href="https://drive.google.com/drive/folders/1c4OUapwH5QwLwZ-oxQV1-Q6wrQkhV7Gy">carpeta de Drive de CONICET</a>. Obtendrás 288 archivos que totalizan varios gigabytes con datos de precipitación. </p>
+<p>Además, desarrollaron una app en Google Earth Engine que permite visualizar los 23 mapas anuales de precipitación,  delimitar un área de interés y generar un gráfico de la serie temporal de precipitaciones mensuales</p>
+<p><img alt="Rasters de precipitación PMRA" src="../../../../../assets/blog/PMRA/gee_app.jpeg" /></p>
+<p>La ventaja clave sobre ERA5 u otros productos satelitales es la combinación de datos de campo con datos satelitales. Este enfoque híbrido entrega mejor precisión local sin requerir una estación meteorológica en tu área específica.</p>
+<h2 id="por-que-xarray-cambia-todo">Por Qué XArray Cambia Todo</h2>
+<p>La mayoría de los profesionales GIS están familiarizados con trabajar con rasters individuales usando herramientas como <code>rasterio</code> o GDAL. El flujo de trabajo estándar se ve así:</p>
 <ol>
-<li>Open raster file  </li>
-<li>Extract data  </li>
-<li>Process  </li>
-<li>Close file  </li>
-<li>Repeat 287 more times</li>
+<li>Abrir archivo raster</li>
+<li>Extraer datos</li>
+<li>Procesar</li>
+<li>Cerrar archivo</li>
+<li>Repetir 287 veces más</li>
 </ol>
-<p>This approach breaks down when you need to analyze temporal patterns. <strong>XArray treats your 288 rasters as a single multidimensional dataset</strong> organized by time, latitude, and longitude.</p>
-<p><img alt="XArray Data Structure" src="../../../../../assets/blog/PMRA/xarray-datastructure.png" /></p>
-<p>Instead of managing 288 file handles, you work with one unified data structure. This makes temporal queries instant: "What was the average precipitation in this location across all Januaries?" becomes a single line of code.</p>
-<h2 id="setting-up-the-environment">Setting Up the Environment</h2>
-<p>First, install the required libraries:</p>
+<p>Este enfoque se rompe cuando necesitás analizar patrones temporales. <strong>XArray trata tus 288 rasters como un único dataset multidimensional</strong> organizado por tiempo, latitud y longitud.</p>
+<p><img alt="Estructura de Datos de XArray" src="../../../../../assets/blog/PMRA/xarray-datastructure.png" /></p>
+<p>En lugar de gestionar 288 archivos, trabajás con una sola estructura de datos unificada. Esto hace que las consultas temporales sean instantáneas: "¿Cuál fue la precipitación promedio en esta ubicación en todos los eneros?" se convierte en una sola línea de código.</p>
+<h2 id="configuracion-del-entorno">Configuración del Entorno</h2>
+<p>Primero, instalá las librerías necesarias:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>rioxarray<span class="w"> </span>xarray<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>geopandas<span class="w"> </span>matplotlib<span class="w"> </span>python-dotenv
 </span></code></pre></div>
-<p>The core imports for this workflow:</p>
+<p>Las importaciones principales para este flujo de trabajo:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">rioxarray</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
@@ -1618,15 +1618,16 @@
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">load_dotenv</span><span class="p">()</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">xr</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">keep_attrs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">display_expand_data</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
-<h2 id="loading-and-organizing-288-rasters">Loading and Organizing 288 Rasters</h2>
-<p>The first challenge is reading all raster files and organizing them chronologically. The file names contain the month and year, but we need to parse them into proper datetime objects.</p>
+<p>Uso <code>python-dotenv</code> para mantener las rutas de archivos en variables de entorno en lugar de hardcodearlas. Esto hace que el código sea portable entre diferentes máquinas y mantiene las rutas sensibles fuera del control de versiones.</p>
+<h2 id="cargando-y-organizando-288-rasters">Cargando y Organizando 288 Rasters</h2>
+<p>El primer desafío es leer todos los archivos raster y organizarlos cronológicamente. Los nombres de archivo contienen el mes y el año, pero necesitamos parsearlos a objetos datetime correctos.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">rasters_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;RASTERS_PATH&#39;</span><span class="p">)</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">raster_files</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">rasters_path</span><span class="p">)</span> <span class="o">/</span> <span class="s1">&#39;*.tif&#39;</span><span class="p">)</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">file_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">raster_files</span><span class="p">)]</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">file_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">raster_files</span><span class="p">)]</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">months_str_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ene&#39;</span><span class="p">,</span> <span class="s1">&#39;feb&#39;</span><span class="p">,</span> <span class="s1">&#39;mar&#39;</span><span class="p">,</span> <span class="s1">&#39;abr&#39;</span><span class="p">,</span> <span class="s1">&#39;may&#39;</span><span class="p">,</span> <span class="s1">&#39;jun&#39;</span><span class="p">,</span> 
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">months_str_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ene&#39;</span><span class="p">,</span> <span class="s1">&#39;feb&#39;</span><span class="p">,</span> <span class="s1">&#39;mar&#39;</span><span class="p">,</span> <span class="s1">&#39;abr&#39;</span><span class="p">,</span> <span class="s1">&#39;may&#39;</span><span class="p">,</span> <span class="s1">&#39;jun&#39;</span><span class="p">,</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>                   <span class="s1">&#39;jul&#39;</span><span class="p">,</span> <span class="s1">&#39;ago&#39;</span><span class="p">,</span> <span class="s1">&#39;sep&#39;</span><span class="p">,</span> <span class="s1">&#39;oct&#39;</span><span class="p">,</span> <span class="s1">&#39;nov&#39;</span><span class="p">,</span> <span class="s1">&#39;dic&#39;</span><span class="p">]</span>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">months_num_list</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">my_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">months_str_list</span><span class="p">,</span> <span class="n">months_num_list</span><span class="p">))</span>
@@ -1642,19 +1643,19 @@
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="n">date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">month</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="n">dates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
 </span></code></pre></div>
-<p>This extracts the Spanish month abbreviations and years from filenames, then converts them to Python datetime objects. These become the time dimension in our XArray dataset.</p>
-<h2 id="building-the-xarray-dataset">Building the XArray Dataset</h2>
-<p>Here's where XArray shows its power. Instead of looping through files, we concatenate all rasters along the time dimension in one operation:</p>
+<p>Esto extrae las abreviaturas de meses en español y los años de los nombres de archivo, luego los convierte a objetos datetime de Python. Estos se convierten en la dimensión temporal de nuestro dataset XArray.</p>
+<h2 id="construyendo-el-dataset-xarray">Construyendo el Dataset XArray</h2>
+<p>Aquí es donde XArray muestra su poder. En lugar de iterar sobre archivos, concatenamos todos los rasters a lo largo de la dimensión temporal en una sola operación:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">time_var</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">dates</span><span class="p">)</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">geotiffs_da</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">file_paths</span><span class="p">],</span> 
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">geotiffs_da</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">rioxarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">file_paths</span><span class="p">],</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>                        <span class="n">dim</span><span class="o">=</span><span class="n">time_var</span><span class="p">)</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">geotiffs_ds</span> <span class="o">=</span> <span class="n">geotiffs_da</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="s2">&quot;band&quot;</span><span class="p">)</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">geotiffs_ds</span> <span class="o">=</span> <span class="n">geotiffs_ds</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;precipitacion&#39;</span><span class="p">})</span>
 </span></code></pre></div>
-<p>What we get is a Dataset with dimensions <code>(time: 288, y: 851, x: 713)</code>. That's 288 months, 851 latitude points, and 713 longitude points. Every pixel now has a complete 24-year precipitation history.</p>
-<p>The output structure looks like this:</p>
+<p>Lo que obtenemos es un Dataset con dimensiones <code>(time: 288, y: 851, x: 713)</code>. Eso son 288 meses, 851 puntos de latitud y 713 puntos de longitud. Cada píxel ahora tiene un historial completo de precipitaciones de 24 años.</p>
+<p>La estructura de salida se ve así:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&lt;xarray.Dataset&gt;
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Dimensions:        (time: 288, y: 851, x: 713)
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Coordinates:
@@ -1665,59 +1666,59 @@
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Data variables:
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    precipitacion  (time, y, x) float32 nan nan nan nan nan ... nan nan nan nan
 </span></code></pre></div>
-<h2 id="exporting-to-netcdf-for-reusability">Exporting to NetCDF for Reusability</h2>
-<p>Once you've built the XArray dataset, save it as NetCDF. This is a self-describing binary format designed for scientific data:</p>
+<h2 id="exportando-a-netcdf-para-reutilizacion">Exportando a NetCDF para Reutilización</h2>
+<p>Una vez que construiste el dataset XArray, guardalo como NetCDF. Este es un formato binario autodescriptivo diseñado para datos científicos:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">out_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">raster_files</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;precipitaciones_arg_PMRA.nc&#39;</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">geotiffs_ds</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="n">out_file</span><span class="p">)</span>
 </span></code></pre></div>
-<p>NetCDF files preserve all metadata and load much faster than processing 288 individual rasters. The next time you need this data, you can load the entire 24-year dataset in seconds instead of minutes.</p>
-<h2 id="converting-to-dataframe-for-analysis">Converting to DataFrame for Analysis</h2>
-<p>XArray is great for spatial operations, but most analysis tools expect tabular data. Converting to a Pandas DataFrame gives you access to the full ecosystem of Python data science libraries:</p>
+<p>Los archivos NetCDF preservan todos los metadatos y se cargan mucho más rápido que procesar 288 rasters individuales. La próxima vez que necesites estos datos, podés cargar el dataset completo de 24 años en segundos en lugar de minutos.</p>
+<h2 id="convirtiendo-a-dataframe-para-analisis">Convirtiendo a DataFrame para Análisis</h2>
+<p>XArray es genial para operaciones espaciales, pero la mayoría de las herramientas de análisis esperan datos tabulares. Convertir a un DataFrame de Pandas te da acceso al ecosistema completo de librerías de ciencia de datos de Python:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">precipitacion_df</span> <span class="o">=</span> <span class="n">geotiffs_ds</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">precipitacion_df</span> <span class="o">=</span> <span class="n">precipitacion_df</span><span class="p">[[</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;precipitacion&#39;</span><span class="p">]]</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">precipitacion_df</span> <span class="o">=</span> <span class="n">precipitacion_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">precipitacion_df</span><span class="o">.</span><span class="n">precipitacion</span> <span class="o">=</span> <span class="n">precipitacion_df</span><span class="o">.</span><span class="n">precipitacion</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int8&#39;</span><span class="p">)</span>
 </span></code></pre></div>
-<p>This creates a <strong>40+ million row DataFrame</strong> with columns for time, coordinates, and precipitation values. Each row represents one pixel at one point in time.</p>
-<p>The <code>.dropna()</code> step is important because many pixels fall outside Argentina's borders and contain null values. Removing them reduces file size and speeds up analysis.</p>
-<h2 id="creating-a-geodataframe-for-spatial-analysis">Creating a GeoDataFrame for Spatial Analysis</h2>
-<p>If you need to perform spatial operations like overlays or spatial joins, convert to a GeoDataFrame:</p>
+<p>Esto crea un <strong>DataFrame de más de 40 millones de filas</strong> con columnas para tiempo, coordenadas y valores de precipitación. Cada fila representa un píxel en un punto en el tiempo.</p>
+<p>El paso <code>.dropna()</code> es importante porque muchos píxeles caen fuera de las fronteras de Argentina y contienen valores nulos. Eliminarlos reduce el tamaño del archivo y acelera el análisis.</p>
+<h2 id="creando-un-geodataframe-para-analisis-espacial">Creando un GeoDataFrame para Análisis Espacial</h2>
+<p>Si necesitás realizar operaciones espaciales como overlays o spatial joins, convertí a GeoDataFrame:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">shapely.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">Point</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">precipitacion_df</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">Point</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span> <span class="k">for</span> <span class="n">xy</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">precipitacion_df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> 
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">precipitacion_df</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">Point</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span> <span class="k">for</span> <span class="n">xy</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">precipitacion_df</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>                                                         <span class="n">precipitacion_df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])]</span>
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">precipitacion_df</span><span class="p">)</span>
 </span></code></pre></div>
-<p>This adds a geometry column with Point objects for each coordinate pair. Now you can:</p>
+<p>Esto agrega una columna de geometría con objetos Point para cada par de coordenadas. Ahora podés:</p>
 <ul>
-<li>Spatially join with field boundaries</li>
-<li>Filter by region using polygons</li>
-<li>Calculate zonal statistics for specific areas</li>
-<li>Export to GIS formats like GeoPackage or Shapefile</li>
+<li>Hacer spatial join con límites de campos</li>
+<li>Filtrar por región usando polígonos</li>
+<li>Calcular estadísticas zonales para áreas específicas</li>
+<li>Exportar a formatos GIS como GeoPackage o Shapefile</li>
 </ul>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">out_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">raster_files</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;precipitaciones_arg_PMRA.gpkg&#39;</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">gdf</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="n">out_file</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;GPKG&#39;</span><span class="p">)</span>
 </span></code></pre></div>
-<h2 id="real-world-application-field-evaluation">Real-World Application: Field Evaluation</h2>
-<p>When we evaluate a potential lease field, I run this workflow to extract precipitation data for that specific location. The process takes minutes:</p>
+<h2 id="aplicacion-real-evaluacion-de-campos">Aplicación Real: Evaluación de Campos</h2>
+<p>Cuando evaluamos un campo potencial para arrendamiento, ejecuto este flujo de trabajo para extraer datos de precipitación para esa ubicación específica. El proceso toma minutos:</p>
 <ol>
-<li>Load the field boundary as a polygon</li>
-<li>Spatially filter the GeoDataFrame to points within the boundary</li>
-<li>Group by time and calculate mean precipitation</li>
-<li>Generate monthly and annual statistics</li>
-<li>Compare against regional benchmarks</li>
+<li>Cargar el límite del campo como un polígono</li>
+<li>Filtrar espacialmente el GeoDataFrame a puntos dentro del límite</li>
+<li>Agrupar por tiempo y calcular la precipitación media</li>
+<li>Generar estadísticas mensuales y anuales</li>
+<li>Comparar contra benchmarks regionales</li>
 </ol>
-<p>This gives us a 24-year precipitation history for a field we've never farmed. We can identify drought-prone years, calculate growing season rainfall, and assess variability.</p>
-<p><strong>Without PMRA data, we'd be relying on the nearest weather station, which might be 50km away in a different microclimate.</strong> With PMRA, we have site-specific data at 5km resolution.</p>
-<h2 id="key-takeaways">Key Takeaways</h2>
-<p><strong>You don't need weather stations to analyze precipitation anywhere in Argentina.</strong> PMRA provides validated, high-resolution data that combines the accuracy of ground measurements with the coverage of satellite data.</p>
-<p>XArray is the right tool for this job because it handles multidimensional geospatial data natively. Trying to process 288 rasters individually is inefficient and error-prone.</p>
-<p>The output formats matter. NetCDF for quick reloading, DataFrames for statistical analysis, GeoDataFrames for spatial operations. Choose the format that matches your downstream workflow.</p>
-<h2 id="next-steps">Next Steps</h2>
-<p>If you're working with agricultural data in Argentina and need to incorporate precipitation analysis into your decision-making, this workflow is a starting point. The same approach works for other gridded time-series datasets like temperature, NDVI, or soil moisture.</p>
-<p>I'm always interested in discussing how spatial data analysis can improve agricultural operations. If you're tackling similar challenges or want to explore how these techniques apply to your specific use case, let's connect.</p>
-<p><a class="md-button md-button--primary" href="https://calendly.com/joaquin-urruti/consultation-30min">Book Free Intro Call <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19z"/></svg></span></a></p>
-<p>You can also find me on <a href="https://www.linkedin.com/in/jurruti/">LinkedIn</a> where I share more about GIS, Python, and agricultural innovation.</p>
+<p>Esto nos da un historial de precipitaciones de 24 años para un campo que nunca cultivamos. Podemos identificar años propensos a sequía, calcular la lluvia de la temporada de crecimiento y evaluar la variabilidad.</p>
+<p><strong>Sin los datos de PMRA, estaríamos dependiendo de la estación meteorológica más cercana, que podría estar a 50km en un microclima diferente.</strong> Con PMRA, tenemos datos específicos del sitio con resolución de 5km.</p>
+<h2 id="conclusiones-clave">Conclusiones Clave</h2>
+<p><strong>No necesitás estaciones meteorológicas para analizar precipitaciones en cualquier lugar de Argentina.</strong> PMRA proporciona datos validados de alta resolución que combinan la precisión de mediciones terrestres con la cobertura de datos satelitales.</p>
+<p>XArray es la herramienta correcta para este trabajo porque maneja datos geoespaciales multidimensionales de forma nativa. Intentar procesar 288 rasters individualmente es ineficiente y propenso a errores.</p>
+<p>Los formatos de salida importan. NetCDF para recarga rápida, DataFrames para análisis estadístico, GeoDataFrames para operaciones espaciales. Elegí el formato que se ajuste a tu flujo de trabajo posterior.</p>
+<h2 id="proximos-pasos">Próximos Pasos</h2>
+<p>Si estás trabajando con datos agrícolas en Argentina y necesitás incorporar análisis de precipitación en tu toma de decisiones, este flujo de trabajo es un punto de partida. El mismo enfoque funciona para otros datasets de series temporales grillados como temperatura, NDVI o humedad del suelo.</p>
+<p>Siempre me interesa discutir cómo el análisis de datos espaciales puede mejorar las operaciones agrícolas. Si estás enfrentando desafíos similares o querés explorar cómo estas técnicas se aplican a tu caso de uso específico, conectemos.</p>
+<p><a class="md-button md-button--primary" href="https://calendly.com/joaquin-urruti/consultation-30min">Agendar Llamada Introductoria Gratuita <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19z"/></svg></span></a></p>
+<p>También podés encontrarme en <a href="https://www.linkedin.com/in/jurruti/">LinkedIn</a> donde comparto más sobre GIS, Python e innovación agrícola.</p>
 
 
 
@@ -1755,20 +1756,20 @@
       
         
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../../11/eliminating-manual-data-entry-from-pdfs-with-ai-a-production-pipeline/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Eliminating Manual Data Entry from PDFs with AI: A Production Pipeline">
+          <a href="../../11/eliminando-la-carga-manual-de-datos-desde-pdfs-con-ia-un-pipeline-productivo/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Eliminando la Carga Manual de Datos desde PDFs con IA: Un Pipeline Productivo">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Previous
+                Anterior
               </span>
               <div class="md-ellipsis">
-                Eliminating Manual Data Entry from PDFs with AI: A Production Pipeline
+                Eliminando la Carga Manual de Datos desde PDFs con IA: Un Pipeline Productivo
               </div>
             </div>
           </a>
@@ -1782,7 +1783,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      &copy; 2026 <a href="https://www.linkedin.com/in/jurruti/" target="_blank" rel="noopener">Joaquín Urruti</a>. All rights reserved.
+      &copy; 2026 <a href="https://www.linkedin.com/in/jurruti/" target="_blank" rel="noopener">Joaquín Urruti</a>. Todos los derechos reservados.
 
     </div>
   
@@ -1856,7 +1857,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["search.suggest", "toc.integrate", "navigation.tabs", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.instant.prefetch", "content.tooltips", "content.tabs.link", "content.code.copy", "navigation.footer"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["search.suggest", "toc.integrate", "navigation.tabs", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.instant.prefetch", "content.tooltips", "content.tabs.link", "content.code.copy", "navigation.footer"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>

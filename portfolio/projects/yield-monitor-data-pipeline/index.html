@@ -1,16 +1,16 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Automated workflow for transforming noisy yield monitor data into clean, enriched spatial datasets for precision agriculture">
+        <meta name="description" content="Flujo de trabajo automatizado para transformar datos ruidosos de monitores de rendimiento en datasets espaciales limpios y enriquecidos para agricultura de precisión">
       
       
       
-        <link rel="canonical" href="https://joaquinurruti.com/en/portfolio/projects/yield-monitor-data-pipeline/">
+        <link rel="canonical" href="https://joaquinurruti.com/es/portfolio/projects/yield-monitor-data-pipeline/">
       
       
         <link rel="prev" href="../../">
@@ -31,7 +31,7 @@
     
     
       
-        <title>End-to-End Yield Monitor Processing Pipeline - Joaquin Urruti</title>
+        <title>Flujo de Procesamiento de Monitores de Rendimiento de Punta a Punta - Joaquin Urruti</title>
       
     
     
@@ -96,8 +96,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
-          Skip to content
+        <a href="#descripcion-general" class="md-skip">
+          Saltar a contenido
         </a>
       
     </div>
@@ -109,7 +109,7 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
     <a href="../../.." title="Joaquin Urruti" class="md-header__button md-logo" aria-label="Joaquin Urruti" data-md-component="logo">
       
   <img src="../../../assets/logo_ju.svg" alt="logo">
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              End-to-End Yield Monitor Processing Pipeline
+              Flujo de Procesamiento de Monitores de Rendimiento de Punta a Punta
             
           </span>
         </div>
@@ -142,9 +142,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
       </label>
     
@@ -152,9 +152,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
       </label>
     
@@ -169,7 +169,7 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
@@ -203,16 +203,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Buscar">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -225,7 +225,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicializando búsqueda
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -246,7 +246,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -262,7 +262,7 @@
           
   
   
-  Home
+  Inicio
 
         </a>
       </li>
@@ -284,7 +284,7 @@
           
   
   
-  Case Studies
+  Casos de Estudio
 
         </a>
       </li>
@@ -334,7 +334,7 @@
 
   
 
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Joaquin Urruti" class="md-nav__button md-logo" aria-label="Joaquin Urruti" data-md-component="logo">
       
@@ -378,7 +378,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Inicio
   
 
     
@@ -394,7 +394,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Home
+    Inicio
   
 
           </label>
@@ -414,7 +414,7 @@
   <span class="md-ellipsis">
     
   
-    About
+    Sobre mí
   
 
     
@@ -470,7 +470,7 @@
   <span class="md-ellipsis">
     
   
-    Case Studies
+    Casos de Estudio
   
 
     
@@ -486,7 +486,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Case Studies
+    Casos de Estudio
   
 
           </label>
@@ -506,7 +506,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Resumen
   
 
     
@@ -555,7 +555,7 @@
   <span class="md-ellipsis">
     
   
-    Projects
+    Proyectos
   
 
     
@@ -571,7 +571,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Projects
+    Proyectos
   
 
           </label>
@@ -598,7 +598,7 @@
   <span class="md-ellipsis">
     
   
-    End-to-End Yield Monitor Processing Pipeline
+    Flujo de Procesamiento de Monitores de Rendimiento de Punta a Punta
   
 
     
@@ -616,7 +616,7 @@
   <span class="md-ellipsis">
     
   
-    End-to-End Yield Monitor Processing Pipeline
+    Flujo de Procesamiento de Monitores de Rendimiento de Punta a Punta
   
 
     
@@ -628,22 +628,22 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Tabla de contenidos
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#descripcion-general" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Descripción General
       
     </span>
   </a>
@@ -651,10 +651,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-challenge" class="md-nav__link">
+  <a href="#el-desafio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Challenge
+        El Desafío
       
     </span>
   </a>
@@ -662,22 +662,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#technical-approach" class="md-nav__link">
+  <a href="#enfoque-tecnico" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Technical Approach
+        Enfoque Técnico
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Technical Approach">
+    <nav class="md-nav" aria-label="Enfoque Técnico">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#technology-stack" class="md-nav__link">
+  <a href="#stack-tecnologico" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Technology Stack
+        Stack Tecnológico
       
     </span>
   </a>
@@ -685,10 +685,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
+  <a href="#arquitectura" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture
+        Arquitectura
       
     </span>
   </a>
@@ -701,22 +701,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-highlights" class="md-nav__link">
+  <a href="#aspectos-destacados-de-la-implementacion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation Highlights
+        Aspectos Destacados de la Implementación
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Implementation Highlights">
+    <nav class="md-nav" aria-label="Aspectos Destacados de la Implementación">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-noise-filtering-and-smoothing" class="md-nav__link">
+  <a href="#paso-1-filtrado-y-suavizado-de-ruido" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — Noise Filtering and Smoothing
+        Paso 1 — Filtrado y Suavizado de Ruido
       
     </span>
   </a>
@@ -724,10 +724,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-multi-header-calibration-correction" class="md-nav__link">
+  <a href="#paso-2-correccion-de-calibracion-multi-cabezal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 — Multi-Header Calibration Correction
+        Paso 2 — Corrección de Calibración Multi-Cabezal
       
     </span>
   </a>
@@ -735,10 +735,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-edge-point-detection-and-cleanup" class="md-nav__link">
+  <a href="#paso-3-deteccion-y-limpieza-de-puntos-de-borde" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3 — Edge Point Detection and Cleanup
+        Paso 3 — Detección y Limpieza de Puntos de Borde
       
     </span>
   </a>
@@ -746,10 +746,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-spatial-enrichment" class="md-nav__link">
+  <a href="#paso-4-enriquecimiento-espacial" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4 — Spatial Enrichment
+        Paso 4 — Enriquecimiento Espacial
       
     </span>
   </a>
@@ -757,10 +757,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-5-h3-hexagonal-grid-conversion-optional" class="md-nav__link">
+  <a href="#paso-5-conversion-a-grilla-hexagonal-h3-opcional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5 — H3 Hexagonal Grid Conversion (Optional)
+        Paso 5 — Conversión a Grilla Hexagonal H3 (Opcional)
       
     </span>
   </a>
@@ -773,10 +773,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#results-impact" class="md-nav__link">
+  <a href="#resultados-e-impacto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Results &amp; Impact
+        Resultados e Impacto
       
     </span>
   </a>
@@ -784,10 +784,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#my-contributions" class="md-nav__link">
+  <a href="#mis-contribuciones" class="md-nav__link">
     <span class="md-ellipsis">
       
-        My Contributions
+        Mis Contribuciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecciones-aprendidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lecciones Aprendidas
       
     </span>
   </a>
@@ -817,7 +828,7 @@
   <span class="md-ellipsis">
     
   
-    Water Risk Assessment for Agricultural Land Acquisition
+    Evaluación de Riesgo Hídrico para Adquisición de Tierras Agrícolas
   
 
     
@@ -845,7 +856,7 @@
   <span class="md-ellipsis">
     
   
-    Automatic crop protection compliance mapping across Argentina
+    Mapeo automático de cumplimiento de aplicaciones fitosanitarias en Argentina
   
 
     
@@ -873,7 +884,7 @@
   <span class="md-ellipsis">
     
   
-    Semi-Automatic Land Cover Classification with Sentinel-2
+    Clasificación Semi-Automática de Cobertura del Suelo con Sentinel-2
   
 
     
@@ -901,7 +912,7 @@
   <span class="md-ellipsis">
     
   
-    Computing Large-Scale Distance Matrices with a Local OSRM Server
+    Cálculo de Matrices de Distancia a Gran Escala con un Servidor OSRM Local
   
 
     
@@ -929,7 +940,7 @@
   <span class="md-ellipsis">
     
   
-    GeoNode Deployment - Open Source Geospatial Platform
+    Despliegue de GeoNode - Plataforma Geoespacial Open Source
   
 
     
@@ -1074,7 +1085,7 @@
   <span class="md-ellipsis">
     
   
-    Archive
+    Archivo
   
 
     
@@ -1090,7 +1101,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Archive
+    Archivo
   
 
           </label>
@@ -1166,7 +1177,7 @@
   <span class="md-ellipsis">
     
   
-    Categories
+    Categorías
   
 
     
@@ -1182,7 +1193,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Categories
+    Categorías
   
 
           </label>
@@ -1197,44 +1208,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/ai-engineering/" class="md-nav__link">
+      <a href="../../../blog/category/comandos/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    AI Engineering
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../blog/category/commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Commands
+    Comandos
   
 
     
@@ -1287,44 +1268,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/data-extraction/" class="md-nav__link">
+      <a href="../../../blog/category/extracci%C3%B3n-de-datos/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data Extraction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../blog/category/document-processing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Document Processing
+    Extracción de Datos
   
 
     
@@ -1377,6 +1328,96 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../blog/category/herramientas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Herramientas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/ingenier%C3%ADa-de-ia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ingeniería de IA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/category/procesamiento-de-documentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesamiento de Documentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="../../../blog/category/python/" class="md-nav__link">
         
   
@@ -1407,44 +1448,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/quick-tips/" class="md-nav__link">
+      <a href="../../../blog/category/tips-r%C3%A1pidos/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Quick Tips
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../blog/category/tools/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tools
+    Tips Rápidos
   
 
     
@@ -1520,58 +1531,58 @@
 
 
 
-  <h1>End-to-End Yield Monitor Processing Pipeline</h1>
+  <h1>Flujo de Procesamiento de Monitores de Rendimiento de Punta a Punta</h1>
 
 <div class="admonition abstract">
-<p class="admonition-title">Case Study Summary</p>
-<p><strong>Industry</strong>: Precision Agriculture / Agricultural Technology  </p>
-<p><strong>Impact Metrics</strong>:</p>
+<p class="admonition-title">Resumen del Caso de Estudio</p>
+<p><strong>Industria</strong>: Agricultura de Precisión / Tecnología Agrícola  </p>
+<p><strong>Métricas de Impacto</strong>:</p>
 <ul>
-<li>85% reduction in manual yield data processing time per campaign</li>
-<li>130,000+ hectares processed per season across multiple farms</li>
-<li>40–60% noise reduction in raw yield monitor datasets</li>
-<li>Consistent, analysis-ready spatial datasets enabling cross-campaign comparison for the first time</li>
-<li>Full integration with ERP, crop monitoring platforms, and management zone layers</li>
+<li>85% de reducción en el tiempo de procesamiento manual de datos de rendimiento por campaña</li>
+<li>130.000+ hectáreas procesadas por temporada en múltiples establecimientos</li>
+<li>40–60% de reducción de ruido en datasets crudos de monitores de rendimiento</li>
+<li>Datasets espaciales consistentes y listos para análisis, habilitando por primera vez la comparación entre campañas</li>
+<li>Integración completa con ERP, plataformas de monitoreo de cultivos y capas de zonas de manejo</li>
 </ul>
 </div>
-<h2 id="overview">Overview</h2>
-<p>Raw yield monitor data is one of the most valuable agronomic assets in a large-scale farming operation — but only when it is properly processed. This case study describes the design and implementation of an end-to-end workflow that transforms noisy, unreliable yield monitor exports into a clean, enriched, and spatially consistent analytics layer ready for agronomic decision support.</p>
-<h2 id="the-challenge">The Challenge</h2>
-<p>Yield monitors generate massive volumes of georeferenced data during harvest. However, the raw output is plagued by systematic noise: overlap between harvester passes, partially filled headers at field edges, sensor time lag at the beginning of each swath, abrupt speed changes, and calibration drift across different machines or headers operating in the same field.</p>
-<p>Without proper cleaning, yield maps display spatial artifacts that can be mistaken for real agronomic variability. This distorts any downstream analysis — from trial interpretation and environment evaluation to variable rate prescriptions and profitability mapping.</p>
-<p>The operation faced several specific constraints:</p>
+<h2 id="descripcion-general">Descripción General</h2>
+<p>Los datos crudos de monitores de rendimiento son uno de los activos agronómicos más valiosos en una operación agrícola de gran escala — pero solo cuando están correctamente procesados. Este caso de estudio describe el diseño e implementación de un flujo de trabajo de extremo a extremo que transforma las exportaciones ruidosas y poco confiables de monitores de rendimiento en una capa analítica limpia, enriquecida y espacialmente consistente, lista para el soporte de decisiones agronómicas.</p>
+<h2 id="el-desafio">El Desafío</h2>
+<p>Los monitores de rendimiento generan volúmenes masivos de datos georreferenciados durante la cosecha. Sin embargo, la salida cruda está plagada de ruido sistemático: superposición entre pasadas de cosechadora, cabezales parcialmente llenos en los bordes del lote, retardo temporal del sensor al inicio de cada franja, cambios abruptos de velocidad y deriva de calibración entre diferentes máquinas o cabezales operando en el mismo lote.</p>
+<p>Sin un procesamiento adecuado, los mapas de rendimiento muestran artefactos espaciales que pueden confundirse con variabilidad agronómica real. Esto distorsiona cualquier análisis posterior — desde la interpretación de ensayos y la evaluación de ambientes hasta las prescripciones de dosis variable y el mapeo de rentabilidad.</p>
+<p>La operación enfrentaba varias restricciones específicas:</p>
 <ul>
-<li><strong>Multiple machines per field</strong>: Different combines and headers introduced systematic bias that could not be corrected with simple filtering.</li>
-<li><strong>No standardized processing</strong>: Each agronomist handled data differently, producing inconsistent results across farms and seasons.</li>
-<li><strong>Large geographic scale</strong>: With tens of thousands of hectares, a manual or semi-manual approach was not sustainable.</li>
-<li><strong>Integration needs</strong>: Cleaned yield data needed to connect seamlessly with management zones, land capability layers, risk assessments, ERP records, and external crop monitoring platforms.</li>
+<li><strong>Múltiples máquinas por lote</strong>: Diferentes cosechadoras y cabezales introducían sesgo sistemático que no podía corregirse con filtrado simple.</li>
+<li><strong>Sin procesamiento estandarizado</strong>: Cada agrónomo manejaba los datos de forma diferente, produciendo resultados inconsistentes entre establecimientos y campañas.</li>
+<li><strong>Gran escala geográfica</strong>: Con decenas de miles de hectáreas, un enfoque manual o semi-manual no era sostenible.</li>
+<li><strong>Necesidades de integración</strong>: Los datos de rendimiento limpios debían conectarse sin problemas con zonas de manejo, capas de aptitud de suelo, evaluaciones de riesgo, registros del ERP y plataformas externas de monitoreo de cultivos.</li>
 </ul>
-<h2 id="technical-approach">Technical Approach</h2>
-<h3 id="technology-stack">Technology Stack</h3>
+<h2 id="enfoque-tecnico">Enfoque Técnico</h2>
+<h3 id="stack-tecnologico">Stack Tecnológico</h3>
 <ul>
-<li><strong>Language</strong>: Python</li>
-<li><strong>Geospatial Processing</strong>: GeoPandas, Shapely, Fiona, GDAL/OGR, Wbw-Pro</li>
-<li><strong>Spatial Indexing</strong>: H3 (Uber's hexagonal hierarchical spatial index)</li>
-<li><strong>Database</strong>: PostgreSQL with PostGIS</li>
-<li><strong>Visualization</strong>: QGIS for validation and map production</li>
-<li><strong>Integration</strong>: Custom connectors to ERP systems and crop monitoring platforms (SIMA)</li>
-<li><strong>Orchestration</strong>: Modular Python pipeline with configurable parameters per field and campaign</li>
+<li><strong>Lenguaje</strong>: Python</li>
+<li><strong>Procesamiento Geoespacial</strong>: GeoPandas, Shapely, Fiona, GDAL/OGR, Wbw-Pro</li>
+<li><strong>Indexación Espacial</strong>: H3 (índice espacial jerárquico hexagonal de Uber)</li>
+<li><strong>Base de Datos</strong>: PostgreSQL con PostGIS</li>
+<li><strong>Visualización</strong>: QGIS para validación y producción de mapas</li>
+<li><strong>Integración</strong>: Conectores personalizados a sistemas ERP y plataformas de monitoreo de cultivos (SIMA)</li>
+<li><strong>Orquestación</strong>: Pipeline modular en Python con parámetros configurables por lote y campaña</li>
 </ul>
-<h3 id="architecture">Architecture</h3>
+<h3 id="arquitectura">Arquitectura</h3>
 <div align="center" style="margin: 0 auto; display: block; max-width: 1400px;">
 
 <pre class="mermaid-custom"><code>flowchart TD
-    A([📥 Raw Yield Monitor Data]) --&gt; B[🔍 Noise Filtering and Smoothing]
-    B --&gt; C{Multiple Machines?}
-    C --&gt;|Yes| D[⚖️ Multi-Header Calibration Correction]
-    C --&gt;|No| E[📐 Edge Point Detection and Removal]
+    A([📥 Datos Crudos de Monitores]) --&gt; B[🔍 Filtrado y Suavizado de Ruido]
+    B --&gt; C{Múltiples Máquinas?}
+    C --&gt;|Sí| D[⚖️ Corrección de Calibración Multi-Cabezal]
+    C --&gt;|No| E[📐 Detección y Eliminación de Puntos de Borde]
     D --&gt; E
-    E --&gt; F[🗺️ Spatial Enrichment]
-    F --&gt; G{H3 Conversion?}
-    G --&gt;|Yes| H[⬡ H3 Hexagonal Indexing]
-    G --&gt;|No| I[(🗄️ PostGIS Database)]
+    E --&gt; F[🗺️ Enriquecimiento Espacial]
+    F --&gt; G{Conversión H3?}
+    G --&gt;|Sí| H[⬡ Indexación Hexagonal H3]
+    G --&gt;|No| I[(🗄️ Base de Datos PostGIS)]
     H --&gt; I
-    I --&gt; J([📊 Analysis-Ready Dataset])
+    I --&gt; J([📊 Dataset Listo para Análisis])
 
     classDef startEnd fill:#E7F5C5,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
     classDef process fill:#DDEAF6,stroke:#B5C0C0,stroke-width:2px,color:#3A4040
@@ -1586,76 +1597,83 @@
 </div>
 
 <div class="admonition info">
-<p class="admonition-title">System Architecture</p>
-<p>The pipeline is fully modular: each processing step can be configured, skipped, or parameterized independently depending on the characteristics of the field and the harvesting operation. This design allows the same workflow to handle single-machine fields and complex multi-combine scenarios without code changes.</p>
-<p><strong>Core Components</strong>:</p>
+<p class="admonition-title">Arquitectura del Sistema</p>
+<p>El pipeline es completamente modular: cada paso de procesamiento puede configurarse, omitirse o parametrizarse de forma independiente según las características del lote y la operación de cosecha. Este diseño permite que el mismo flujo de trabajo maneje lotes con una sola máquina y escenarios complejos con múltiples cosechadoras sin cambios en el código.</p>
+<p><strong>Componentes Principales</strong>:</p>
 <ul>
-<li><strong>Noise Filter Module</strong>: Applies statistical and spatial filtering to remove common harvesting artifacts</li>
-<li><strong>Calibration Correction Engine</strong>: Detects and normalizes systematic differences between harvesting regions</li>
-<li><strong>Edge Detector</strong>: Identifies and flags points affected by partial header width near boundaries</li>
-<li><strong>Spatial Enrichment Layer</strong>: Joins cleaned data with management zones, land capability, risk layers, and business data</li>
-<li><strong>H3 Indexer</strong>: Converts point-based datasets into compact hexagonal grids for scalable analytics</li>
+<li><strong>Módulo de Filtrado de Ruido</strong>: Aplica filtrado estadístico y espacial para eliminar artefactos comunes de la cosecha</li>
+<li><strong>Motor de Corrección de Calibración</strong>: Detecta y normaliza diferencias sistemáticas entre regiones de cosecha</li>
+<li><strong>Detector de Bordes</strong>: Identifica y marca puntos afectados por ancho parcial del cabezal cerca de los límites</li>
+<li><strong>Capa de Enriquecimiento Espacial</strong>: Vincula datos limpios con zonas de manejo, aptitud de suelo, capas de riesgo y datos de negocio</li>
+<li><strong>Indexador H3</strong>: Convierte datasets basados en puntos en grillas hexagonales compactas para analítica escalable</li>
 </ul>
 </div>
-<h2 id="implementation-highlights">Implementation Highlights</h2>
-<h3 id="step-1-noise-filtering-and-smoothing">Step 1 — Noise Filtering and Smoothing</h3>
-<p>Raw yield points are filtered using a combination of statistical thresholds and spatial consistency checks. This step removes the most common artifacts: extreme outlier values, zero-yield readings, points recorded during speed changes, and time-lag distortions at the start of each pass.</p>
-<p><img alt="Raw vs Clean yield monitor data" src="../../../assets/yield-monitor-data-pipeline/clean_monitors.png" /></p>
-<p><em>Left: Raw yield monitor data showing significant noise and spatial inconsistency. Right: Cleaned and smoothed dataset with artifacts removed, revealing the true spatial yield pattern.</em></p>
-<h3 id="step-2-multi-header-calibration-correction">Step 2 — Multi-Header Calibration Correction</h3>
-<p>When a field has been harvested by more than one combine or header, each machine may record systematically different yield values due to calibration differences. The workflow detects harvesting regions, compares each region against its neighbors, and iteratively applies compensation values until the entire field is normalized to a consistent baseline.</p>
-<p>A key component of this correction is the <strong>yield index</strong> (<code>rinde_ind</code>): for each lot, the monitor yield is expressed as a ratio relative to the lot mean, producing a dimensionless index that captures the spatial variability pattern independently of absolute values. This index is then multiplied by the <strong>ERP yield</strong> (<code>Rinde_Albalanza</code>) — the actual yield calculated from truck scale weights at delivery — which is the most reliable ground-truth measurement available. The result is the <strong>corrected yield</strong> (<code>rinde_corregido</code>): a spatially variable map that preserves the relative pattern from the monitor but is anchored to the real, scale-verified production of each lot.</p>
-<p><img alt="Yield correction data table" src="../../../assets/yield-monitor-data-pipeline/Imagen%201.png" /></p>
-<p><em>Correction table by lot, crop, genotype, treatment, and management zone. The yield index (<code>rinde_ind</code>) expresses each monitor value relative to the lot mean. The corrected yield (<code>rinde_corregido</code>) is obtained by multiplying this index by the ERP scale-based yield (<code>Rinde_Albalanza</code>), anchoring spatial variability to the most reliable production measurement.</em></p>
-<h3 id="step-3-edge-point-detection-and-cleanup">Step 3 — Edge Point Detection and Cleanup</h3>
-<p>Points located near field boundaries are frequently distorted due to partial header width during harvesting. The workflow identifies these edge points using spatial proximity analysis against field boundary geometries and either removes or flags them to prevent their influence on downstream analytics.</p>
-<p><img alt="Edge point detection" src="../../../assets/yield-monitor-data-pipeline/remove-edge-points.png" /></p>
-<p><em>Edge point classification: green points are retained as valid interior data; red points are identified as boundary-affected and excluded from analysis.</em></p>
-<h3 id="step-4-spatial-enrichment">Step 4 — Spatial Enrichment</h3>
-<p>The cleaned yield dataset is spatially joined with multiple contextual layers:</p>
+<h2 id="aspectos-destacados-de-la-implementacion">Aspectos Destacados de la Implementación</h2>
+<h3 id="paso-1-filtrado-y-suavizado-de-ruido">Paso 1 — Filtrado y Suavizado de Ruido</h3>
+<p>Los puntos crudos de rendimiento se filtran usando una combinación de umbrales estadísticos y verificaciones de consistencia espacial. Este paso elimina los artefactos más comunes: valores atípicos extremos, lecturas de rendimiento cero, puntos registrados durante cambios de velocidad y distorsiones por retardo temporal al inicio de cada pasada.</p>
+<p><img alt="Datos crudos vs limpios de monitor de rendimiento" src="../../../assets/yield-monitor-data-pipeline/clean_monitors.png" /></p>
+<p><em>Izquierda: Datos crudos del monitor de rendimiento mostrando ruido significativo e inconsistencia espacial. Derecha: Dataset limpio y suavizado con artefactos eliminados, revelando el patrón espacial real de rendimiento.</em></p>
+<h3 id="paso-2-correccion-de-calibracion-multi-cabezal">Paso 2 — Corrección de Calibración Multi-Cabezal</h3>
+<p>Cuando un lote ha sido cosechado por más de una cosechadora o cabezal, cada máquina puede registrar valores de rendimiento sistemáticamente diferentes debido a diferencias de calibración. El flujo de trabajo detecta regiones de cosecha, compara cada región contra sus vecinas y aplica iterativamente valores de compensación hasta que todo el lote se normaliza a una línea base consistente.</p>
+<p>Un componente clave de esta corrección es el <strong>índice de rendimiento</strong> (<code>rinde_ind</code>): para cada lote, el rendimiento del monitor se expresa como una relación respecto a la media del lote, produciendo un índice adimensional que captura el patrón de variabilidad espacial independientemente de los valores absolutos. Este índice se multiplica luego por el <strong>rendimiento ERP</strong> (<code>Rinde_Albalanza</code>) — el rendimiento real calculado a partir de los pesos de balanza de camión en la entrega — que es la medición de verdad terrestre más confiable disponible. El resultado es el <strong>rendimiento corregido</strong> (<code>rinde_corregido</code>): un mapa espacialmente variable que preserva el patrón relativo del monitor pero está anclado a la producción real, verificada por balanza, de cada lote.</p>
+<p><img alt="Tabla de datos de corrección de rendimiento" src="../../../assets/yield-monitor-data-pipeline/Imagen%201.png" /></p>
+<p><em>Tabla de corrección por lote, cultivo, genotipo, tratamiento y zona de manejo. El índice de rendimiento (<code>rinde_ind</code>) expresa cada valor del monitor relativo a la media del lote. El rendimiento corregido (<code>rinde_corregido</code>) se obtiene multiplicando este índice por el rendimiento de balanza ERP (<code>Rinde_Albalanza</code>), anclando la variabilidad espacial a la medición de producción más confiable.</em></p>
+<h3 id="paso-3-deteccion-y-limpieza-de-puntos-de-borde">Paso 3 — Detección y Limpieza de Puntos de Borde</h3>
+<p>Los puntos ubicados cerca de los límites del lote están frecuentemente distorsionados debido al ancho parcial del cabezal durante la cosecha. El flujo de trabajo identifica estos puntos de borde usando análisis de proximidad espacial contra las geometrías de límite del lote y los elimina o marca para prevenir su influencia en los análisis posteriores.</p>
+<p><img alt="Detección de puntos de borde" src="../../../assets/yield-monitor-data-pipeline/remove-edge-points.png" /></p>
+<p><em>Clasificación de puntos de borde: los puntos verdes se retienen como datos interiores válidos; los puntos rojos se identifican como afectados por el borde y se excluyen del análisis.</em></p>
+<h3 id="paso-4-enriquecimiento-espacial">Paso 4 — Enriquecimiento Espacial</h3>
+<p>El dataset de rendimiento limpio se vincula espacialmente con múltiples capas contextuales:</p>
 <ul>
-<li><strong>Management zones</strong> derived from soil surveys, elevation models, and historical productivity</li>
-<li><strong>Land capability classifications</strong> reflecting soil aptitude and drainage characteristics</li>
-<li><strong>Risk layers</strong> for flood-prone or degraded areas</li>
-<li><strong>Field boundaries and lot identifiers</strong> from the company's cadastral database</li>
-<li><strong>ERP data</strong> including input costs, planting dates, and applied treatments</li>
-<li><strong>Crop monitoring data</strong> from platforms like SIMA</li>
+<li><strong>Zonas de manejo</strong> derivadas de relevamientos de suelo, modelos de elevación y productividad histórica</li>
+<li><strong>Clasificaciones de aptitud de suelo</strong> que reflejan aptitud edáfica y características de drenaje</li>
+<li><strong>Capas de riesgo</strong> para áreas inundables o degradadas</li>
+<li><strong>Límites de lote e identificadores catastrales</strong> de la base de datos catastral de la empresa</li>
+<li><strong>Datos ERP</strong> incluyendo costos de insumos, fechas de siembra y tratamientos aplicados</li>
+<li><strong>Datos de monitoreo de cultivos</strong> de plataformas como SIMA</li>
 </ul>
-<p>This enrichment transforms the yield data from a standalone spatial layer into a multidimensional analytical dataset.</p>
-<h3 id="step-5-h3-hexagonal-grid-conversion-optional">Step 5 — H3 Hexagonal Grid Conversion (Optional)</h3>
-<p>When long-term storage and cross-campaign comparison are priorities, the final dataset is converted from raw point geometries into an H3-indexed hexagonal grid. This provides several advantages over traditional geometry-based operations:</p>
-<p><img alt="H3 grid with management zones" src="../../../assets/yield-monitor-data-pipeline/h3_grid.png" /></p>
-<p><em>Left: Management zone boundaries derived from soil and topographic analysis. Right: Cleaned yield data aggregated into H3 hexagonal cells, overlaid with management zone delineations for spatial comparison.</em></p>
+<p>Este enriquecimiento transforma los datos de rendimiento de una capa espacial aislada en un dataset analítico multidimensional.</p>
+<h3 id="paso-5-conversion-a-grilla-hexagonal-h3-opcional">Paso 5 — Conversión a Grilla Hexagonal H3 (Opcional)</h3>
+<p>Cuando el almacenamiento a largo plazo y la comparación entre campañas son prioridades, el dataset final se convierte de geometrías de puntos crudas a una grilla hexagonal indexada con H3. Esto proporciona varias ventajas sobre las operaciones tradicionales basadas en geometrías:</p>
+<p><img alt="Grilla H3 con zonas de manejo" src="../../../assets/yield-monitor-data-pipeline/h3_grid.png" /></p>
+<p><em>Izquierda: Límites de zonas de manejo derivados de análisis de suelo y topografía. Derecha: Datos de rendimiento limpios agregados en celdas hexagonales H3, superpuestos con las delineaciones de zonas de manejo para comparación espacial.</em></p>
 <div class="admonition note">
-<p class="admonition-title">Why H3?</p>
-<p>H3 hexagonal grids provide uniform spatial resolution, efficient indexing, and seamless aggregation across campaigns. Unlike irregular point clouds, H3 cells enable direct comparison between seasons without complex spatial join operations, making large-scale historical analysis significantly faster and more consistent.</p>
+<p class="admonition-title">¿Por qué H3?</p>
+<p>Las grillas hexagonales H3 proporcionan resolución espacial uniforme, indexación eficiente y agregación fluida entre campañas. A diferencia de las nubes de puntos irregulares, las celdas H3 permiten la comparación directa entre temporadas sin operaciones complejas de vinculación espacial, haciendo que el análisis histórico a gran escala sea significativamente más rápido y consistente.</p>
 </div>
-<h2 id="results-impact">Results &amp; Impact</h2>
-<p>The implementation of this workflow delivered measurable improvements across the entire agronomic data lifecycle:</p>
+<h2 id="resultados-e-impacto">Resultados e Impacto</h2>
+<p>La implementación de este flujo de trabajo entregó mejoras medibles a lo largo de todo el ciclo de vida de los datos agronómicos:</p>
 <ul>
-<li><strong>+85% reduction in processing time</strong>: What previously required days of manual work per farm is now completed in hours through the automated pipeline.</li>
-<li><strong>40–60% noise reduction</strong>: Statistical and spatial filtering consistently removes a significant portion of raw data artifacts, depending on harvest conditions and equipment.</li>
-<li><strong>130,000+ hectares processed per season</strong>: The workflow scales across the company's full operational footprint without degradation in processing quality.</li>
-<li><strong>First-ever cross-campaign comparison capability</strong>: With H3-indexed historical data, agronomists can now compare yield performance across multiple seasons at consistent spatial resolution.</li>
-<li><strong>Unified data standard</strong>: All farms, lots, and campaigns produce datasets in the same format, enabling company-wide analytics and benchmarking.</li>
-<li><strong>Seamless integration</strong>: Enriched datasets connect directly to management zone analysis, trial interpretation, variable rate prescriptions, and business intelligence dashboards.</li>
+<li><strong>85% de reducción en el tiempo de procesamiento</strong>: Lo que antes requería días de trabajo manual por establecimiento ahora se completa en horas a través del pipeline automatizado.</li>
+<li><strong>40–60% de reducción de ruido</strong>: El filtrado estadístico y espacial elimina consistentemente una porción significativa de los artefactos de datos crudos, dependiendo de las condiciones de cosecha y el equipamiento.</li>
+<li><strong>130.000+ hectáreas procesadas por temporada</strong>: El flujo de trabajo escala a toda la superficie operativa de la empresa sin degradación en la calidad del procesamiento.</li>
+<li><strong>Primera capacidad de comparación entre campañas</strong>: Con datos históricos indexados con H3, los agrónomos pueden ahora comparar el rendimiento entre múltiples temporadas a resolución espacial consistente.</li>
+<li><strong>Estándar de datos unificado</strong>: Todos los establecimientos, lotes y campañas producen datasets en el mismo formato, habilitando analítica y benchmarking a nivel de toda la empresa.</li>
+<li><strong>Integración fluida</strong>: Los datasets enriquecidos se conectan directamente con análisis de zonas de manejo, interpretación de ensayos, prescripciones de dosis variable y dashboards de inteligencia de negocio.</li>
 </ul>
-<h2 id="my-contributions">My Contributions</h2>
+<h2 id="mis-contribuciones">Mis Contribuciones</h2>
 <ul>
-<li><strong>Designed the complete end-to-end workflow architecture</strong>, defining the processing sequence and data flow from raw monitor exports to analysis-ready datasets.</li>
-<li><strong>Configured and parameterized each processing stage</strong>, including noise filtering thresholds, multi-header calibration logic, edge detection distances, and spatial enrichment joins.</li>
-<li><strong>Developed the spatial enrichment pipeline</strong>, integrating cleaned yield data with management zones, land capability layers, risk assessments, ERP records, and crop monitoring platforms.</li>
-<li><strong>Implemented the H3 conversion module</strong>, enabling compact storage and scalable cross-campaign analytics on the company's PostgreSQL/PostGIS infrastructure.</li>
-<li><strong>Established quality assurance protocols</strong>, including visual validation in QGIS and statistical consistency checks to ensure processing integrity across different field conditions.</li>
-<li><strong>Trained agronomic staff</strong> on interpreting cleaned yield data and using the enriched datasets for trial analysis, environment evaluation, and prescription generation.</li>
+<li><strong>Diseñé la arquitectura completa del flujo de trabajo de extremo a extremo</strong>, definiendo la secuencia de procesamiento, los límites de cada módulo y el flujo de datos desde las exportaciones crudas del monitor hasta los datasets listos para análisis.</li>
+<li><strong>Configuré y parametricé cada etapa de procesamiento</strong>, incluyendo umbrales de filtrado de ruido, lógica de calibración multi-cabezal, distancias de detección de bordes y vinculaciones de enriquecimiento espacial.</li>
+<li><strong>Desarrollé el pipeline de enriquecimiento espacial</strong>, integrando datos de rendimiento limpios con zonas de manejo, capas de aptitud de suelo, evaluaciones de riesgo, registros ERP y plataformas de monitoreo de cultivos.</li>
+<li><strong>Implementé el módulo de conversión H3</strong>, habilitando almacenamiento compacto y analítica escalable entre campañas sobre la infraestructura PostgreSQL/PostGIS de la empresa.</li>
+<li><strong>Establecí protocolos de aseguramiento de calidad</strong>, incluyendo validación visual en QGIS y verificaciones de consistencia estadística para asegurar la integridad del procesamiento bajo diferentes condiciones de campo.</li>
+<li><strong>Capacité al personal agronómico</strong> en la interpretación de datos de rendimiento limpios y el uso de los datasets enriquecidos para análisis de ensayos, evaluación de ambientes y generación de prescripciones.</li>
+</ul>
+<h2 id="lecciones-aprendidas">Lecciones Aprendidas</h2>
+<ul>
+<li><strong>La corrección de calibración es crítica</strong>: Incluso pequeñas diferencias sistemáticas entre máquinas pueden producir patrones de rendimiento engañosos que distorsionan las conclusiones agronómicas. La normalización automatizada entre máquinas resultó esencial para lotes cosechados con múltiples cosechadoras.</li>
+<li><strong>Los efectos de borde se subestiman</strong>: Los puntos afectados por el borde pueden representar el 10–15% del dataset de un lote. No eliminarlos introduce sesgo consistente en las estadísticas a nivel de zona.</li>
+<li><strong>H3 rinde frutos a escala</strong>: Para análisis de una sola campaña, las geometrías tradicionales funcionan bien. Pero cuando la operación necesita comparar 3+ campañas en miles de hectáreas, la indexación hexagonal reduce dramáticamente la complejidad de las consultas y el tiempo de procesamiento.</li>
+<li><strong>La modularidad del flujo de trabajo facilita la adopción</strong>: Diferentes establecimientos y agrónomos tienen diferentes necesidades. Hacer que cada paso de procesamiento sea opcional y configurable incrementó la adopción y la confianza en los resultados del pipeline.</li>
 </ul>
 <div class="grid cards" style="margin-top: 3rem">
 <ul>
 <li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 21h18v-2H2M20 8h-2V5h2m0-2H4v10a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4v-3h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></svg></span> Let's grab a virtual coffee together!</p>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 21h18v-2H2M20 8h-2V5h2m0-2H4v10a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4v-3h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></svg></span> ¡Tomemos un café virtual juntos!</p>
 <hr />
-<p>Do you need to build a reliable spatial data pipeline for your agricultural operation? Book a free 30-minute session to discuss your yield data challenges and explore how we can work together.</p>
-<p><a class="md-button md-button--primary" href="https://calendly.com">Book a free call <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19z"/></svg></span></a></p>
+<p>¿Necesitás construir un pipeline de datos espaciales confiable para tu operación agrícola? Reservá una sesión gratuita de 30 minutos para conversar sobre tus desafíos con datos de rendimiento y explorar cómo podemos trabajar juntos.</p>
+<p><a class="md-button md-button--primary" href="https://calendly.com">Reservar una llamada gratuita <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19z"/></svg></span></a></p>
 </li>
 </ul>
 </div>
@@ -1692,33 +1710,33 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
           
-          <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+          <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Resumen">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Previous
+                Anterior
               </span>
               <div class="md-ellipsis">
-                Overview
+                Resumen
               </div>
             </div>
           </a>
         
         
           
-          <a href="../water-risk-assessment/" class="md-footer__link md-footer__link--next" aria-label="Next: Water Risk Assessment for Agricultural Land Acquisition">
+          <a href="../water-risk-assessment/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Evaluación de Riesgo Hídrico para Adquisición de Tierras Agrícolas">
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Next
+                Siguiente
               </span>
               <div class="md-ellipsis">
-                Water Risk Assessment for Agricultural Land Acquisition
+                Evaluación de Riesgo Hídrico para Adquisición de Tierras Agrícolas
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1735,7 +1753,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      &copy; 2026 <a href="https://www.linkedin.com/in/jurruti/" target="_blank" rel="noopener">Joaquín Urruti</a>. All rights reserved.
+      &copy; 2026 <a href="https://www.linkedin.com/in/jurruti/" target="_blank" rel="noopener">Joaquín Urruti</a>. Todos los derechos reservados.
 
     </div>
   
@@ -1809,7 +1827,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["search.suggest", "toc.integrate", "navigation.tabs", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.instant.prefetch", "content.tooltips", "content.tabs.link", "content.code.copy", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["search.suggest", "toc.integrate", "navigation.tabs", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.instant.prefetch", "content.tooltips", "content.tabs.link", "content.code.copy", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>

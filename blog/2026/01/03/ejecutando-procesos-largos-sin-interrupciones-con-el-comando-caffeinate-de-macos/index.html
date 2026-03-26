@@ -1,22 +1,20 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How to build a production-ready pipeline that extracts structured data from PDF documents using Docling, OpenAI Structured Outputs, and Pydantic — eliminating manual data entry at scale.">
+        <meta name="description" content="Un comando de terminal de MacOS que evitará que tu computadora entre en suspensión">
       
       
       
-        <link rel="canonical" href="https://joaquinurruti.com/en/blog/2026/02/11/eliminating-manual-data-entry-from-pdfs-with-ai-a-production-pipeline/">
+        <link rel="canonical" href="https://joaquinurruti.com/es/blog/2026/01/03/ejecutando-procesos-largos-sin-interrupciones-con-el-comando-caffeinate-de-macos/">
       
       
-        <link rel="prev" href="../../../01/03/running-uninterrupted-long-processes-with-macos-caffeinate-command/">
       
-      
-        <link rel="next" href="../../15/processing-pmra-precipitation-data-from-satellite-rasters-to-agricultural-insights/">
+        <link rel="next" href="../../../02/11/eliminando-la-carga-manual-de-datos-desde-pdfs-con-ia-un-pipeline-productivo/">
       
       
         
@@ -31,7 +29,7 @@
     
     
       
-        <title>Eliminating Manual Data Entry from PDFs with AI: A Production Pipeline - Joaquin Urruti</title>
+        <title>Ejecutando Procesos Largos sin Interrupciones con el comando "caffeinate" de MacOS - Joaquin Urruti</title>
       
     
     
@@ -96,8 +94,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#eliminating-manual-data-entry-from-pdfs-with-ai-a-production-pipeline" class="md-skip">
-          Skip to content
+        <a href="#ejecutando-procesos-largos-sin-interrupciones-con-el-comando-caffeinate-de-macos" class="md-skip">
+          Saltar a contenido
         </a>
       
     </div>
@@ -109,7 +107,7 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
     <a href="../../../../.." title="Joaquin Urruti" class="md-header__button md-logo" aria-label="Joaquin Urruti" data-md-component="logo">
       
   <img src="../../../../../assets/logo_ju.svg" alt="logo">
@@ -129,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Eliminating Manual Data Entry from PDFs with AI: A Production Pipeline
+              Ejecutando Procesos Largos sin Interrupciones con el comando "caffeinate" de MacOS
             
           </span>
         </div>
@@ -142,9 +140,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
       </label>
     
@@ -152,9 +150,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
       </label>
     
@@ -169,7 +167,7 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
@@ -203,16 +201,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Buscar">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -225,7 +223,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicializando búsqueda
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -246,7 +244,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -262,7 +260,7 @@
           
   
   
-  Home
+  Inicio
 
         </a>
       </li>
@@ -282,7 +280,7 @@
           
   
   
-  Case Studies
+  Casos de Estudio
 
         </a>
       </li>
@@ -336,7 +334,7 @@
 
   
 
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../../../.." title="Joaquin Urruti" class="md-nav__button md-logo" aria-label="Joaquin Urruti" data-md-component="logo">
       
@@ -380,7 +378,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Inicio
   
 
     
@@ -396,7 +394,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Home
+    Inicio
   
 
           </label>
@@ -416,7 +414,7 @@
   <span class="md-ellipsis">
     
   
-    About
+    Sobre mí
   
 
     
@@ -469,7 +467,7 @@
   <span class="md-ellipsis">
     
   
-    Case Studies
+    Casos de Estudio
   
 
     
@@ -485,7 +483,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Case Studies
+    Casos de Estudio
   
 
           </label>
@@ -505,7 +503,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Resumen
   
 
     
@@ -551,7 +549,7 @@
   <span class="md-ellipsis">
     
   
-    Projects
+    Proyectos
   
 
     
@@ -567,7 +565,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Projects
+    Proyectos
   
 
           </label>
@@ -587,7 +585,7 @@
   <span class="md-ellipsis">
     
   
-    End-to-End Yield Monitor Processing Pipeline
+    Flujo de Procesamiento de Monitores de Rendimiento de Punta a Punta
   
 
     
@@ -615,7 +613,7 @@
   <span class="md-ellipsis">
     
   
-    Water Risk Assessment for Agricultural Land Acquisition
+    Evaluación de Riesgo Hídrico para Adquisición de Tierras Agrícolas
   
 
     
@@ -643,7 +641,7 @@
   <span class="md-ellipsis">
     
   
-    Automatic crop protection compliance mapping across Argentina
+    Mapeo automático de cumplimiento de aplicaciones fitosanitarias en Argentina
   
 
     
@@ -671,7 +669,7 @@
   <span class="md-ellipsis">
     
   
-    Semi-Automatic Land Cover Classification with Sentinel-2
+    Clasificación Semi-Automática de Cobertura del Suelo con Sentinel-2
   
 
     
@@ -699,7 +697,7 @@
   <span class="md-ellipsis">
     
   
-    Computing Large-Scale Distance Matrices with a Local OSRM Server
+    Cálculo de Matrices de Distancia a Gran Escala con un Servidor OSRM Local
   
 
     
@@ -727,7 +725,7 @@
   <span class="md-ellipsis">
     
   
-    GeoNode Deployment - Open Source Geospatial Platform
+    Despliegue de GeoNode - Plataforma Geoespacial Open Source
   
 
     
@@ -880,7 +878,7 @@
   <span class="md-ellipsis">
     
   
-    Archive
+    Archivo
   
 
     
@@ -896,7 +894,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Archive
+    Archivo
   
 
           </label>
@@ -975,7 +973,7 @@
   <span class="md-ellipsis">
     
   
-    Categories
+    Categorías
   
 
     
@@ -991,7 +989,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Categories
+    Categorías
   
 
           </label>
@@ -1006,44 +1004,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/ai-engineering/" class="md-nav__link">
+      <a href="../../../../category/comandos/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    AI Engineering
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../category/commands/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Commands
+    Comandos
   
 
     
@@ -1096,44 +1064,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/data-extraction/" class="md-nav__link">
+      <a href="../../../../category/extracci%C3%B3n-de-datos/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Data Extraction
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../category/document-processing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Document Processing
+    Extracción de Datos
   
 
     
@@ -1186,6 +1124,96 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../category/herramientas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Herramientas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ingenier%C3%ADa-de-ia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ingeniería de IA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/procesamiento-de-documentos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Procesamiento de Documentos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../category/python/" class="md-nav__link">
         
   
@@ -1216,44 +1244,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/quick-tips/" class="md-nav__link">
+      <a href="../../../../category/tips-r%C3%A1pidos/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Quick Tips
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../category/tools/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tools
+    Tips Rápidos
   
 
     
@@ -1331,7 +1329,7 @@
                 <a href="../../../../" class="md-nav__link">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
                   <span class="md-ellipsis">
-                    Back to index
+                    Regresar al índice
                   </span>
                 </a>
               </div>
@@ -1368,7 +1366,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2026-02-11 00:00:00+00:00" class="md-ellipsis">February 11, 2026</time>
+                        <time datetime="2026-01-03 00:00:00+00:00" class="md-ellipsis">3 de enero de 2026</time>
                       </div>
                     </li>
                     
@@ -1377,12 +1375,11 @@
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
                           <span class="md-ellipsis">
-                            in
+                            en
                             
-                              <a href="../../../../category/ai-engineering/">AI Engineering</a>, 
-                              <a href="../../../../category/python/">Python</a>, 
-                              <a href="../../../../category/data-extraction/">Data Extraction</a>, 
-                              <a href="../../../../category/document-processing/">Document Processing</a></span>
+                              <a href="../../../../category/herramientas/">Herramientas</a>, 
+                              <a href="../../../../category/tips-r%C3%A1pidos/">Tips Rápidos</a>, 
+                              <a href="../../../../category/comandos/">Comandos</a></span>
                         </div>
                       </li>
                     
@@ -1393,7 +1390,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              5 min read
+                              3 minutos de lectura
                             
                           </span>
                         </div>
@@ -1408,7 +1405,7 @@
           
             
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
   
   
   
@@ -1417,15 +1414,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Tabla de contenidos
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-real-cost-is-not-the-time-per-document" class="md-nav__link">
+  <a href="#por-que-usar-el-comando-caffeinate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Real Cost Is Not the Time Per Document
+        ¿Por qué usar el comando "caffeinate"?
       
     </span>
   </a>
@@ -1433,10 +1430,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#from-rrhh-problem-to-technical-architecture" class="md-nav__link">
+  <a href="#solucion-uso-estrategico-de-caffeinate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        From RRHH Problem to Technical Architecture
+        Solución: Uso Estratégico de Caffeinate
       
     </span>
   </a>
@@ -1444,10 +1441,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-markdown-as-the-intermediate-format" class="md-nav__link">
+  <a href="#como-funciona-caffeinate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why Markdown as the Intermediate Format
+        Cómo Funciona Caffeinate
       
     </span>
   </a>
@@ -1455,65 +1452,226 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-piece-that-makes-it-production-ready-pydantic-structured-outputs" class="md-nav__link">
+  <a href="#opciones-disponibles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Piece That Makes It Production-Ready: Pydantic + Structured Outputs
+        Opciones Disponibles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Opciones Disponibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-d-display-previene-que-la-pantalla-entre-en-suspension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        -d (display): Previene que la pantalla entre en suspensión.
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#caching-why-it-matters-more-than-youd-think" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#-i-idle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Caching: Why It Matters More Than You'd Think
+        -i (idle)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#the-same-pattern-extends-to-invoices" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#-m-mediadisk" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Same Pattern Extends to Invoices
+        -m (media/disk)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#results" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#-s-system-on-ac" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Results
+        -s (system on AC)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#key-takeaways" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#-u-user-activity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Takeaways
+        -u (user activity)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#explore-the-project" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#-t-segundos-timeout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Explore the Project
+        -t &lt;segundos&gt; (timeout)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-w-pid-wait-for-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        -w &lt;pid&gt; (wait for process)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-de-combinaciones-comunes-de-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen de Combinaciones Comunes de Flags
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resumen de Combinaciones Comunes de Flags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-se-recomienda-ims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Por qué se Recomienda -ims
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-de-implementacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos de Implementación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos de Implementación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#envolviendo-un-proceso-basico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Envolviendo un Proceso Básico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecucion-basada-en-tiempo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejecución Basada en Tiempo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procesamiento-eficiente-en-segundo-plano" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Procesamiento Eficiente en Segundo Plano
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operaciones-criticas-con-monitoreo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operaciones Críticas con Monitoreo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operaciones-de-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operaciones de Base de Datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitorear-proceso-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitorear Proceso Existente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integracion-en-pipeline-de-automatizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integración en Pipeline de Automatización
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultados
       
     </span>
   </a>
@@ -1535,117 +1693,141 @@
 
 
 
-<h1 id="eliminating-manual-data-entry-from-pdfs-with-ai-a-production-pipeline">Eliminating Manual Data Entry from PDFs with AI: A Production Pipeline</h1>
-<p>A very common problem: organizations often have folders full of PDF CVs and someone has to manually extract information into a spreadsheet—slow, error-prone, and impossible to scale. I built a pipeline to eliminate that task entirely.</p>
+<h1 id="ejecutando-procesos-largos-sin-interrupciones-con-el-comando-caffeinate-de-macos">Ejecutando Procesos Largos sin Interrupciones con el comando "caffeinate" de MacOS</h1>
+<h2 id="por-que-usar-el-comando-caffeinate">¿Por qué usar el comando "caffeinate"?</h2>
+<p>El modo de suspensión de MacOS interrumpe procesos de larga duración como análisis de datos GIS, procesamiento de imágenes satelitales o migraciones de bases de datos. Un trabajo de procesamiento raster de 6 horas puede ser terminado cuando el sistema entra en modo de suspensión, desperdiciando horas de computación.</p>
 <!-- more -->
 
-<h2 id="the-real-cost-is-not-the-time-per-document">The Real Cost Is Not the Time Per Document</h2>
-<p>When someone tells me "data entry takes 15 minutes per CV," the instinct is to calculate hourly savings. But that's the wrong frame. The real cost is what doesn't happen because the team is stuck doing manual transcription — analysis that doesn't get run, patterns that don't get spotted, decisions that get delayed.</p>
-<p>The pipeline I built processes a directory of PDFs, extracts every relevant field from each document, validates the output against a strict schema, and appends the results to a structured Excel workbook. The whole thing runs unattended as a cron job or in a Prefect Workflow.</p>
-<h2 id="from-rrhh-problem-to-technical-architecture">From RRHH Problem to Technical Architecture</h2>
-<p>The starting point was a real request: the HR team needed a searchable database of candidates from a folder of CVs. The documents had no consistent format — some were designed with heavy styling, others were plain text exports. No two CVs looked the same.</p>
-<p>The pipeline has four stages:</p>
-<ol>
-<li><strong>File discovery and caching</strong> — walk the directory, skip already-processed files using SHA-256 hashing</li>
-<li><strong>PDF to Markdown conversion</strong> — parse each document with Docling</li>
-<li><strong>Structured extraction</strong> — send the Markdown to OpenAI with a Pydantic schema enforced via Structured Outputs</li>
-<li><strong>Persistence</strong> — append the extracted data to a multi-sheet Excel workbook</li>
-</ol>
-<p><img alt="workflow-schema" src="../../../../../assets/blog/structured-outputs/workflow_schema.png" /></p>
-<h2 id="why-markdown-as-the-intermediate-format">Why Markdown as the Intermediate Format</h2>
-<p>Sending raw PDF bytes to an LLM is not a good idea in practice. PDFs are binary files — the text extraction depends heavily on how the file was generated, and the output is often polluted with layout artifacts, character encoding issues, and scrambled reading order.</p>
-<p><strong>Docling</strong> converts PDFs to clean Markdown, preserving logical structure: headers, bullet points, tables. This matters because the LLM reads the document more like a human would, rather than trying to parse a stream of coordinates and glyph codes. It also reduces token count significantly compared to naive extraction approaches.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">docling.document_converter</span><span class="w"> </span><span class="kn">import</span> <span class="n">DocumentConverter</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">converter</span> <span class="o">=</span> <span class="n">DocumentConverter</span><span class="p">()</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">result</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">markdown_text</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">export_to_markdown</span><span class="p">()</span>
-</span></code></pre></div>
-<p>The Markdown output is clean, human-readable, and optimal for LLM processing. If something goes wrong in the extraction, you can inspect the intermediate file directly.</p>
-<h2 id="the-piece-that-makes-it-production-ready-pydantic-structured-outputs">The Piece That Makes It Production-Ready: Pydantic + Structured Outputs</h2>
-<p>This is the core insight. A standard chat completion call will return text that looks like JSON — until it doesn't. Field names drift, optional fields get omitted silently, nested structures flatten unexpectedly. Running that against hundreds of documents means your database slowly fills with inconsistencies that are expensive to fix later.</p>
-<p><strong>OpenAI Structured Outputs</strong> changes the contract. Instead of asking the model to "please respond in JSON," you pass a Pydantic model as the <code>response_format</code> parameter. The API guarantees the output conforms to that schema — validated before it reaches your code.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">Experience</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">company</span><span class="p">:</span> <span class="nb">str</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">location</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">role</span><span class="p">:</span> <span class="nb">str</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">start_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">end_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">responsibilities</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">class</span><span class="w"> </span><span class="nc">Curriculum</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="n">full_name</span><span class="p">:</span> <span class="nb">str</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="n">email</span><span class="p">:</span> <span class="nb">str</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="n">phone</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="n">summary</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="n">experience</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Experience</span><span class="p">]</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    <span class="n">education</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Education</span><span class="p">]]</span>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="n">skills</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Skill</span><span class="p">]]</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="n">languages</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Language</span><span class="p">]]</span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="n">certifications</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>
-</span></code></pre></div>
-<p>The API call is straightforward:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">beta</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o-mini-2024-07-18&quot;</span><span class="p">,</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="p">{</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Extract all candidate data from this CV:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">markdown_text</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="p">}</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="p">],</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">15000</span><span class="p">,</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="n">response_format</span><span class="o">=</span><span class="n">Curriculum</span><span class="p">,</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">)</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">parsed</span>
-</span></code></pre></div>
-<p><code>temperature=0</code> is deliberate — this is extraction, not generation. Deterministic output is the goal. The model behaves like an intelligent data entry operator: it reads the document and populates the schema fields, nothing more.</p>
-<h2 id="caching-why-it-matters-more-than-youd-think">Caching: Why It Matters More Than You'd Think</h2>
-<p>A pipeline that reprocesses every document on every run is not a pipeline — it's a script you're afraid to run twice. The caching mechanism uses SHA-256 hashes of the file contents stored in a flat <code>.hashes.txt</code> file.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">calculate_file_hash</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">hasher</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">()</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">8192</span><span class="p">),</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            <span class="n">hasher</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">return</span> <span class="n">hasher</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">is_already_processed</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">file_hash</span> <span class="o">=</span> <span class="n">calculate_file_hash</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;.hashes.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="n">existing</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="k">return</span> <span class="n">file_hash</span> <span class="ow">in</span> <span class="n">existing</span>
-</span></code></pre></div>
-<p>Chunked reading in binary mode keeps memory usage flat regardless of file size. The hash check costs microseconds and saves an API call that costs real money. With <code>gpt-4o-mini</code>, each CV costs roughly $0.002 — negligible per document, but not if you're reprocessing 500 files every morning.</p>
-<h2 id="the-same-pattern-extends-to-invoices">The Same Pattern Extends to Invoices</h2>
-<p>One of the clearest signs that an architecture is solid is how easily it accommodates a second use case without structural changes. After validating the CV pipeline, I applied the same pattern to invoice extraction — a completely different document type with different fields (CUIT, CAE, line items, tax breakdowns).</p>
-<p>The only change was the Pydantic model. The pipeline — discovery, hashing, Docling conversion, OpenAI call, Excel output — was identical. This is the value of separating the schema definition from the extraction logic.</p>
-<h2 id="results">Results</h2>
-<p>The pipeline runs daily via cron. A folder of CVs that previously required a dedicated morning of manual data entry now produces a fully structured, multi-sheet Excel workbook — candidates, work history, education, skills, certifications — each in its own normalized sheet, with a foreign key linking back to the candidate record.</p>
-<p>The HR team's time shifted from transcription to analysis. That's the actual outcome worth measuring.</p>
-<h2 id="key-takeaways">Key Takeaways</h2>
-<p>The combination of Docling, OpenAI Structured Outputs, and Pydantic is not just a convenient stack — it's an architecture decision. Each component has a specific role:</p>
+<h2 id="solucion-uso-estrategico-de-caffeinate">Solución: Uso Estratégico de Caffeinate</h2>
+<p>El comando incorporado <code>caffeinate</code> previene la suspensión del sistema <strong>solo cuando es necesario</strong>, manteniendo la eficiencia energética mientras asegura que los procesos críticos se completen sin interrupción.</p>
+<h2 id="como-funciona-caffeinate">Cómo Funciona Caffeinate</h2>
+<p><code>caffeinate</code> crea <strong>aserciones</strong> que modifican el comportamiento de suspensión del sistema. Opera en dos modos:</p>
+<p><strong>Modo Wrapper:</strong> Cuando se especifica un programa, <code>caffeinate</code> crea aserciones para esa utilidad. Las aserciones permanecen activas durante la ejecución y se liberan automáticamente al completarse.</p>
+<p><strong>Modo Directo:</strong> Sin una utilidad especificada, <code>caffeinate</code> crea aserciones directamente y las mantiene activas hasta que se termina manualmente (<code>Ctrl+C</code>) o se cierra la terminal.</p>
+<hr />
+<h2 id="opciones-disponibles">Opciones Disponibles</h2>
+<h3 id="-d-display-previene-que-la-pantalla-entre-en-suspension"><code>-d</code> (display): Previene que la <strong>pantalla</strong> entre en suspensión.</h3>
+<p><strong>Caso de uso:</strong> Monitoreo visual de procesos, presentaciones, dashboards en tiempo real.</p>
+<h3 id="-i-idle"><code>-i</code> (idle)</h3>
+<p>Previene que el <strong>sistema</strong> entre en suspensión por inactividad.</p>
+<p><strong>Caso de uso:</strong> Procesos batch, scripts de análisis, operaciones en segundo plano sin interacción del usuario.</p>
+<h3 id="-m-mediadisk"><code>-m</code> (media/disk)</h3>
+<p>Previene que el <strong>disco</strong> entre en suspensión por inactividad.</p>
+<p><strong>Caso de uso:</strong> Operaciones intensivas de I/O, migraciones de bases de datos, backups, escritura continua de logs.</p>
+<h3 id="-s-system-on-ac"><code>-s</code> (system on AC)</h3>
+<p>Previene que <strong>todo el sistema</strong> entre en suspensión.</p>
+<p><strong>Importante:</strong> Solo válido cuando se ejecuta con alimentación AC. Se ignora cuando está en batería.</p>
+<p><strong>Caso de uso:</strong> Servidores de desarrollo local, procesos críticos que requieren ejecución continua garantizada.</p>
+<h3 id="-u-user-activity"><code>-u</code> (user activity)</h3>
+<p>Declara que el <strong>usuario está activo</strong>.</p>
+<p><strong>Comportamiento especial:</strong></p>
 <ul>
-<li><strong>Docling</strong> handles the unpredictability of PDF formats before the LLM ever sees the document</li>
-<li><strong>Pydantic</strong> defines the contract your data must conform to</li>
-<li><strong>Structured Outputs</strong> enforces that contract at the API level, not in post-processing</li>
-<li><strong>SHA-256 caching</strong> makes the pipeline safe to run repeatedly without waste</li>
+<li>Enciende automáticamente la pantalla si está apagada</li>
+<li>Previene que la pantalla entre en suspensión por inactividad</li>
+<li>Usa un timeout predeterminado de 5 segundos si no se especifica <code>-t</code></li>
 </ul>
-<p>Any of these pieces in isolation is useful. Together, they produce something you can actually run in production.</p>
-<h2 id="explore-the-project">Explore the Project</h2>
-<p>The full implementation — including the invoice extraction notebook and Excel formatting code — is available on GitHub:</p>
-<p><a href="https://github.com/Joaquin-Urruti/openai-structured-outputs"><strong>github.com/Joaquin-Urruti/openai-structured-outputs</strong></a></p>
-<p>If you're evaluating whether this type of pipeline fits a document processing problem in your organization, I'm happy to talk through it. You can reach me via <a href="https://www.linkedin.com/in/joaquin-urruti/">LinkedIn</a> or book a call directly.</p>
-<p><a class="md-button md-button--primary" href="https://calendly.com/joaquin-urruti/consultation-30min">Book Free Intro Call <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19z"/></svg></span></a></p>
+<p><strong>Caso de uso:</strong> Scripts que requieren simular actividad de usuario, mantener sesiones SSH activas.</p>
+<h3 id="-t-segundos-timeout"><code>-t</code> <code>&lt;segundos&gt;</code> (timeout)</h3>
+<p>Especifica el <strong>tiempo de validez</strong> de la aserción en segundos.</p>
+<p><strong>Importante:</strong> No se usa en modo wrapper, ya que la duración se controla por la ejecución del programa.</p>
+<p><strong>Caso de uso:</strong> Mantener el sistema activo por un período específico conocido (ej., 3600 segundos = 1 hora).</p>
+<h3 id="-w-pid-wait-for-process"><code>-w</code> <code>&lt;pid&gt;</code> (wait for process)</h3>
+<p>Espera a que el proceso con el PID especificado termine. La aserción se libera automáticamente cuando el proceso termina.</p>
+<p><strong>Importante:</strong> Se ignora cuando se usa en modo wrapper.</p>
+<p><strong>Caso de uso:</strong> Mantener el sistema activo mientras un proceso específico en ejecución continúa trabajando.</p>
+<hr />
+<h2 id="resumen-de-combinaciones-comunes-de-flags">Resumen de Combinaciones Comunes de Flags</h2>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Descripción</th>
+<th>Caso de Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-i</code></td>
+<td>Solo previene suspensión por inactividad</td>
+<td>Scripts Python, procesos batch</td>
+</tr>
+<tr>
+<td><code>-di</code></td>
+<td>Pantalla + suspensión por inactividad</td>
+<td>Monitoreo visual de procesos</td>
+</tr>
+<tr>
+<td><code>-ims</code></td>
+<td>Sistema + disco + inactividad (pantalla APAGADA)</td>
+<td><strong>Procesamiento eficiente en segundo plano</strong></td>
+</tr>
+<tr>
+<td><code>-dims</code></td>
+<td>Protección completa (pantalla ENCENDIDA)</td>
+<td>Operaciones críticas de DB/disco con monitoreo</td>
+</tr>
+<tr>
+<td><code>-i -t 3600</code></td>
+<td>Suspensión por inactividad por 1 hora</td>
+<td>Proceso con duración conocida</td>
+</tr>
+<tr>
+<td><code>-u</code></td>
+<td>Simula actividad de usuario</td>
+<td>Mantener sesiones activas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="por-que-se-recomienda-ims">Por qué se Recomienda <code>-ims</code></h3>
+<p>La combinación <code>-ims</code> es <strong>ideal para procesos de larga duración en segundo plano</strong> porque:</p>
+<ul>
+<li><strong>Eficiente energéticamente:</strong> Permite que la pantalla entre en suspensión, ahorrando energía</li>
+<li><strong>Protección del sistema:</strong> Previene suspensión del sistema y disco por inactividad</li>
+<li><strong>Conciencia de alimentación AC:</strong> El flag <code>-s</code> asegura protección solo cuando está enchufado</li>
+<li><strong>Perfecto para trabajos nocturnos:</strong> Procesamiento GIS, operaciones de base de datos, pipelines de datos</li>
+</ul>
+<hr />
+<h2 id="ejemplos-de-implementacion">Ejemplos de Implementación</h2>
+<h3 id="envolviendo-un-proceso-basico">Envolviendo un Proceso Básico</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>caffeinate<span class="w"> </span>-i<span class="w"> </span>python<span class="w"> </span>analyze_ndvi_timeseries.py
+</span></code></pre></div>
+<h3 id="ejecucion-basada-en-tiempo">Ejecución Basada en Tiempo</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Mantener sistema activo por 8 horas</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>caffeinate<span class="w"> </span>-i<span class="w"> </span>-t<span class="w"> </span><span class="m">28800</span>
+</span></code></pre></div>
+<h3 id="procesamiento-eficiente-en-segundo-plano">Procesamiento Eficiente en Segundo Plano</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>caffeinate<span class="w"> </span>-ims<span class="w"> </span>python<span class="w"> </span>batch_processing_overnight.py
+</span></code></pre></div>
+<h3 id="operaciones-criticas-con-monitoreo">Operaciones Críticas con Monitoreo</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>caffeinate<span class="w"> </span>-dims<span class="w"> </span>python<span class="w"> </span>process_data.py
+</span></code></pre></div>
+<h3 id="operaciones-de-base-de-datos">Operaciones de Base de Datos</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>caffeinate<span class="w"> </span>-dims<span class="w"> </span>psql<span class="w"> </span>-f<span class="w"> </span>migration_script.sql
+</span></code></pre></div>
+<h3 id="monitorear-proceso-existente">Monitorear Proceso Existente</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>caffeinate<span class="w"> </span>-i<span class="w"> </span>-w<span class="w"> </span><span class="m">12345</span>
+</span></code></pre></div>
+<h3 id="integracion-en-pipeline-de-automatizacion">Integración en Pipeline de Automatización</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># run_geo_pipeline.sh</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>caffeinate<span class="w"> </span>-ims<span class="w"> </span>python<span class="w"> </span>preprocess_sentinel2.py<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>python<span class="w"> </span>train_crop_classifier.py<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>python<span class="w"> </span>generate_yield_predictions.py
+</span></code></pre></div>
+<hr />
+<h2 id="resultados">Resultados</h2>
+<ul>
+<li><strong>Cero procesos interrumpidos</strong>: Completación confiable de trabajos nocturnos</li>
+<li><strong>Mejor utilización de recursos</strong>: Los sistemas entran en suspensión cuando están inactivos, ahorrando energía</li>
+<li><strong>Mejor debugging</strong>: La pantalla permanece activa para monitoreo cuando es necesario</li>
+<li><strong>Despliegue simplificado</strong>: Un solo comando maneja la gestión de suspensión
+```</li>
+</ul>
+<hr />
+<h1 id="trabajando-con-flujos-de-trabajo-de-datos-geoespaciales-similares"><strong>¿Trabajando con flujos de trabajo de datos geoespaciales similares?</strong></h1>
+<p>Si estás lidiando con pipelines de procesamiento interrumpidos o necesitás ayuda optimizando tu infraestructura de automatización GIS, conectemos. Me especializo en construir sistemas de procesamiento de datos robustos para aplicaciones agrícolas y ambientales.</p>
+<p><a class="md-button md-button--primary" href="https://calendly.com/joaquin-urruti/consultation-30min">Agendá una llamada gratuita <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19z"/></svg></span></a></p>
 
 
 
@@ -1683,33 +1865,17 @@
       
         
       
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../../../01/03/running-uninterrupted-long-processes-with-macos-caffeinate-command/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Running Uninterrupted Long Processes with MacOS &#34;caffeinate&#34; command">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Running Uninterrupted Long Processes with MacOS "caffeinate" command
-              </div>
-            </div>
-          </a>
+      <nav class="md-footer__inner md-grid" aria-label="Pie" >
         
         
           
-          <a href="../../15/processing-pmra-precipitation-data-from-satellite-rasters-to-agricultural-insights/" class="md-footer__link md-footer__link--next" aria-label="Next: Processing PMRA Precipitation Data: From Satellite Rasters to Agricultural Insights">
+          <a href="../../../02/11/eliminando-la-carga-manual-de-datos-desde-pdfs-con-ia-un-pipeline-productivo/" class="md-footer__link md-footer__link--next" aria-label="Siguiente: Eliminando la Carga Manual de Datos desde PDFs con IA: Un Pipeline Productivo">
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                Next
+                Siguiente
               </span>
               <div class="md-ellipsis">
-                Processing PMRA Precipitation Data: From Satellite Rasters to Agricultural Insights
+                Eliminando la Carga Manual de Datos desde PDFs con IA: Un Pipeline Productivo
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1726,7 +1892,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      &copy; 2026 <a href="https://www.linkedin.com/in/jurruti/" target="_blank" rel="noopener">Joaquín Urruti</a>. All rights reserved.
+      &copy; 2026 <a href="https://www.linkedin.com/in/jurruti/" target="_blank" rel="noopener">Joaquín Urruti</a>. Todos los derechos reservados.
 
     </div>
   
@@ -1800,7 +1966,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["search.suggest", "toc.integrate", "navigation.tabs", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.instant.prefetch", "content.tooltips", "content.tabs.link", "content.code.copy", "navigation.footer"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["search.suggest", "toc.integrate", "navigation.tabs", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.instant.prefetch", "content.tooltips", "content.tabs.link", "content.code.copy", "navigation.footer"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
