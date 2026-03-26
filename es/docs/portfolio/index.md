@@ -27,6 +27,12 @@ Bienvenido a mi portfolio de proyectos de ciencia de datos geoespaciales e IA. C
 
     Pipeline geoespacial automatizado con FABDEM, Google Earth Engine y WhiteboxTools para identificar depresiones topográficas y vías de drenaje en campos agrícolas. Genera zonas de restricción con buffer de 50 m para colocación de silobolsas y evaluación de riesgo de heladas — más de 130.000 hectáreas por ejecución sin digitalización manual.
 
+-   [Más Allá de la Visita a Campo: Automatización del Análisis de Desempeño Agronómico para Decisiones de Arrendamiento](projects/field-benchmarking.md)
+
+    ---
+
+    Flujo de trabajo automatizado de teledetección para comparar el desempeño NDVI de un campo candidato contra lotes vecinos del mismo cultivo en la misma campaña. Usando imágenes Sentinel-2 y la API de Python de Google Earth Engine, el sistema genera histogramas interpretables dentro de un radio de 20 km para respaldar decisiones de arrendamiento de tierras agrícolas.
+
 -   [Mapeo automático de cumplimiento de aplicaciones fitosanitarias](projects/phytosanitary-compliance-mapping.md)
 
     ---

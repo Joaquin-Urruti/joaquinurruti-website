@@ -27,6 +27,12 @@ Welcome to my portfolio of geospatial data science and AI projects. Each project
 
     Automated geospatial pipeline using FABDEM, Google Earth Engine, and WhiteboxTools to identify topographic depressions and drainage pathways across agricultural fields. Delivers 50 m buffer restriction zones for silo bag placement and frost-risk assessment — processing 130,000+ hectares per run with zero manual digitizing.
 
+-   [Beyond the Field Visit: Automating Crop Performance Analysis for Farmland Lease Decisions](projects/field-benchmarking.md)
+
+    ---
+
+    Automated remote sensing workflow to benchmark NDVI performance of a candidate field against neighboring lots growing the same crop in the same season. Using Sentinel-2 imagery and the Google Earth Engine Python API, the system produces interpretable histograms that contextualize the field within a 20 km radius agronomic environment to support farmland lease decisions.
+
 -   [Automatic phytosanitary application compliance mapping](projects/phytosanitary-compliance-mapping.md)
 
     ---
