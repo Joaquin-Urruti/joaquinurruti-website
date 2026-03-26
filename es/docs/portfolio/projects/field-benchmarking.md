@@ -11,7 +11,7 @@ tags:
   - Python
 ---
 
-# Más Allá de la Visita a Campo: Automatización del Análisis de Desempeño Agronómico para Decisiones de Arrendamiento
+# Más Allá de la Visita a Campo: Automatización de Benchmarking de Lotes para Decisiones de Arrendamiento
 
 !!! abstract "Resumen del Caso de Estudio"
     **Industria**: Tecnología Agropecuaria / Agricultura de Precisión
