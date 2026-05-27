@@ -172,6 +172,6 @@ This was a **solo project**, end-to-end. My specific contributions included:
 
     Do you need to map and classify land cover over large areas using satellite imagery? Book a free 30-minute session to discuss your challenges and explore how we can work together.
 
-    [Book a free call :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
+    [Book a free call :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>

@@ -181,6 +181,6 @@ La implementación de este flujo de trabajo entregó mejoras medibles a lo largo
 
     ¿Necesitás construir un pipeline de datos espaciales confiable para tu operación agrícola? Reservá una sesión gratuita de 30 minutos para conversar sobre tus desafíos con datos de rendimiento y explorar cómo podemos trabajar juntos.
 
-    [Reservar una llamada gratuita :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
+    [Reservar una llamada gratuita :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>

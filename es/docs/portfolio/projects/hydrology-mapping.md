@@ -161,6 +161,6 @@ Se aplica un buffer planimétrico de 50 m a cada polígono de depresión para de
 
     ¿Querés identificar zonas de anegamiento o riesgo de heladas a escala de lote antes de la próxima campaña? Reservá una sesión gratuita de 30 minutos para analizar tus datos y explorar cómo podemos trabajar juntos.
 
-    [Reservar una llamada gratuita :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
+    [Reservar una llamada gratuita :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>

@@ -153,6 +153,6 @@ Como único desarrollador de esta solución, mis responsabilidades incluyeron:
 
     ¿Querés ver si somos un buen match? Charlemos y descubrámoslo. Agendá una sesión de estrategia gratuita de 30 minutos para discutir tus desafíos y explorar cómo podemos trabajar juntos.
 
-    [Agendá una llamada gratuita :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
+    [Agendá una llamada gratuita :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>

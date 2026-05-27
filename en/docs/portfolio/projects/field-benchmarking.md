@@ -144,6 +144,6 @@ Key outcomes:
 
     If you work with farmland evaluation, crop monitoring, or agricultural data and want to turn satellite imagery into actionable business intelligence, let's talk. I offer a free 30-minute session to explore whether this kind of workflow fits your operation.
 
-    [Book a free call :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
+    [Book a free call :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>

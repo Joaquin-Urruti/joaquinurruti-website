@@ -226,6 +226,6 @@ Si estás trabajando con datos agrícolas en Argentina y necesitás incorporar a
 
 Siempre me interesa discutir cómo el análisis de datos espaciales puede mejorar las operaciones agrícolas. Si estás enfrentando desafíos similares o querés explorar cómo estas técnicas se aplican a tu caso de uso específico, conectemos.
 
-[Agendar Llamada Introductoria Gratuita :material-arrow-top-right:](https://calendly.com/joaquin-urruti/consultation-30min){ .md-button .md-button--primary }
+[Agendar Llamada Introductoria Gratuita :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 También podés encontrarme en [LinkedIn](https://www.linkedin.com/in/jurruti/) donde comparto más sobre GIS, Python e innovación agrícola.

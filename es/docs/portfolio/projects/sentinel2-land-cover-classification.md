@@ -173,6 +173,6 @@ Este fue un **proyecto individual**, de punta a punta. Mis contribuciones espec�
 
     ¿Necesitás mapear y clasificar cobertura del suelo en grandes extensiones usando imágenes satelitales? Reservá una sesión gratuita de 30 minutos para conversar sobre tus desafíos y explorar cómo podemos trabajar juntos.
 
-    [Reservar una llamada gratuita :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
+    [Reservar una llamada gratuita :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>

@@ -45,7 +45,7 @@ canonical_url: https://www.joaquinurruti.com/es/
 
 
 
-[Agendá una llamada gratuita :material-arrow-top-right:](https://calendly.com/joaquin-urruti/consultation-30min){ .md-button .md-button--primary }
+[Agendá una llamada gratuita :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>
 
@@ -202,6 +202,6 @@ Esto es lo que me diferencia y cómo puedo ayudar a generar valor para tu negoci
 
     ¿Querés ver si somos un buen match? Charlemos y descubrámoslo. Agendá una sesión de estrategia gratuita de 30 minutos para discutir tus desafíos y explorar cómo podemos trabajar juntos.
 
-    [Agendá una llamada gratuita :material-arrow-top-right:](https://calendly.com/joaquin-urruti/consultation-30min){ .md-button .md-button--primary }
+    [Agendá una llamada gratuita :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>

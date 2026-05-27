@@ -155,6 +155,6 @@ Resultados clave:
 
     Si trabajás en evaluación de tierras, monitoreo de cultivos o datos agrícolas y querés convertir imágenes satelitales en inteligencia de negocio accionable, hablemos. Ofrezco una sesión gratuita de 30 minutos para explorar si este tipo de flujo de trabajo se adapta a tu operación.
 
-    [Reservá una llamada gratuita :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
+    [Reservá una llamada gratuita :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>

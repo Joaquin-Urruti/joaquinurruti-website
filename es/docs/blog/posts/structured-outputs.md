@@ -160,4 +160,4 @@ La implementación completa — incluyendo el notebook de extracción de factura
 
 Si estás evaluando si este tipo de pipeline se ajusta a un problema de procesamiento de documentos en tu organización, estoy feliz de conversarlo. Podés contactarme via [LinkedIn](https://www.linkedin.com/in/joaquin-urruti/) o agendar una llamada directamente.
 
-[Agendar Llamada Introductoria Gratuita :material-arrow-top-right:](https://calendly.com/joaquin-urruti/consultation-30min){ .md-button .md-button--primary }
+[Agendar Llamada Introductoria Gratuita :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }

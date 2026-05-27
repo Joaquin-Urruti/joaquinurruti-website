@@ -223,6 +223,6 @@ If you're working with agricultural data in Argentina and need to incorporate pr
 
 I'm always interested in discussing how spatial data analysis can improve agricultural operations. If you're tackling similar challenges or want to explore how these techniques apply to your specific use case, let's connect.
 
-[Book Free Intro Call :material-arrow-top-right:](https://calendly.com/joaquin-urruti/consultation-30min){ .md-button .md-button--primary }
+[Book Free Intro Call :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 You can also find me on [LinkedIn](https://www.linkedin.com/in/jurruti/) where I share more about GIS, Python, and agricultural innovation.

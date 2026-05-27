@@ -161,6 +161,6 @@ As the sole developer of this solution, my responsibilities included:
 
     Do you need to deploy your own GIS data platform? Book a free 30-minute session to discuss your challenges and explore how we can work together.
 
-    [Book a free call :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
+    [Book a free call :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>

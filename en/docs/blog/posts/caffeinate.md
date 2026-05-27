@@ -169,4 +169,4 @@ python generate_yield_predictions.py
 # **Working with similar geospatial data workflows?** 
 If you're dealing with interrupted processing pipelines or need help optimizing your GIS automation infrastructure, let's connect. I specialize in building robust data processing systems for agricultural and environmental applications.
 
-[Book Free Intro Call :material-arrow-top-right:](https://calendly.com/joaquin-urruti/consultation-30min){ .md-button .md-button--primary }
+[Book Free Intro Call :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }

@@ -154,6 +154,6 @@ flowchart LR
 
     Do you need satellite-based risk analysis for agricultural land evaluation? Book a free 30-minute session to discuss your challenges and explore how we can work together.
 
-    [Book a free call :material-arrow-top-right:](https://calendly.com/joaquin-urruti/consultation-30min){ .md-button .md-button--primary }
+    [Book a free call :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>

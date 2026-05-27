@@ -161,6 +161,6 @@ A 50 m planar buffer is applied to each depression polygon to define the practic
 
     Do you need to identify waterlogging or frost-risk zones at field scale before the next planting season? Book a free 30-minute session to discuss your specific terrain and data constraints.
 
-    [Book a free call :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
+    [Book a free call :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>

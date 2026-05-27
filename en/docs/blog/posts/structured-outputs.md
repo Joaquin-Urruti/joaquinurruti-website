@@ -160,4 +160,4 @@ The full implementation — including the invoice extraction notebook and Excel 
 
 If you're evaluating whether this type of pipeline fits a document processing problem in your organization, I'm happy to talk through it. You can reach me via [LinkedIn](https://www.linkedin.com/in/joaquin-urruti/) or book a call directly.
 
-[Book Free Intro Call :material-arrow-top-right:](https://calendly.com/joaquin-urruti/consultation-30min){ .md-button .md-button--primary }
+[Book Free Intro Call :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }

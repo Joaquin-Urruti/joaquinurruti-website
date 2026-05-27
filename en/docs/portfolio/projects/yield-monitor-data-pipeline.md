@@ -173,6 +173,6 @@ The implementation of this workflow delivered measurable improvements across the
 
     Do you need to build a reliable spatial data pipeline for your agricultural operation? Book a free 30-minute session to discuss your yield data challenges and explore how we can work together.
 
-    [Book a free call :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
+    [Book a free call :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>

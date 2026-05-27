@@ -154,6 +154,6 @@ flowchart LR
 
     ¿Necesitás análisis de riesgo hídrico basado en imágenes satelitales para evaluación de tierras agrícolas? Reservá una sesión gratuita de 30 minutos para conversar sobre tus desafíos y explorar cómo podemos trabajar juntos.
 
-    [Reservar una llamada gratuita :material-arrow-top-right:](https://calendly.com/joaquin-urruti/consultation-30min){ .md-button .md-button--primary }
+    [Reservar una llamada gratuita :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>

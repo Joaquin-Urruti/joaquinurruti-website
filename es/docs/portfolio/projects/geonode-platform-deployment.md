@@ -161,6 +161,6 @@ Como único desarrollador de esta solución, mis responsabilidades incluyeron:
 
     ¿Necesitás desplegar tu propia plataforma de datos GIS? Agendá una sesión gratuita de 30 minutos para discutir tus desafíos y explorar cómo podemos trabajar juntos.
 
-    [Agendá una llamada gratuita :material-arrow-top-right:](https://calendly.com){ .md-button .md-button--primary }
+    [Agendá una llamada gratuita :material-arrow-top-right:](https://calendar.app.google/4mzpZDysx9izs5MBA){ .md-button .md-button--primary }
 
 </div>
